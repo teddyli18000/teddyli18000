@@ -3,3 +3,5 @@ preview-server.log*
 assets/millikan-work-*.png
 desktop-*.png
 mobile-*.png
+__pycache__/
+*.pyc

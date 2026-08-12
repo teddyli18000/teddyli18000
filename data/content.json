@@ -1,0 +1,19 @@
+{
+  "footer_lines": [
+    "built with AI and unnecessary optimization.",
+    "some side quests became main quests.",
+    "it worked on my machine.",
+    "probably overengineered. definitely worth it.",
+    "made because leaving it alone felt boring.",
+    "turns out the workaround needed a workaround.",
+    "shipping beats organizing the idea forever.",
+    "the README has infrastructure now. of course it does.",
+    "if it looks simple, something underneath probably isn't."
+  ],
+  "external_notes": {
+    "open-city-ai/haidian#61": "public AI infrastructure proposal",
+    "Waishnav/devspace#181": "Git write operations through its Bash tool",
+    "pandas-dev/pandas#66739": "shared low-level Cython declarations"
+  }
+}
+
