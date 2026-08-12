@@ -111,7 +111,7 @@ def fetch_profile() -> dict:
             }
         )
 
-    active_public = sum(
+    active_public_repos = sum(
         1
         for repo in graph["repositories"]["nodes"]
         if not repo["isFork"] and not repo["isArchived"]
@@ -121,7 +121,7 @@ def fetch_profile() -> dict:
         "contributions": graph["contributionsCollection"]["contributionCalendar"][
             "totalContributions"
         ],
-        "public_builds": active_public,
+        "active_public_repos": active_public_repos,
         "upstream_prs": pulls["total_count"],
         "external": external,
     }
@@ -150,7 +150,8 @@ def live_markdown(stats: dict, selected: list[dict], updated: dt.datetime) -> st
     year = stats["year"]
     alt = (
         f"Live GitHub activity: {stats['contributions']} contributions in {year}, "
-        f"{stats['public_builds']} public builds, {stats['upstream_prs']} upstream pull requests. "
+        f"{stats['active_public_repos']} active public repositories, "
+        f"{stats['upstream_prs']} upstream pull requests. "
         f"Updated automatically."
     )
     lines = [
@@ -187,7 +188,7 @@ def svg(stats: dict, updated: dt.datetime, dark: bool) -> str:
     stamp = updated.strftime("%d %b %Y · %H:%M SGT").lstrip("0")
     metrics = [
         (str(stats["contributions"]), f"CONTRIBUTIONS / {stats['year']}"),
-        (str(stats["public_builds"]), "PUBLIC BUILDS"),
+        (str(stats["active_public_repos"]), "ACTIVE PUBLIC REPOS"),
         (str(stats["upstream_prs"]), "UPSTREAM PRS"),
     ]
     metric_nodes = []
@@ -243,7 +244,7 @@ def main() -> None:
     snapshot = {**stats, "selected_external": selected, "updated_at": now.isoformat()}
     LIVE.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(
-        f"Updated {stats['contributions']} contributions, {stats['public_builds']} builds, "
+        f"Updated {stats['contributions']} contributions, {stats['active_public_repos']} active public repos, "
         f"{stats['upstream_prs']} upstream PRs at {now.isoformat()}"
     )
 

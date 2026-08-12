@@ -1,6 +1,6 @@
 # Visual system
 
-The profile uses one continuous visual metaphor: a warm mesh field carries sparse system nodes; liquid-glass lenses bend that field; one node eventually leaves it as a side quest.
+The profile uses one continuous visual metaphor: a restrained editorial signal trace routes a few inputs into one coherent path; a small branch eventually leaves it as a side quest. Typography, hairlines, alignment, and negative space carry the composition rather than a large illustrative object.
 
 ## Tokens
 
@@ -20,6 +20,8 @@ The profile uses one continuous visual metaphor: a warm mesh field carries spars
 ## Composition
 
 - One dominant hero poster.
-- A native-text work ledger; project screenshots and marketing mockups are intentionally excluded.
-- One generated live instrument followed by directly clickable upstream links.
+- A native-text work ledger: Millikan AI is the featured repository, while Screen Clone Manager and Baidu Drive Mover stay in a compact secondary ledger. Project screenshots and marketing mockups are intentionally excluded.
+- Current lines are explicitly exploratory threads, distinct from shipped or public repositories.
+- One generated live SVG instrument followed by directly clickable upstream links; the standalone full-width live-signal GIF is not part of the README.
+- The live metric is named `ACTIVE PUBLIC REPOS` so it describes non-fork, non-archived public repositories rather than implying a build artifact.
 - One quiet escaped-node gesture for Side Quests.

@@ -12,23 +12,22 @@
 
 Human-in-the-loop software for turning the Millikan oil-drop experiment into an inspectable measurement workflow.
 
-<sub>01 / computer vision · scientific tooling · desktop</sub>
+<sub>01 / FEATURED · Python · inspectable measurement workflow</sub>
+
+The repository is the proof surface: [source](https://github.com/teddyli18000/AiForMillikan), [desktop tests](https://github.com/teddyli18000/AiForMillikan/tree/main/apps/desktop/tests), and [validation notes](https://github.com/teddyli18000/AiForMillikan/blob/main/docs/technical/validation.md).
 
 ---
 
-### [Screen Clone Manager](https://github.com/teddyli18000/screen-clone-manager)
+#### Secondary ledger
 
-Windows couldn't clone the display the way I wanted, so I built around it.
-
-<sub>02 / Windows · OBS · systems</sub>
-
-### [Baidu Drive Mover](https://github.com/teddyli18000/baidu-drive-mover)
-
-Moving files between two clouds that were never particularly interested in cooperating.
-
-<sub>03 / Go · resumability · reliability</sub>
+| Repository | Focus |
+| --- | --- |
+| [Screen Clone Manager](https://github.com/teddyli18000/screen-clone-manager) | C# · Windows · OBS |
+| [Baidu Drive Mover](https://github.com/teddyli18000/baidu-drive-mover) | Go · resumable transfers |
 
 ### Current lines of work
+
+*Exploratory threads — not shipped products or public releases.*
 
 **Building small language models** — from the tokenizer upward.<br>
 <sub>tokenizer · pretraining · post-training · inference</sub>
@@ -41,26 +40,19 @@ Moving files between two clouds that were never particularly interested in coope
 
 ## Open source / live
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/live-signal-dark.png">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/live-signal-light.png">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/live-signal-dark.gif">
-  <img width="100%" alt="A live signal moving through the profile's system field" src="./assets/live-signal-light.gif">
-</picture>
-
 <!-- profile-live:start -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/live-dark.svg">
-  <img width="100%" alt="Live GitHub activity: 342 contributions in 2026, 12 public builds, 5 upstream pull requests. Updated automatically." src="./assets/live-light.svg">
+  <img width="100%" alt="Live GitHub activity: 341 contributions in 2026, 12 active public repositories, 5 upstream pull requests. Updated automatically." src="./assets/live-light.svg">
 </picture>
 
 **Outside my repos**
 
 - merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
+- open → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - open → [Waishnav/devspace #181](https://github.com/Waishnav/devspace/pull/181) · Git write operations through its Bash tool
-- draft → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 
-<sub>generated from public GitHub activity · updated 13 Aug · 01:31 SGT</sub>
+<sub>generated from public GitHub activity · updated 13 Aug · 01:56 SGT</sub>
 <!-- profile-live:end -->
 
 ## Side quests
@@ -74,7 +66,9 @@ Moving files between two clouds that were never particularly interested in coope
 
 > not everything needed to exist.
 
-Interfaces, automation, media systems, and strange little tools—usually built because leaving the annoyance alone felt worse.
+- [Pancreas NIfTI prep](https://github.com/teddyli18000/medical-img-preparer): preprocess, then check shape, spacing, orientation, and mask overlap.
+- [A ViT from scratch](https://github.com/teddyli18000/Vision-Transformer-From-Scratch): hand-built attention blocks with interactive image prediction.
+- [Text classification from first principles](https://github.com/teddyli18000/transformer-text-classification): encoder-only attention, positional encoding, residuals.
 
 <!-- profile-footer:start -->
 <sub>some side quests became main quests.</sub>
