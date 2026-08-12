@@ -1,9 +1,9 @@
 name: Refresh profile
 
 on:
+  schedule:
+    - cron: "17 16 * * *"
   workflow_dispatch:
-  # Scheduled refresh is intentionally paused while automation budget is unavailable.
-  # Re-enable later with: schedule: [{ cron: "17 16 * * *" }]
 
 permissions:
   contents: write
