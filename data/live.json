@@ -1,0 +1,75 @@
+{
+  "year": 2026,
+  "contributions": 341,
+  "public_builds": 11,
+  "upstream_prs": 5,
+  "external": [
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66739,
+      "title": "CLN: share checked integer extern declarations",
+      "url": "https://github.com/pandas-dev/pandas/pull/66739",
+      "status": "draft",
+      "updated_at": "2026-08-12T14:11:31Z"
+    },
+    {
+      "repo": "Waishnav/devspace",
+      "number": 181,
+      "title": "fix: allow Git write operations through bash tool",
+      "url": "https://github.com/Waishnav/devspace/pull/181",
+      "status": "open",
+      "updated_at": "2026-08-12T14:21:56Z"
+    },
+    {
+      "repo": "open-city-ai/haidian",
+      "number": 61,
+      "title": "投稿：京张元枢｜JING-ZHANG AI KERNEL — 城市 AI 公共内核",
+      "url": "https://github.com/open-city-ai/haidian/pull/61",
+      "status": "merged",
+      "updated_at": "2026-08-07T16:24:08Z"
+    },
+    {
+      "repo": "nexu-io/nexu",
+      "number": 1088,
+      "title": "fix(desktop): localize update fetch-failure message on Windows",
+      "url": "https://github.com/nexu-io/nexu/pull/1088",
+      "status": "closed",
+      "updated_at": "2026-04-30T10:47:59Z"
+    },
+    {
+      "repo": "nexu-io/nexu",
+      "number": 1081,
+      "title": "fix: add missing favicon references to login page",
+      "url": "https://github.com/nexu-io/nexu/pull/1081",
+      "status": "closed",
+      "updated_at": "2026-04-30T10:47:59Z"
+    }
+  ],
+  "selected_external": [
+    {
+      "repo": "open-city-ai/haidian",
+      "number": 61,
+      "title": "投稿：京张元枢｜JING-ZHANG AI KERNEL — 城市 AI 公共内核",
+      "url": "https://github.com/open-city-ai/haidian/pull/61",
+      "status": "merged",
+      "updated_at": "2026-08-07T16:24:08Z"
+    },
+    {
+      "repo": "Waishnav/devspace",
+      "number": 181,
+      "title": "fix: allow Git write operations through bash tool",
+      "url": "https://github.com/Waishnav/devspace/pull/181",
+      "status": "open",
+      "updated_at": "2026-08-12T14:21:56Z"
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66739,
+      "title": "CLN: share checked integer extern declarations",
+      "url": "https://github.com/pandas-dev/pandas/pull/66739",
+      "status": "draft",
+      "updated_at": "2026-08-12T14:11:31Z"
+    }
+  ],
+  "updated_at": "2026-08-13T00:50:55.978304+08:00"
+}
