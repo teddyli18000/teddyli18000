@@ -49,7 +49,7 @@ def field(width: int, height: int, phase: float, dark: bool) -> Image.Image:
         + np.cos(x * 0.23 - y * 0.41)
         + np.sin(x * 0.071 + phase)
         + np.cos(y * 0.067 - phase)
-    ) * 1.15
+    ) * 0.52
     canvas += noise[..., None]
     return Image.fromarray(np.uint8(np.clip(canvas, 0, 255)), "RGB")
 
@@ -70,39 +70,100 @@ def draw_nodes(image: Image.Image, phase: float, dark: bool) -> None:
         draw.ellipse((x - r, y - r, x + r, y + r), fill=fill)
 
 
+def organic_contour(cx: int, cy: int, rx: int, ry: int, phase: float) -> list[tuple[float, float]]:
+    points = []
+    for index in range(128):
+        angle = index / 128 * math.tau
+        radial = (
+            1
+            + 0.055 * math.sin(angle * 3 + phase * 0.82)
+            + 0.026 * math.sin(angle * 5 - phase * 0.55)
+        )
+        vertical = 1 + 0.035 * math.cos(angle * 4 + phase)
+        points.append(
+            (
+                cx + rx * radial * math.cos(angle),
+                cy + ry * radial * vertical * math.sin(angle),
+            )
+        )
+    return points
+
+
+def offset_alpha(alpha: Image.Image, dx: int, dy: int) -> Image.Image:
+    shifted = Image.new("L", alpha.size, 0)
+    shifted.paste(alpha, (dx, dy))
+    return shifted
+
+
 def glass_lens(base: Image.Image, phase: float, dark: bool) -> Image.Image:
     width, height = base.size
-    cx = int(width * 0.77 + 15 * math.sin(phase))
-    cy = int(height * 0.49 + 9 * math.cos(phase * 0.8))
+    cx = int(width * 0.77 + 13 * math.sin(phase))
+    cy = int(height * 0.51 + 8 * math.cos(phase * 0.8))
+    rx = int(226 + 7 * math.sin(phase * 0.72))
+    ry = int(176 + 6 * math.cos(phase * 0.64))
+    contour = organic_contour(cx, cy, rx, ry, phase)
     mask = Image.new("L", base.size, 0)
     md = ImageDraw.Draw(mask)
-    md.ellipse((cx - 192, cy - 148, cx + 178, cy + 148), fill=215)
-    md.ellipse((cx - 66, cy - 190, cx + 170, cy + 100), fill=225)
-    mask = mask.filter(ImageFilter.GaussianBlur(4))
-    # A soft cast shadow plus a magnified, displaced copy make the lens physical.
-    shadow_alpha = mask.filter(ImageFilter.GaussianBlur(18)).point(lambda p: int(p * 0.18))
+    md.polygon(contour, fill=218)
+    # A second moving lobe merges into the primary membrane instead of reading as a circle.
+    lobe_x = int(cx + 142 + 8 * math.cos(phase * 0.7))
+    lobe_y = int(cy - 112 + 7 * math.sin(phase * 0.9))
+    md.ellipse((lobe_x - 102, lobe_y - 78, lobe_x + 102, lobe_y + 78), fill=214)
+    mask = mask.filter(ImageFilter.GaussianBlur(3.2))
+
+    # A soft cast shadow plus a centered magnification make the lens feel physical.
+    shadow_alpha = mask.filter(ImageFilter.GaussianBlur(19)).point(lambda p: int(p * 0.20))
     shadow = Image.new("RGBA", base.size, (0, 0, 0, 0))
-    shadow.putalpha(ImageChops.offset(shadow_alpha, 7, 10))
+    shadow.putalpha(offset_alpha(shadow_alpha, 8, 11))
     result = Image.alpha_composite(base.convert("RGBA"), shadow)
-    refracted = base.resize((int(width * 1.13), int(height * 1.13)), Image.Resampling.BICUBIC)
-    left = max(0, int((refracted.width - width) * 0.76))
-    top = max(0, int((refracted.height - height) * 0.47))
-    refracted = refracted.crop((left, top, left + width, top + height)).filter(ImageFilter.GaussianBlur(1.1))
-    refracted = ImageEnhance.Contrast(refracted).enhance(1.13)
+    scale = 1.15 + 0.012 * math.sin(phase)
+    shear = 0.012 * math.sin(phase * 0.8)
+    refracted = base.transform(
+        base.size,
+        Image.Transform.AFFINE,
+        (
+            1 / scale,
+            shear,
+            cx * (1 - 1 / scale) - shear * cy,
+            -shear * 0.55,
+            1 / scale,
+            cy * (1 - 1 / scale) + shear * cx * 0.55,
+        ),
+        resample=Image.Resampling.BICUBIC,
+    ).filter(ImageFilter.GaussianBlur(0.8))
+    refracted = ImageEnhance.Contrast(refracted).enhance(1.16)
     result.paste(refracted, (0, 0), mask)
     glaze = Image.new("RGBA", base.size, (255, 255, 255, 0))
-    glaze.putalpha(mask.point(lambda p: int(p * (0.13 if dark else 0.09))))
+    glaze.putalpha(mask.point(lambda p: int(p * (0.14 if dark else 0.095))))
     result = Image.alpha_composite(result.convert("RGBA"), glaze)
-    rim = mask.filter(ImageFilter.FIND_EDGES).filter(ImageFilter.GaussianBlur(0.8))
+
+    outer = mask.filter(ImageFilter.MaxFilter(7))
+    inner = mask.filter(ImageFilter.MinFilter(7))
+    rim = ImageChops.subtract(outer, inner).filter(ImageFilter.GaussianBlur(0.7))
+    cyan = Image.new("RGBA", base.size, (91, 221, 215, 0))
+    cyan.putalpha(offset_alpha(rim.point(lambda p: int(p * 0.34)), -2, 0))
+    coral = Image.new("RGBA", base.size, (255, 116, 91, 0))
+    coral.putalpha(offset_alpha(rim.point(lambda p: int(p * 0.29)), 2, 1))
+    result = Image.alpha_composite(result, cyan)
+    result = Image.alpha_composite(result, coral)
     rim_layer = Image.new("RGBA", base.size, (255, 255, 255, 0))
-    rim_layer.putalpha(rim.point(lambda p: min(155, p * 2)))
-    result = Image.alpha_composite(result.convert("RGBA"), rim_layer)
+    rim_layer.putalpha(rim.point(lambda p: min(84, int(p * 0.34))))
+    result = Image.alpha_composite(result, rim_layer)
+
+    # A moving Fresnel glare tracks only one edge; it is deliberately not a full outline.
+    glare_points = [
+        contour[index]
+        for index in range(128)
+        if 0.56 <= (index / 128) <= 0.80
+    ]
+    glare = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    gd = ImageDraw.Draw(glare, "RGBA")
+    gd.line(glare_points, fill=(255, 255, 255, 78), width=10, joint="curve")
+    glare = glare.filter(ImageFilter.GaussianBlur(7))
+    result = Image.alpha_composite(result, glare)
     draw = ImageDraw.Draw(result, "RGBA")
-    draw.ellipse((cx - 193, cy - 149, cx + 179, cy + 149), outline=(255, 255, 255, 58), width=2)
-    draw.arc((cx - 198, cy - 154, cx + 184, cy + 154), 202, 322, fill=(105, 218, 216, 165), width=3)
-    draw.arc((cx - 194, cy - 151, cx + 180, cy + 151), 22, 142, fill=(246, 143, 115, 155), width=3)
-    draw.arc((cx - 184, cy - 140, cx + 170, cy + 140), 205, 315, fill=(255, 255, 255, 175), width=2)
-    draw.arc((cx - 155, cy - 123, cx + 145, cy + 120), 212, 300, fill=(255, 255, 255, 78), width=8)
+    crisp_glare = glare_points[4:-5]
+    draw.line(crisp_glare, fill=(255, 255, 255, 172), width=2, joint="curve")
     return result.convert("RGB")
 
 
@@ -117,9 +178,9 @@ def hero_frame(index: int, total: int, dark: bool) -> Image.Image:
     muted = (190, 190, 185, 235) if dark else (90, 86, 81, 235)
     rule = (255, 255, 255, 48) if dark else (29, 32, 36, 32)
     draw.rounded_rectangle((22, 22, 938, 398), radius=28, outline=rule, width=1)
-    draw.text((57, 58), "Xinchen Lee", font=font(59, True), fill=ink)
-    draw.text((60, 142), "AI, systems, and things", font=font(29, True), fill=ink)
-    draw.text((60, 179), "I felt like building.", font=font(29, True), fill=ink)
+    draw.text((57, 56), "Xinchen Lee", font=font(62, True), fill=ink)
+    draw.text((60, 145), "AI, systems, and things", font=font(28, True), fill=ink)
+    draw.text((60, 181), "I felt like building.", font=font(28, True), fill=ink)
     draw.line((60, 245, 435, 245), fill=rule, width=1)
     draw.text((60, 270), "small language models  /  AI infrastructure", font=font(15), fill=muted)
     draw.text((60, 298), "robotics & perception  /  human-in-the-loop tools", font=font(15), fill=muted)
@@ -162,8 +223,14 @@ def save_animation(name: str, maker, dark: bool, frames_count: int, duration: in
     frames = [maker(index, frames_count, dark) for index in range(frames_count)]
     stem = f"{name}-{'dark' if dark else 'light'}"
     frames[0].save(ASSETS / f"{stem}.png", optimize=True)
-    palette = frames[0].quantize(colors=256, method=Image.Quantize.MEDIANCUT)
-    palettes = [frame.quantize(palette=palette, dither=Image.Dither.FLOYDSTEINBERG) for frame in frames]
+    palettes = [
+        frame.quantize(
+            colors=256,
+            method=Image.Quantize.MEDIANCUT,
+            dither=Image.Dither.FLOYDSTEINBERG,
+        )
+        for frame in frames
+    ]
     palettes[0].save(
         ASSETS / f"{stem}.gif",
         save_all=True,
@@ -178,14 +245,14 @@ def save_animation(name: str, maker, dark: bool, frames_count: int, duration: in
 def main() -> None:
     ASSETS.mkdir(exist_ok=True)
     for dark in (False, True):
-        save_animation("hero", hero_frame, dark, 24, 180)
-        save_animation("live-signal", signal_frame, dark, 20, 170)
+        save_animation("hero", hero_frame, dark, 20, 230)
+        save_animation("live-signal", signal_frame, dark, 18, 190)
         save_animation(
             "sidequest",
             lambda index, total, theme: signal_frame(index, total, theme, True),
             dark,
-            20,
-            170,
+            18,
+            190,
         )
     print(f"Rendered motion and fallback assets to {ASSETS}")
 
