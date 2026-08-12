@@ -13,6 +13,8 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
 ASSETS = ROOT / "assets"
+GENERATOR = ROOT / "scripts" / "generate_profile.py"
+ACTIVE_REPOS_LABEL = "ACTIVE PUBLIC REPOS"
 
 
 def fail(message: str) -> None:
@@ -26,8 +28,20 @@ def main() -> None:
             fail(f"expected exactly one {marker} marker")
     if "millikan-work" in readme:
         fail("specific project imagery must not be embedded")
+    if "live-signal-" in readme:
+        fail("the standalone live-signal GIF must not be embedded")
+    if "public builds" in readme.lower():
+        fail("README must use active public repositories terminology")
+    if "active public repositories" not in readme.lower():
+        fail("README is missing active public repositories terminology")
     if "<script" in readme.lower() or "javascript:" in readme.lower():
         fail("README must remain script-free")
+
+    generator = GENERATOR.read_text(encoding="utf-8")
+    if ACTIVE_REPOS_LABEL not in generator:
+        fail(f"generator must emit {ACTIVE_REPOS_LABEL}")
+    if "PUBLIC BUILDS" in generator:
+        fail("generator contains stale public builds terminology")
 
     local_refs = re.findall(r'(?:src|srcset)="\./([^" ]+)"', readme)
     missing = [ref for ref in local_refs if not (ROOT / ref).is_file()]
@@ -35,10 +49,10 @@ def main() -> None:
         fail(f"missing referenced assets: {missing}")
 
     expected_rasters = {
-        "hero-light.gif": (960, 420),
-        "hero-dark.gif": (960, 420),
-        "hero-light.png": (960, 420),
-        "hero-dark.png": (960, 420),
+        "hero-light.gif": (960, 320),
+        "hero-dark.gif": (960, 320),
+        "hero-light.png": (960, 320),
+        "hero-dark.png": (960, 320),
         "live-signal-light.gif": (960, 150),
         "live-signal-dark.gif": (960, 150),
         "sidequest-light.gif": (960, 150),
@@ -55,7 +69,12 @@ def main() -> None:
             fail(f"{name} exceeds the 6 MiB per-asset budget")
 
     for name in ("live-light.svg", "live-dark.svg"):
+        svg_text = (ASSETS / name).read_text(encoding="utf-8")
         ET.parse(ASSETS / name)
+        if ACTIVE_REPOS_LABEL not in svg_text:
+            fail(f"{name} is missing {ACTIVE_REPOS_LABEL} metric")
+        if "PUBLIC BUILDS" in svg_text:
+            fail(f"{name} contains stale public builds terminology")
     published = [path for path in ASSETS.iterdir() if not path.name.startswith("millikan-work-")]
     total = sum(path.stat().st_size for path in published)
     if total > 16 * 1024 * 1024:
@@ -68,4 +87,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
