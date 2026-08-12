@@ -1,9 +1,9 @@
 name: Refresh profile
 
 on:
-  schedule:
-    - cron: "17 16 * * *"
   workflow_dispatch:
+  # Scheduled refresh is intentionally paused while automation budget is unavailable.
+  # Re-enable later with: schedule: [{ cron: "17 16 * * *" }]
 
 permissions:
   contents: write
@@ -40,4 +40,3 @@ jobs:
           git add README.md assets/live-light.svg assets/live-dark.svg data/live.json
           git commit -m "chore(profile): refresh live signal"
           git push
-
