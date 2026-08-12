@@ -29,13 +29,13 @@ Moving files between two clouds that were never particularly interested in coope
 
 ### Current lines of work
 
-**Building small language models** — from the tokenizer upward.  
+**Building small language models** — from the tokenizer upward.<br>
 <sub>tokenizer · pretraining · post-training · inference</sub>
 
-**AI developer infrastructure** — routing models, coordinating agents, and connecting systems.  
+**AI developer infrastructure** — routing models, coordinating agents, and connecting systems.<br>
 <sub>routing · agents · connectors · tooling</sub>
 
-**Robotics & perception** — exploring perception and coordination across robotic systems.  
+**Robotics & perception** — exploring perception and coordination across robotic systems.<br>
 <sub>vision · perception · coordination · embodied systems</sub>
 
 ## Open source / live
