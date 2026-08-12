@@ -326,29 +326,30 @@ def editorial_trace_frame(index: int, total: int, dark: bool) -> Image.Image:
 
     # A precise frame and one short rule give the poster an editorial grid
     # without competing with the two lines of type.
-    frame = (255, 255, 255, 45) if dark else (38, 40, 42, 34)
-    draw.rounded_rectangle((24, 22, width - 24, height - 22), radius=22, outline=frame, width=1)
+    frame = (255, 255, 255, 36) if dark else (38, 40, 42, 26)
+    draw.rounded_rectangle((24, 22, width - 24, height - 22), radius=7, outline=frame, width=1)
     ink = (246, 243, 236, 255) if dark else (28, 31, 35, 255)
     draw.text((58, 54), "Xinchen Lee", font=font(58, True), fill=ink)
-    draw.text((60, 139), "AI, systems, and things", font=font(28, True), fill=ink)
-    draw.text((60, 173), "I felt like building.", font=font(28, True), fill=ink)
+    subtitle_font = font(24)
+    draw.text((60, 139), "AI, systems,", font=subtitle_font, fill=ink)
+    draw.text((60, 171), "and things I felt like building.", font=subtitle_font, fill=ink)
     draw.line((60, 229, 456, 229), fill=secondary, width=1)
 
     # Three independent inputs enter a compact, unboxed routing region.  The
     # paths change order by a few pixels before they merge, avoiding a graph or
     # object-like motif while keeping the transformation legible.
     input_paths = [
-        [(548, 96), (586, 96), (612, 104), (640, 100), (662, 108)],
-        [(548, 128), (586, 128), (614, 120), (644, 126), (671, 127)],
-        [(548, 160), (586, 160), (612, 154), (640, 158), (664, 152)],
+        [(486, 100), (552, 100), (612, 118), (690, 112)],
+        [(486, 150), (552, 150), (616, 146), (690, 150)],
+        [(486, 200), (552, 200), (612, 180), (690, 184)],
     ]
     routing_paths = [
-        [(662, 108), (687, 113), (705, 129), (731, 126), (753, 134)],
-        [(671, 127), (691, 121), (707, 128), (731, 139), (753, 134)],
-        [(664, 152), (687, 147), (706, 138), (732, 134), (753, 134)],
+        [(690, 112), (722, 174), (760, 148)],
+        [(690, 150), (724, 158), (760, 148)],
+        [(690, 184), (722, 120), (760, 148)],
     ]
-    main_path = [(753, 134), (786, 138), (819, 131), (853, 135), (886, 126), (918, 127)]
-    breakaway = [(852, 135), (871, 149), (895, 160), (918, 159)]
+    main_path = [(760, 148), (794, 148), (824, 143), (856, 146)]
+    breakaway = [(824, 143), (840, 170), (856, 190)]
     for path in input_paths + routing_paths:
         draw.line(path, fill=hairline, width=1, joint="curve")
     draw.line(main_path, fill=hairline, width=1, joint="curve")
