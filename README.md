@@ -1,3 +1,4 @@
+<!-- profile-readme:v1 -->
 <picture>
   <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/hero-dark.png">
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/hero-light.png">
