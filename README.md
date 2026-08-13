@@ -20,7 +20,7 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
   <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/millikan-mark-dark.png">
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/millikan-mark-light.png">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/millikan-mark-dark.gif">
-  <img width="100%" alt="A measured oil drop moving between two reference plates." src="./assets/millikan-mark-light.gif">
+  <img width="280" alt="A measured oil drop moving between two reference plates." src="./assets/millikan-mark-light.gif">
 </picture>
 
 <sub>FEATURED · Python · inspectable measurement workflow · [tests](https://github.com/teddyli18000/AiForMillikan/tree/main/apps/desktop/tests) · [validation](https://github.com/teddyli18000/AiForMillikan/blob/main/docs/technical/validation.md)</sub>
@@ -59,12 +59,12 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
   <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/sidequest-dark.png">
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/sidequest-light.png">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/sidequest-dark.gif">
-  <img width="100%" alt="A tiny app window taking the unnecessary route around an obstacle." src="./assets/sidequest-light.gif">
+  <img width="220" alt="A tiny app window taking the unnecessary route around an obstacle." src="./assets/sidequest-light.gif">
 </picture>
 
 > not everything needed to exist.
 
-- **[Outlook Mail Helper](https://github.com/teddyli18000/outlook-mail-helper)** — a local Outlook/Hotmail utility for multi-account checks, inbox collection, and verification-code extraction.
+- **[Outlook Mail Helper](https://github.com/teddyli18000/outlook-mail-helper)** — a local multi-account inbox utility.
 - **[Medical image preparer](https://github.com/teddyli18000/medical-img-preparer)** — NIfTI/MSD Pancreas preprocessing with checks for shape, spacing, orientation, and mask overlap.
 - **[Millikan drop processor](https://github.com/teddyli18000/millikan-drop-processor)** — an online and offline processor for the oil-drop experiment.
 
