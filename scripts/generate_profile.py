@@ -239,17 +239,15 @@ def svg(stats: dict, updated: dt.datetime, dark: bool) -> str:
   </defs>
   <rect width="960" height="220" fill="{bg}"/>
   <path d="M16 190 C220 86 436 234 944 36" fill="none" stroke="url(#field)" stroke-width="48" opacity=".20" filter="url(#soften)"/>
-  <rect x="22" y="22" width="916" height="176" rx="24" fill="{panel}" fill-opacity=".56" stroke="{rule}"/>
-  <path d="M58 67 H902" stroke="{rule}"/>
-  <text x="74" y="53" class="status">PUBLIC ACTIVITY</text>
+  <rect x="30" y="28" width="900" height="164" rx="10" fill="{panel}" fill-opacity=".38" stroke="{rule}" stroke-opacity=".48"/>
   <text x="902" y="53" text-anchor="end" class="stamp">{html.escape(stamp)}</text>
   {''.join(metric_nodes)}
-  <path d="M58 178 H902" stroke="{rule}"/>
+  <path d="M58 178 H902" stroke="{rule}" stroke-opacity=".55"/>
   <circle cx="512" cy="178" r="5" fill="{accent}"/>
   <circle cx="512" cy="178" r="10" fill="none" stroke="{accent}" stroke-opacity=".30"/>
   <style>
     text{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:{ink}}}
-    .status,.label,.stamp{{font-size:12px;letter-spacing:1.8px}}
+    .label,.stamp{{font-size:12px;letter-spacing:1.8px}}
     .stamp,.label{{fill:{muted}}}
     .value{{font-size:38px;font-weight:580;letter-spacing:-1px}}
   </style>

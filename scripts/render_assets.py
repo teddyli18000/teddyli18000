@@ -50,6 +50,15 @@ def font(size: int, semibold: bool = False) -> ImageFont.FreeTypeFont:
     return ImageFont.load_default(size=size)
 
 
+def display_font(size: int) -> ImageFont.FreeTypeFont:
+    """Use an installed serif display face for the editorial title."""
+    for candidate in ("georgia.ttf", "cambria.ttc", "times.ttf"):
+        path = FONT_DIR / candidate
+        if path.exists():
+            return ImageFont.truetype(str(path), size=size)
+    return font(size)
+
+
 def tracked_text(
     draw: ImageDraw.ImageDraw,
     xy: tuple[float, float],
@@ -245,7 +254,7 @@ def source_field(width: int, height: int, dark: bool, narrow: bool = False) -> I
         start = int(width * 0.62)
         for x in range(start, width):
             fade = (x - start) / max(1, width - start)
-            alpha[:, x] = np.uint8(255 * 0.25 * fade)
+            alpha[:, x] = np.uint8(255 * 0.32 * fade)
         # Fade is strongest in the ridge's lower-right half, not over text.
         yy = np.arange(height, dtype=np.float32)[:, None] / max(1, height - 1)
         alpha = np.uint8(alpha * (0.40 + 0.60 * yy))
@@ -327,13 +336,13 @@ def draw_hero_type(image: Image.Image, dark: bool, narrow: bool = False) -> None
     draw = ImageDraw.Draw(image, "RGBA")
     ink = DARK_INK if dark else LIGHT_INK
     if narrow:
-        tracked_text(draw, (30, 34), "Xinchen Lee", font(39, True), ink, tracking=-0.6)
+        tracked_text(draw, (30, 34), "Xinchen Lee", display_font(39), ink, tracking=-0.35)
         tracked_text(draw, (32, 96), "AI, systems, and", font(20), ink, tracking=0.05)
         tracked_text(draw, (32, 124), "things I felt like building.", font(20), ink, tracking=0.05)
         return
     # Display tracking is slightly tighter than sentence tracking, with a
     # generous left margin that remains stable at GitHub's 960px source width.
-    tracked_text(draw, (72, 65), "Xinchen Lee", font(58, True), ink, tracking=-0.75)
+    tracked_text(draw, (72, 65), "Xinchen Lee", display_font(58), ink, tracking=-0.35)
     tracked_text(
         draw,
         (74, 159),
