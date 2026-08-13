@@ -17,10 +17,8 @@
 Human-in-the-loop software for turning the Millikan oil-drop experiment into an inspectable measurement workflow.
 
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/millikan-mark-dark.png">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/millikan-mark-light.png">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/millikan-mark-dark.gif">
-  <img width="280" alt="A measured oil drop moving between two reference plates." src="./assets/millikan-mark-light.gif">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/millikan-mark-dark.png">
+  <img width="280" alt="A measured oil drop between two reference plates." src="./assets/millikan-mark-light.png">
 </picture>
 
 <sub>FEATURED · Python · inspectable measurement workflow · [tests](https://github.com/teddyli18000/AiForMillikan/tree/main/apps/desktop/tests) · [validation](https://github.com/teddyli18000/AiForMillikan/blob/main/docs/technical/validation.md)</sub>
@@ -50,14 +48,14 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
 - open → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - open → [Waishnav/devspace #181](https://github.com/Waishnav/devspace/pull/181) · Git write operations through its Bash tool
 
-<sub>generated from public GitHub activity · updated 13 Aug · 13:21 SGT</sub>
+<sub>generated from public GitHub activity · updated 14 Aug · 01:11 SGT</sub>
 <!-- profile-live:end -->
 
 ## Side quests
 
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/sidequest-dark.png">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/sidequest-light.png">
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/sidequest-dark.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/sidequest-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/sidequest-dark.gif">
   <img width="220" alt="A tiny app window taking the unnecessary route around an obstacle." src="./assets/sidequest-light.gif">
 </picture>
