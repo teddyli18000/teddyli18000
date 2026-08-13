@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refresh the small truthful/data-driven portion of the profile README."""
+"""Refresh the data-driven live block, SVG instrument, and rotating footer."""
 
 from __future__ import annotations
 
@@ -23,6 +23,9 @@ SGT = dt.timezone(dt.timedelta(hours=8), name="SGT")
 
 
 def api(path: str, *, graphql: dict[str, object] | None = None) -> dict:
+    """Read one GitHub API response, falling back to an authenticated gh CLI."""
+
+    payload: bytes | None = None
     if graphql is not None:
         payload = json.dumps(graphql).encode()
         request = urllib.request.Request(
@@ -42,6 +45,7 @@ def api(path: str, *, graphql: dict[str, object] | None = None) -> dict:
         if not shutil_which("gh"):
             raise
         if graphql is not None:
+            assert payload is not None
             proc = subprocess.run(
                 ["gh", "api", "graphql", "--input", "-"],
                 input=payload,
@@ -49,9 +53,7 @@ def api(path: str, *, graphql: dict[str, object] | None = None) -> dict:
                 check=True,
             )
         else:
-            proc = subprocess.run(
-                ["gh", "api", path], capture_output=True, check=True
-            )
+            proc = subprocess.run(["gh", "api", path], capture_output=True, check=True)
         return json.loads(proc.stdout)
 
 
@@ -133,38 +135,66 @@ def choose_external(items: list[dict]) -> list[dict]:
         items,
         key=lambda item: (
             rank.get(item["status"], 4),
-            -dt.datetime.fromisoformat(item["updated_at"].replace("Z", "+00:00")).timestamp(),
+            -dt.datetime.fromisoformat(
+                item["updated_at"].replace("Z", "+00:00")
+            ).timestamp(),
         ),
     )[:3]
+
+
+def parse_stamp(value: str) -> dt.datetime:
+    parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+    return parsed.astimezone(SGT)
+
+
+def last_good_profile() -> tuple[dict, list[dict], dt.datetime]:
+    """Load the previous authenticated snapshot without inventing new values."""
+
+    snapshot = json.loads(LIVE.read_text(encoding="utf-8"))
+    required = ("year", "contributions", "active_public_repos", "upstream_prs", "updated_at")
+    if any(key not in snapshot for key in required):
+        raise ValueError("live.json is missing required last-good fields")
+    selected = snapshot.get("selected_external") or choose_external(snapshot.get("external", []))
+    if len(selected) != 3:
+        raise ValueError("live.json does not contain three last-good upstream PRs")
+    return snapshot, selected, parse_stamp(snapshot["updated_at"])
+
+
+def collect_profile() -> tuple[dict, list[dict], dt.datetime, bool]:
+    try:
+        stats = fetch_profile()
+        selected = choose_external(stats["external"])
+        if len(selected) != 3:
+            raise ValueError(f"expected three upstream pull requests, got {len(selected)}")
+        return stats, selected, dt.datetime.now(SGT), True
+    except Exception as error:
+        stats, selected, stamp = last_good_profile()
+        print(f"GitHub refresh failed ({error}); retaining last-good data from {stamp.isoformat()}")
+        return stats, selected, stamp, False
 
 
 def replace_block(text: str, name: str, body: str) -> str:
     start = f"<!-- profile-{name}:start -->"
     end = f"<!-- profile-{name}:end -->"
+    if text.count(start) != 1 or text.count(end) != 1:
+        raise ValueError(f"expected one {start} and one {end} marker")
     before, rest = text.split(start, 1)
     _, after = rest.split(end, 1)
     return f"{before}{start}\n{body.rstrip()}\n{end}{after}"
 
 
 def live_markdown(stats: dict, selected: list[dict], updated: dt.datetime) -> str:
-    year = stats["year"]
-    alt = (
-        f"Live GitHub activity: {stats['contributions']} contributions in {year}, "
-        f"{stats['active_public_repos']} active public repositories, "
-        f"{stats['upstream_prs']} upstream pull requests. "
-        f"Updated automatically."
-    )
+    content = json.loads(DATA.read_text(encoding="utf-8"))
+    notes = content.get("external_notes", {})
     lines = [
         '<picture>',
         '  <source media="(prefers-color-scheme: dark)" srcset="./assets/live-dark.svg">',
-        f'  <img width="100%" alt="{alt}" src="./assets/live-light.svg">',
+        '  <img width="100%" alt="Public GitHub activity with contributions, active public repositories, and upstream pull requests." src="./assets/live-light.svg">',
         '</picture>',
         '',
         '**Outside my repos**',
         '',
     ]
-    content = json.loads(DATA.read_text(encoding="utf-8"))
-    notes = content.get("external_notes", {})
     for item in selected:
         key = f"{item['repo']}#{item['number']}"
         note = notes.get(key, item["title"])
@@ -172,19 +202,19 @@ def live_markdown(stats: dict, selected: list[dict], updated: dt.datetime) -> st
             f"- {item['status']} → [{item['repo']} #{item['number']}]({item['url']}) · {note}"
         )
     stamp = updated.strftime("%d %b · %H:%M SGT").lstrip("0")
-    lines.extend(
-        ["", f"<sub>generated from public GitHub activity · updated {stamp}</sub>"]
-    )
+    lines.extend(["", f"<sub>generated from public GitHub activity · updated {stamp}</sub>"])
     return "\n".join(lines)
 
 
 def svg(stats: dict, updated: dt.datetime, dark: bool) -> str:
+    """Render a quiet editorial instrument with three truthful metrics."""
+
     bg = "#121418" if dark else "#f7f4ee"
     ink = "#f3f0e9" if dark else "#1d2024"
     muted = "#a7a59f" if dark else "#77736d"
     rule = "#34383e" if dark else "#d8d2c8"
-    glass = "#20242a" if dark else "#ffffff"
-    glow = "#7dd4cf" if dark else "#dc805f"
+    panel = "#20242a" if dark else "#ffffff"
+    accent = "#7dd4cf" if dark else "#dc805f"
     stamp = updated.strftime("%d %b %Y · %H:%M SGT").lstrip("0")
     metrics = [
         (str(stats["contributions"]), f"CONTRIBUTIONS / {stats['year']}"),
@@ -195,29 +225,28 @@ def svg(stats: dict, updated: dt.datetime, dark: bool) -> str:
     for index, (value, label) in enumerate(metrics):
         x = 58 + index * 290
         metric_nodes.append(
-            f'<text x="{x}" y="121" class="value">{html.escape(value)}</text>'
-            f'<text x="{x}" y="150" class="label">{html.escape(label)}</text>'
+            f'<text x="{x}" y="125" class="value">{html.escape(value)}</text>'
+            f'<text x="{x}" y="153" class="label">{html.escape(label)}</text>'
         )
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="960" height="220" viewBox="0 0 960 220" role="img" aria-label="Live GitHub signal">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="960" height="220" viewBox="0 0 960 220" role="img" aria-label="Public GitHub activity">
   <defs>
     <linearGradient id="field" x1="0" x2="1">
       <stop offset="0" stop-color="#efb36f" stop-opacity=".64"/>
       <stop offset=".48" stop-color="#ec8b70" stop-opacity=".38"/>
       <stop offset="1" stop-color="#75cbc9" stop-opacity=".50"/>
     </linearGradient>
-    <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="soften"><feGaussianBlur stdDeviation="18"/></filter>
   </defs>
-  <rect width="960" height="220" rx="30" fill="{bg}"/>
-  <path d="M16 190 C220 86 436 234 944 36" fill="none" stroke="url(#field)" stroke-width="48" opacity=".20" filter="url(#blur)"/>
-  <rect x="22" y="22" width="916" height="176" rx="24" fill="{glass}" fill-opacity=".56" stroke="{rule}"/>
+  <rect width="960" height="220" fill="{bg}"/>
+  <path d="M16 190 C220 86 436 234 944 36" fill="none" stroke="url(#field)" stroke-width="48" opacity=".20" filter="url(#soften)"/>
+  <rect x="22" y="22" width="916" height="176" rx="24" fill="{panel}" fill-opacity=".56" stroke="{rule}"/>
   <path d="M58 67 H902" stroke="{rule}"/>
-  <circle cx="58" cy="48" r="5" fill="{glow}"/>
-  <text x="74" y="53" class="status">LIVE SIGNAL</text>
+  <text x="74" y="53" class="status">PUBLIC ACTIVITY</text>
   <text x="902" y="53" text-anchor="end" class="stamp">{html.escape(stamp)}</text>
   {''.join(metric_nodes)}
-  <path d="M58 176 H902" stroke="{rule}"/>
-  <circle cx="512" cy="176" r="5" fill="{glow}"/>
-  <circle cx="512" cy="176" r="10" fill="none" stroke="{glow}" stroke-opacity=".30"/>
+  <path d="M58 178 H902" stroke="{rule}"/>
+  <circle cx="512" cy="178" r="5" fill="{accent}"/>
+  <circle cx="512" cy="178" r="10" fill="none" stroke="{accent}" stroke-opacity=".30"/>
   <style>
     text{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:{ink}}}
     .status,.label,.stamp{{font-size:12px;letter-spacing:1.8px}}
@@ -228,24 +257,25 @@ def svg(stats: dict, updated: dt.datetime, dark: bool) -> str:
 
 
 def main() -> None:
-    stats = fetch_profile()
-    selected = choose_external(stats["external"])
-    now = dt.datetime.now(SGT)
+    stats, selected, updated, fresh = collect_profile()
     current = README.read_text(encoding="utf-8")
-    current = replace_block(current, "live", live_markdown(stats, selected, now))
+    current = replace_block(current, "live", live_markdown(stats, selected, updated))
     content = json.loads(DATA.read_text(encoding="utf-8"))
     footer_pool = content["footer_lines"]
-    footer = footer_pool[int(now.strftime("%Y%j")) % len(footer_pool)]
+    # Footer rotation follows the refresh date even when the live block falls
+    # back to an older last-good snapshot.
+    footer = footer_pool[int(dt.datetime.now(SGT).strftime("%Y%j")) % len(footer_pool)]
     current = replace_block(current, "footer", f"<sub>{footer}</sub>")
     README.write_text(current, encoding="utf-8", newline="\n")
-    (ROOT / "assets").mkdir(exist_ok=True)
-    (ROOT / "assets" / "live-light.svg").write_text(svg(stats, now, False), encoding="utf-8")
-    (ROOT / "assets" / "live-dark.svg").write_text(svg(stats, now, True), encoding="utf-8")
-    snapshot = {**stats, "selected_external": selected, "updated_at": now.isoformat()}
-    LIVE.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    if fresh:
+        (ROOT / "assets" / "live-light.svg").write_text(svg(stats, updated, False), encoding="utf-8")
+        (ROOT / "assets" / "live-dark.svg").write_text(svg(stats, updated, True), encoding="utf-8")
+        snapshot = {**stats, "selected_external": selected, "updated_at": updated.isoformat()}
+        LIVE.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(
-        f"Updated {stats['contributions']} contributions, {stats['active_public_repos']} active public repos, "
-        f"{stats['upstream_prs']} upstream PRs at {now.isoformat()}"
+        f"{'Updated' if fresh else 'Retained'} {stats['contributions']} contributions, "
+        f"{stats['active_public_repos']} active public repos, {stats['upstream_prs']} upstream PRs "
+        f"at {updated.isoformat()}"
     )
 
 
