@@ -54,6 +54,52 @@ def require_refs(readme: str, names: tuple[str, ...]) -> None:
         fail(f"missing referenced assets: {missing_files}")
 
 
+def gif_frame_count(data: bytes, name: str) -> int:
+    """Count GIF image descriptors without treating compressed bytes as frames."""
+
+    if len(data) < 13:
+        fail(f"{name} has a truncated logical screen descriptor")
+    packed = data[10]
+    offset = 13
+    if packed & 0x80:
+        offset += 3 * (2 ** ((packed & 0x07) + 1))
+
+    frames = 0
+    while offset < len(data):
+        block = data[offset]
+        if block == 0x3B:  # trailer
+            return frames
+        if block == 0x21:  # extension + data sub-blocks
+            if offset + 2 > len(data):
+                fail(f"{name} has a truncated extension block")
+            offset += 2
+        elif block == 0x2C:  # image descriptor + optional local table
+            if offset + 10 > len(data):
+                fail(f"{name} has a truncated image descriptor")
+            local_packed = data[offset + 9]
+            offset += 10
+            if local_packed & 0x80:
+                offset += 3 * (2 ** ((local_packed & 0x07) + 1))
+            if offset >= len(data):
+                fail(f"{name} is missing its LZW code size")
+            offset += 1
+            frames += 1
+        else:
+            fail(f"{name} contains an unexpected GIF block 0x{block:02x}")
+
+        while True:
+            if offset >= len(data):
+                fail(f"{name} has a truncated data sub-block")
+            size = data[offset]
+            offset += 1
+            if size == 0:
+                break
+            offset += size
+            if offset > len(data):
+                fail(f"{name} has an overlong data sub-block")
+    fail(f"{name} is missing its GIF trailer")
+
+
 def raster_dimensions(name: str) -> tuple[int, int, int]:
     path = ASSETS / name
     try:
@@ -69,9 +115,7 @@ def raster_dimensions(name: str) -> tuple[int, int, int]:
         if len(data) < 10:
             fail(f"{name} has a truncated GIF header")
         width, height = struct.unpack("<HH", data[6:10])
-        # GIF image descriptors start with 0x2c. This is sufficient for the
-        # committed generated assets and avoids a Pillow dependency in CI.
-        return width, height, data.count(b"\x2c")
+        return width, height, gif_frame_count(data, name)
     fail(f"{name} is not a readable PNG or GIF")
 
 
