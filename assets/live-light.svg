@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="220" viewBox="0 0 960 220" role="img" aria-label="Public GitHub activity"><defs><linearGradient id="wash" x1="0" x2="1"><stop offset="0" stop-color="#c86e52" stop-opacity=".14"/><stop offset=".55" stop-color="#87998a" stop-opacity=".08"/><stop offset="1" stop-color="#c86e52" stop-opacity=".05"/></linearGradient><filter id="blur"><feGaussianBlur stdDeviation="22"/></filter></defs><rect width="960" height="220" fill="#f8f6f1"/><path d="M-40 150 C220 72 590 224 1000 52" fill="none" stroke="url(#wash)" stroke-width="74" filter="url(#blur)"/><text x="902" y="38" text-anchor="end" class="stamp">updated 13 Aug 2026 · 22:20 SGT</text><text x="58" y="118" class="value">355</text><text x="58" y="148" class="label">contributions · 2026</text><text x="352" y="118" class="value">12</text><text x="352" y="148" class="label">active public repos</text><text x="646" y="118" class="value">5</text><text x="646" y="148" class="label">upstream PRs</text><path d="M58 166 H902" stroke="#d9d3c9" stroke-opacity=".55"/><path d="M326 82 V156 M620 82 V156" stroke="#d9d3c9" stroke-opacity=".45"/><style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#211f1c}.stamp,.label{font-size:12px;letter-spacing:.8px;fill:#78736b}.value{font-family:Georgia,"Times New Roman",serif;font-size:42px;font-weight:400}</style></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="180" viewBox="0 0 960 180" role="img" aria-label="Public GitHub activity">
+  <rect width="960" height="180" fill="#f9f7f2"/>
+  <path d="M58 34 H902" stroke="#d8d1c7" stroke-opacity=".72"/>
+  <path d="M58 148 H902" stroke="#d8d1c7" stroke-opacity=".72"/>
+  <path d="M58 34 H142" stroke="#bd654e" stroke-width="2" stroke-opacity=".75"/>
+  <path d="M335 58 V133 M625 58 V133" stroke="#d8d1c7" stroke-opacity=".62"/>
+  <text x="902" y="27" text-anchor="end" class="stamp">updated 14 Aug 2026 · 01:11 SGT</text>
+  <text x="58" y="102" class="value">359</text><text x="58" y="128" class="label">CONTRIBUTIONS / 2026</text>
+  <text x="375" y="102" class="value">12</text><text x="375" y="128" class="label">ACTIVE PUBLIC REPOS</text>
+  <text x="665" y="102" class="value">5</text><text x="665" y="128" class="label">UPSTREAM PRS</text>
+  <style>
+    .value{font-family:Georgia,ui-serif,serif;font-size:40px;fill:#1e1d1b;letter-spacing:-1px}
+    .label,.stamp{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:11px;letter-spacing:1.45px;fill:#777169}
+  </style>
+</svg>
