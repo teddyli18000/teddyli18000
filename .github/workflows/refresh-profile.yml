@@ -26,8 +26,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PROFILE_LOGIN: teddyli18000
-          PROFILE_TIMEZONE: Asia/Singapore
         run: python scripts/generate_profile.py
+
+      - name: Verify generated profile
+        run: python scripts/check_profile.py
 
       - name: Commit meaningful changes only
         run: |
