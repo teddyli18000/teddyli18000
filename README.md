@@ -1,4 +1,4 @@
-<!-- profile-readme:v2 -->
+<!-- profile-readme:v3 -->
 <picture>
   <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/hero-narrow-dark.png">
   <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="./assets/hero-narrow-light.png">
@@ -20,7 +20,7 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
   <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/millikan-mark-dark.png">
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/millikan-mark-light.png">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/millikan-mark-dark.gif">
-  <img width="100%" alt="A compact measuring mark for Millikan AI." src="./assets/millikan-mark-light.gif">
+  <img width="100%" alt="A measured oil drop moving between two reference plates." src="./assets/millikan-mark-light.gif">
 </picture>
 
 <sub>FEATURED · Python · inspectable measurement workflow · [tests](https://github.com/teddyli18000/AiForMillikan/tree/main/apps/desktop/tests) · [validation](https://github.com/teddyli18000/AiForMillikan/blob/main/docs/technical/validation.md)</sub>
@@ -59,7 +59,7 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
   <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/sidequest-dark.png">
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/sidequest-light.png">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/sidequest-dark.gif">
-  <img width="100%" alt="A compact branch leaving the main work to begin a side quest." src="./assets/sidequest-light.gif">
+  <img width="100%" alt="A tiny app window taking the unnecessary route around an obstacle." src="./assets/sidequest-light.gif">
 </picture>
 
 > not everything needed to exist.
