@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "contributions": 359,
+  "contributions": 361,
   "active_public_repos": 12,
   "upstream_prs": 5,
   "external": [
@@ -9,8 +9,8 @@
       "number": 66739,
       "title": "CLN: share checked integer extern declarations",
       "url": "https://github.com/pandas-dev/pandas/pull/66739",
-      "status": "open",
-      "updated_at": "2026-08-13T01:37:27Z"
+      "status": "merged",
+      "updated_at": "2026-08-14T01:53:24Z"
     },
     {
       "repo": "Waishnav/devspace",
@@ -47,20 +47,20 @@
   ],
   "selected_external": [
     {
+      "repo": "pandas-dev/pandas",
+      "number": 66739,
+      "title": "CLN: share checked integer extern declarations",
+      "url": "https://github.com/pandas-dev/pandas/pull/66739",
+      "status": "merged",
+      "updated_at": "2026-08-14T01:53:24Z"
+    },
+    {
       "repo": "open-city-ai/haidian",
       "number": 61,
       "title": "投稿：京张元枢｜JING-ZHANG AI KERNEL — 城市 AI 公共内核",
       "url": "https://github.com/open-city-ai/haidian/pull/61",
       "status": "merged",
       "updated_at": "2026-08-07T16:24:08Z"
-    },
-    {
-      "repo": "pandas-dev/pandas",
-      "number": 66739,
-      "title": "CLN: share checked integer extern declarations",
-      "url": "https://github.com/pandas-dev/pandas/pull/66739",
-      "status": "open",
-      "updated_at": "2026-08-13T01:37:27Z"
     },
     {
       "repo": "Waishnav/devspace",
@@ -71,5 +71,5 @@
       "updated_at": "2026-08-12T14:21:56Z"
     }
   ],
-  "updated_at": "2026-08-14T01:11:57.058007+08:00"
+  "updated_at": "2026-08-15T01:11:05.483142+08:00"
 }

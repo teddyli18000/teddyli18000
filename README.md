@@ -46,11 +46,11 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
 
 **Outside my repos**
 
+- merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
-- open → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - open → [Waishnav/devspace #181](https://github.com/Waishnav/devspace/pull/181) · Git write operations through its Bash tool
 
-<sub>generated from public GitHub activity · updated 14 Aug · 01:11 SGT</sub>
+<sub>generated from public GitHub activity · updated 15 Aug · 01:11 SGT</sub>
 <!-- profile-live:end -->
 
 ## Side quests
@@ -69,5 +69,5 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
 - **[Millikan drop processor](https://github.com/teddyli18000/millikan-drop-processor)** — an online and offline processor for the oil-drop experiment.
 
 <!-- profile-footer:start -->
-<sub>it worked on my machine.</sub>
+<sub>probably overengineered. definitely worth it.</sub>
 <!-- profile-footer:end -->
