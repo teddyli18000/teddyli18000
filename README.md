@@ -17,22 +17,24 @@
 Human-in-the-loop software for turning the Millikan oil-drop experiment into an inspectable measurement workflow.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/millikan-mark-dark.png">
-  <img width="280" alt="A measured oil drop between two reference plates." src="./assets/millikan-mark-light.png">
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/millikan-mark-dark.png">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/millikan-mark-light.png">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/millikan-mark-dark.gif">
+  <img width="520" alt="A tiny measured oil drop moving between two reference plates." src="./assets/millikan-mark-light.gif">
 </picture>
 
-<sub>FEATURED · Python · inspectable measurement workflow · [tests](https://github.com/teddyli18000/AiForMillikan/tree/main/apps/desktop/tests) · [validation](https://github.com/teddyli18000/AiForMillikan/blob/main/docs/technical/validation.md)</sub>
+<sub>Python · computer vision · desktop · inspectable measurement workflow · [tests](https://github.com/teddyli18000/AiForMillikan/tree/main/apps/desktop/tests) · [validation](https://github.com/teddyli18000/AiForMillikan/blob/main/docs/technical/validation.md)</sub>
 
-1. **[Screen Clone Manager](https://github.com/teddyli18000/screen-clone-manager)** — C# · Windows · OBS.
-2. **[Baidu Drive Mover](https://github.com/teddyli18000/baidu-drive-mover)** — Go · resumable transfers.
+- **[Screen Clone Manager](https://github.com/teddyli18000/screen-clone-manager)** — Windows would not clone the display the way I wanted, so I built around it.
+- **[Baidu Drive Mover](https://github.com/teddyli18000/baidu-drive-mover)** — resumable transfers from Baidu Netdisk to Google Drive.
 
 ### Current lines of work
 
-*Exploratory threads, kept deliberately small — not shipped products or public releases.*
+*Mostly experiments; not all of these are public.*
 
 **Small models** — tokenizer, pretraining, post-training, inference.<br>
-**AI developer infrastructure** — models, agents, connectors, developer tooling.<br>
-**Robotics & perception** — vision, perception, coordination, embodied systems.
+**AI tooling** — models, agents, connectors, developer infrastructure.<br>
+**Robotics & perception** — vision, coordination, embodied systems.
 
 ## Open source / live
 
@@ -54,16 +56,16 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
 ## Side quests
 
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/sidequest-dark.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/sidequest-light.svg">
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/sidequest-dark.png">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/sidequest-light.png">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/sidequest-dark.gif">
-  <img width="220" alt="A tiny app window taking the unnecessary route around an obstacle." src="./assets/sidequest-light.gif">
+  <img width="360" alt="A tiny app window taking an unnecessary detour around an obstacle." src="./assets/sidequest-light.gif">
 </picture>
 
 > not everything needed to exist.
 
-- **[Outlook Mail Helper](https://github.com/teddyli18000/outlook-mail-helper)** — a local multi-account inbox utility.
-- **[Medical image preparer](https://github.com/teddyli18000/medical-img-preparer)** — NIfTI/MSD Pancreas preprocessing with checks for shape, spacing, orientation, and mask overlap.
+- **[Outlook Mail Helper](https://github.com/teddyli18000/outlook-mail-helper)** — multi-account inbox checks and verification-code extraction.
+- **[Medical image preparer](https://github.com/teddyli18000/medical-img-preparer)** — NIfTI/MSD Pancreas preprocessing with shape, spacing, orientation, and mask-overlap checks.
 - **[Millikan drop processor](https://github.com/teddyli18000/millikan-drop-processor)** — an online and offline processor for the oil-drop experiment.
 
 <!-- profile-footer:start -->
