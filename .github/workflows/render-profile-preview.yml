@@ -8,6 +8,7 @@ on:
       - README.md
       - scripts/render_assets.py
       - scripts/check_profile.py
+      - assets/live-*.svg
       - AGENTS.md
       - docs/design-system.md
       - .github/workflows/render-profile-preview.yml
