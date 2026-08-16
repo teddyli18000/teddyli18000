@@ -10,7 +10,7 @@
       "title": "fix(ci): guard upstream issue lifecycle automation",
       "url": "https://github.com/anywhere-labs/deepseek-harness-desktop/pull/61",
       "status": "open",
-      "updated_at": "2026-08-15T13:15:17Z"
+      "updated_at": "2026-08-16T10:05:09Z"
     },
     {
       "repo": "pandas-dev/pandas",
@@ -76,8 +76,8 @@
       "title": "fix(ci): guard upstream issue lifecycle automation",
       "url": "https://github.com/anywhere-labs/deepseek-harness-desktop/pull/61",
       "status": "open",
-      "updated_at": "2026-08-15T13:15:17Z"
+      "updated_at": "2026-08-16T10:05:09Z"
     }
   ],
-  "updated_at": "2026-08-16T00:41:06.543644+08:00"
+  "updated_at": "2026-08-17T00:41:57.113328+08:00"
 }
