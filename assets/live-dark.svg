@@ -10,7 +10,7 @@
   <rect width="960" height="220" fill="#121418"/>
   <path d="M16 190 C220 86 436 234 944 36" fill="none" stroke="url(#field)" stroke-width="48" opacity=".20" filter="url(#soften)"/>
   <rect x="30" y="28" width="900" height="164" rx="10" fill="#20242a" fill-opacity=".38" stroke="#34383e" stroke-opacity=".48"/>
-  <text x="902" y="53" text-anchor="end" class="stamp">17 Aug 2026 · 00:41 SGT</text>
+  <text x="902" y="53" text-anchor="end" class="stamp">18 Aug 2026 · 00:45 SGT</text>
   <text x="58" y="125" class="value">364</text><text x="58" y="153" class="label">CONTRIBUTIONS / 2026</text><text x="348" y="125" class="value">12</text><text x="348" y="153" class="label">ACTIVE PUBLIC REPOS</text><text x="638" y="125" class="value">6</text><text x="638" y="153" class="label">UPSTREAM PRS</text>
   <path d="M58 178 H902" stroke="#34383e" stroke-opacity=".55"/>
   <circle cx="512" cy="178" r="5" fill="#7dd4cf"/>
