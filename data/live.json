@@ -9,8 +9,8 @@
       "number": 61,
       "title": "fix(ci): guard upstream issue lifecycle automation",
       "url": "https://github.com/anywhere-labs/deepseek-harness-desktop/pull/61",
-      "status": "open",
-      "updated_at": "2026-08-16T10:05:09Z"
+      "status": "closed",
+      "updated_at": "2026-08-18T15:38:21Z"
     },
     {
       "repo": "pandas-dev/pandas",
@@ -71,13 +71,13 @@
       "updated_at": "2026-08-07T16:24:08Z"
     },
     {
-      "repo": "anywhere-labs/deepseek-harness-desktop",
-      "number": 61,
-      "title": "fix(ci): guard upstream issue lifecycle automation",
-      "url": "https://github.com/anywhere-labs/deepseek-harness-desktop/pull/61",
+      "repo": "Waishnav/devspace",
+      "number": 181,
+      "title": "fix: allow Git write operations through bash tool",
+      "url": "https://github.com/Waishnav/devspace/pull/181",
       "status": "open",
-      "updated_at": "2026-08-16T10:05:09Z"
+      "updated_at": "2026-08-12T14:21:56Z"
     }
   ],
-  "updated_at": "2026-08-18T00:45:10.627197+08:00"
+  "updated_at": "2026-08-19T00:48:03.391638+08:00"
 }
