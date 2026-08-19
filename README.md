@@ -50,7 +50,7 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
 - merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 - open → [Waishnav/devspace #181](https://github.com/Waishnav/devspace/pull/181) · Git write operations through its Bash tool
 
-<sub>generated from public GitHub activity · updated 19 Aug · 00:48 SGT</sub>
+<sub>generated from public GitHub activity · updated 20 Aug · 00:46 SGT</sub>
 <!-- profile-live:end -->
 
 ## Side quests
@@ -69,5 +69,5 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
 - **[Millikan drop processor](https://github.com/teddyli18000/millikan-drop-processor)** — an online and offline processor for the oil-drop experiment.
 
 <!-- profile-footer:start -->
-<sub>the README has infrastructure now. of course it does.</sub>
+<sub>if it looks simple, something underneath probably isn't.</sub>
 <!-- profile-footer:end -->
