@@ -10,8 +10,8 @@
   <rect width="960" height="220" fill="#f7f4ee"/>
   <path d="M16 190 C220 86 436 234 944 36" fill="none" stroke="url(#field)" stroke-width="48" opacity=".20" filter="url(#soften)"/>
   <rect x="30" y="28" width="900" height="164" rx="10" fill="#ffffff" fill-opacity=".38" stroke="#d8d2c8" stroke-opacity=".48"/>
-  <text x="902" y="53" text-anchor="end" class="stamp">21 Aug 2026 · 00:50 SGT</text>
-  <text x="58" y="125" class="value">364</text><text x="58" y="153" class="label">CONTRIBUTIONS / 2026</text><text x="348" y="125" class="value">12</text><text x="348" y="153" class="label">ACTIVE PUBLIC REPOS</text><text x="638" y="125" class="value">6</text><text x="638" y="153" class="label">UPSTREAM PRS</text>
+  <text x="902" y="53" text-anchor="end" class="stamp">22 Aug 2026 · 00:50 SGT</text>
+  <text x="58" y="125" class="value">369</text><text x="58" y="153" class="label">CONTRIBUTIONS / 2026</text><text x="348" y="125" class="value">12</text><text x="348" y="153" class="label">ACTIVE PUBLIC REPOS</text><text x="638" y="125" class="value">8</text><text x="638" y="153" class="label">UPSTREAM PRS</text>
   <path d="M58 178 H902" stroke="#d8d2c8" stroke-opacity=".55"/>
   <circle cx="512" cy="178" r="5" fill="#dc805f"/>
   <circle cx="512" cy="178" r="10" fill="none" stroke="#dc805f" stroke-opacity=".30"/>

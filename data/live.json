@@ -1,9 +1,25 @@
 {
   "year": 2026,
-  "contributions": 364,
+  "contributions": 369,
   "active_public_repos": 12,
-  "upstream_prs": 6,
+  "upstream_prs": 8,
   "external": [
+    {
+      "repo": "omdsh-dev/DSH-better-sidebar",
+      "number": 301,
+      "title": "fix(git): hide spawned git windows on Windows",
+      "url": "https://github.com/omdsh-dev/DSH-better-sidebar/pull/301",
+      "status": "open",
+      "updated_at": "2026-08-21T10:46:30Z"
+    },
+    {
+      "repo": "zhu1090093659/dsh-web-ui",
+      "number": 878,
+      "title": "fix(remote-web-ui): preserve out-of-order polled events (#851)",
+      "url": "https://github.com/zhu1090093659/dsh-web-ui/pull/878",
+      "status": "closed",
+      "updated_at": "2026-08-21T15:48:56Z"
+    },
     {
       "repo": "anywhere-labs/deepseek-harness-desktop",
       "number": 61,
@@ -71,13 +87,13 @@
       "updated_at": "2026-08-07T16:24:08Z"
     },
     {
-      "repo": "Waishnav/devspace",
-      "number": 181,
-      "title": "fix: allow Git write operations through bash tool",
-      "url": "https://github.com/Waishnav/devspace/pull/181",
+      "repo": "omdsh-dev/DSH-better-sidebar",
+      "number": 301,
+      "title": "fix(git): hide spawned git windows on Windows",
+      "url": "https://github.com/omdsh-dev/DSH-better-sidebar/pull/301",
       "status": "open",
-      "updated_at": "2026-08-12T14:21:56Z"
+      "updated_at": "2026-08-21T10:46:30Z"
     }
   ],
-  "updated_at": "2026-08-21T00:50:09.121921+08:00"
+  "updated_at": "2026-08-22T00:50:38.196643+08:00"
 }
