@@ -46,11 +46,11 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
 
 **Outside my repos**
 
+- merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · fix(git): hide spawned git windows on Windows
 - merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
-- open → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · fix(git): hide spawned git windows on Windows
 
-<sub>generated from public GitHub activity · updated 22 Aug · 00:50 SGT</sub>
+<sub>generated from public GitHub activity · updated 23 Aug · 00:39 SGT</sub>
 <!-- profile-live:end -->
 
 ## Side quests
@@ -69,5 +69,5 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
 - **[Millikan drop processor](https://github.com/teddyli18000/millikan-drop-processor)** — an online and offline processor for the oil-drop experiment.
 
 <!-- profile-footer:start -->
-<sub>some side quests became main quests.</sub>
+<sub>it worked on my machine.</sub>
 <!-- profile-footer:end -->

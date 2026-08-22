@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "contributions": 369,
+  "contributions": 370,
   "active_public_repos": 12,
   "upstream_prs": 8,
   "external": [
@@ -9,8 +9,8 @@
       "number": 301,
       "title": "fix(git): hide spawned git windows on Windows",
       "url": "https://github.com/omdsh-dev/DSH-better-sidebar/pull/301",
-      "status": "open",
-      "updated_at": "2026-08-21T10:46:30Z"
+      "status": "merged",
+      "updated_at": "2026-08-22T15:11:28Z"
     },
     {
       "repo": "zhu1090093659/dsh-web-ui",
@@ -42,7 +42,7 @@
       "title": "fix: allow Git write operations through bash tool",
       "url": "https://github.com/Waishnav/devspace/pull/181",
       "status": "open",
-      "updated_at": "2026-08-12T14:21:56Z"
+      "updated_at": "2026-08-21T19:03:38Z"
     },
     {
       "repo": "open-city-ai/haidian",
@@ -71,6 +71,14 @@
   ],
   "selected_external": [
     {
+      "repo": "omdsh-dev/DSH-better-sidebar",
+      "number": 301,
+      "title": "fix(git): hide spawned git windows on Windows",
+      "url": "https://github.com/omdsh-dev/DSH-better-sidebar/pull/301",
+      "status": "merged",
+      "updated_at": "2026-08-22T15:11:28Z"
+    },
+    {
       "repo": "pandas-dev/pandas",
       "number": 66739,
       "title": "CLN: share checked integer extern declarations",
@@ -85,15 +93,7 @@
       "url": "https://github.com/open-city-ai/haidian/pull/61",
       "status": "merged",
       "updated_at": "2026-08-07T16:24:08Z"
-    },
-    {
-      "repo": "omdsh-dev/DSH-better-sidebar",
-      "number": 301,
-      "title": "fix(git): hide spawned git windows on Windows",
-      "url": "https://github.com/omdsh-dev/DSH-better-sidebar/pull/301",
-      "status": "open",
-      "updated_at": "2026-08-21T10:46:30Z"
     }
   ],
-  "updated_at": "2026-08-22T00:50:38.196643+08:00"
+  "updated_at": "2026-08-23T00:39:57.698759+08:00"
 }
