@@ -1,73 +1,64 @@
-<!-- profile-readme:v2 -->
-<picture>
-  <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/hero-narrow-dark.png">
-  <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="./assets/hero-narrow-light.png">
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/hero-narrow-dark.gif">
-  <source media="(max-width: 600px)" srcset="./assets/hero-narrow-light.gif">
-  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/hero-dark.png">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/hero-light.png">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-dark.gif">
-  <img width="100%" alt="Xinchen Lee — AI, systems, and things I felt like building." src="./assets/hero-light.gif">
-</picture>
+<!-- profile-readme:v4 -->
+<div align="center">
+  <h1>Xinchen Lee <img src="https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif" width="30" alt="waving hand"></h1>
+  <p><strong>AI, systems, and things I felt like building.</strong></p>
+  <p>🧠 small models &nbsp;·&nbsp; 🧩 AI tooling &nbsp;·&nbsp; 🤖 robotics & perception &nbsp;·&nbsp; 🔬 scientific software</p>
+  <p><sub>mostly building · occasionally overengineering · sometimes both</sub></p>
+</div>
 
-## Selected work
+---
 
-### [Millikan AI](https://github.com/teddyli18000/AiForMillikan)
+## ✦ Selected work
+
+### 🔬 [Millikan AI](https://github.com/teddyli18000/AiForMillikan)
 
 Human-in-the-loop software for turning the Millikan oil-drop experiment into an inspectable measurement workflow.
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/millikan-mark-dark.png">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/millikan-mark-light.png">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/millikan-mark-dark.gif">
-  <img width="100%" alt="A compact measuring mark for Millikan AI." src="./assets/millikan-mark-light.gif">
-</picture>
+`measure → inspect → validate`
 
-<sub>FEATURED · Python · inspectable measurement workflow · [tests](https://github.com/teddyli18000/AiForMillikan/tree/main/apps/desktop/tests) · [validation](https://github.com/teddyli18000/AiForMillikan/blob/main/docs/technical/validation.md)</sub>
+<sub>Python · computer vision · desktop · [tests](https://github.com/teddyli18000/AiForMillikan/tree/main/apps/desktop/tests) · [validation](https://github.com/teddyli18000/AiForMillikan/blob/main/docs/technical/validation.md)</sub>
 
-1. **[Screen Clone Manager](https://github.com/teddyli18000/screen-clone-manager)** — C# · Windows · OBS.
-2. **[Baidu Drive Mover](https://github.com/teddyli18000/baidu-drive-mover)** — Go · resumable transfers.
+- 🪟 **[Screen Clone Manager](https://github.com/teddyli18000/screen-clone-manager)** — Windows would not clone the display the way I wanted, so I built around it.
+- ☁️ **[Baidu Drive Mover](https://github.com/teddyli18000/baidu-drive-mover)** — resumable transfers from Baidu Netdisk to Google Drive.
 
-### Current lines of work
+### 🧭 Current lines
 
-*Exploratory threads, kept deliberately small — not shipped products or public releases.*
+<sub>mostly experiments; not all of these are public.</sub>
 
-**Small models** — tokenizer, pretraining, post-training, inference.<br>
-**AI developer infrastructure** — models, agents, connectors, developer tooling.<br>
-**Robotics & perception** — vision, perception, coordination, embodied systems.
+- 🧠 **Small models** — tokenizer, pretraining, post-training, inference.
+- 🧩 **AI tooling** — models, agents, connectors, developer infrastructure.
+- 🤖 **Robotics & perception** — vision, coordination, embodied systems.
 
-## Open source / live
+---
+
+## ↗ Open source / live
 
 <!-- profile-live:start -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/live-dark.svg">
-  <img width="100%" alt="Public GitHub activity with contributions, active public repositories, and upstream pull requests." src="./assets/live-light.svg">
-</picture>
+<div align="center">
+  <p><strong>370</strong> contributions in 2026 &nbsp;·&nbsp; <strong>12</strong> active public repos &nbsp;·&nbsp; <strong>8</strong> upstream PRs</p>
+</div>
 
 **Outside my repos**
 
-- merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · fix(git): hide spawned git windows on Windows
-- merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
-- merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
+- ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
+- ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
+- ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>generated from public GitHub activity · updated 23 Aug · 00:39 SGT</sub>
+<sub>↻ refreshed 23 Aug · 00:39 SGT</sub>
 <!-- profile-live:end -->
 
-## Side quests
+---
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/sidequest-dark.png">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/sidequest-light.png">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/sidequest-dark.gif">
-  <img width="100%" alt="A compact branch leaving the main work to begin a side quest." src="./assets/sidequest-light.gif">
-</picture>
+## 🛸 Side quests
 
 > not everything needed to exist.
 
-- **[Outlook Mail Helper](https://github.com/teddyli18000/outlook-mail-helper)** — a local Outlook/Hotmail utility for multi-account checks, inbox collection, and verification-code extraction.
-- **[Medical image preparer](https://github.com/teddyli18000/medical-img-preparer)** — NIfTI/MSD Pancreas preprocessing with checks for shape, spacing, orientation, and mask overlap.
-- **[Millikan drop processor](https://github.com/teddyli18000/millikan-drop-processor)** — an online and offline processor for the oil-drop experiment.
+- 📬 **[Outlook Mail Helper](https://github.com/teddyli18000/outlook-mail-helper)** — multi-account inbox checks and verification-code extraction.
+- 🩻 **[Medical image preparer](https://github.com/teddyli18000/medical-img-preparer)** — NIfTI/MSD Pancreas preprocessing with shape, spacing, orientation, and mask-overlap checks.
+- 🧪 **[Millikan drop processor](https://github.com/teddyli18000/millikan-drop-processor)** — an online and offline processor for the oil-drop experiment.
 
+<div align="center">
 <!-- profile-footer:start -->
-<sub>it worked on my machine.</sub>
+<sub>⌁ there was probably an easier way. ⌁</sub>
 <!-- profile-footer:end -->
+</div>
