@@ -1,16 +1,40 @@
 {
   "year": 2026,
-  "contributions": 374,
+  "contributions": 372,
   "active_public_repos": 12,
-  "upstream_prs": 10,
+  "upstream_prs": 13,
   "external": [
+    {
+      "repo": "openclaw/openclaw",
+      "number": 128302,
+      "title": "fix(feishu): prevent open account DMs from being silently blocked",
+      "url": "https://github.com/openclaw/openclaw/pull/128302",
+      "status": "open",
+      "updated_at": "2026-08-23T18:01:58Z"
+    },
+    {
+      "repo": "Waishnav/devspace",
+      "number": 230,
+      "title": "fix: reject non-http public base URLs",
+      "url": "https://github.com/Waishnav/devspace/pull/230",
+      "status": "open",
+      "updated_at": "2026-08-23T17:00:36Z"
+    },
+    {
+      "repo": "cline/cline",
+      "number": 13493,
+      "title": "docs: remove outdated diff editing claim",
+      "url": "https://github.com/cline/cline/pull/13493",
+      "status": "open",
+      "updated_at": "2026-08-23T16:53:57Z"
+    },
     {
       "repo": "BigPizzaV3/CodexPlusPlus",
       "number": 1957,
       "title": "fix(dreamskin): skip invalid community catalog entries",
       "url": "https://github.com/BigPizzaV3/CodexPlusPlus/pull/1957",
-      "status": "open",
-      "updated_at": "2026-08-23T16:36:05Z"
+      "status": "closed",
+      "updated_at": "2026-08-23T18:16:26Z"
     },
     {
       "repo": "AprilNEA/OpenLogi",
@@ -58,7 +82,7 @@
       "title": "fix: allow Git write operations through bash tool",
       "url": "https://github.com/Waishnav/devspace/pull/181",
       "status": "open",
-      "updated_at": "2026-08-21T19:03:38Z"
+      "updated_at": "2026-08-23T17:09:50Z"
     },
     {
       "repo": "open-city-ai/haidian",
@@ -111,5 +135,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-08-24T00:42:45.283962+08:00"
+  "updated_at": "2026-08-24T02:47:59.318721+08:00"
 }

@@ -21,7 +21,7 @@
 
 <!-- profile-live:start -->
 <div align="center">
-  <p><strong>374</strong> contributions in 2026 &nbsp;·&nbsp; <strong>12</strong> active public repos &nbsp;·&nbsp; <strong>10</strong> upstream PRs</p>
+  <p><strong>372</strong> contributions in 2026 &nbsp;·&nbsp; <strong>12</strong> active public repos &nbsp;·&nbsp; <strong>13</strong> upstream PRs</p>
 </div>
 
 **Outside my repos**
@@ -30,7 +30,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 24 Aug · 00:42 SGT</sub>
+<sub>↻ refreshed 24 Aug · 02:47 SGT</sub>
 <!-- profile-live:end -->
 
 ---
