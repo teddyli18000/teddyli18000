@@ -87,17 +87,38 @@ def last_good() -> tuple[dict, list[dict], dt.datetime]:
     return snapshot, selected, stamp
 
 
-def collect() -> tuple[dict, list[dict], dt.datetime, bool]:
+def visible_signature(stats: dict, selected: list[dict]) -> dict:
+    return {
+        "year": stats["year"],
+        "contributions": stats["contributions"],
+        "active_public_repos": stats["active_public_repos"],
+        "upstream_prs": stats["upstream_prs"],
+        "selected_external": [
+            {key: item[key] for key in ("repo", "number", "title", "url", "status")}
+            for item in selected
+        ],
+    }
+
+
+def collect() -> tuple[dict, list[dict], dt.datetime, bool, bool]:
     try:
         stats = fetch_profile()
         selected = choose_external(stats["external"])
         if len(selected) != 3:
             raise ValueError(f"expected three upstream pull requests, got {len(selected)}")
-        return stats, selected, dt.datetime.now(SGT), True
+        now = dt.datetime.now(SGT)
+        try:
+            previous, previous_selected, previous_stamp = last_good()
+            changed = visible_signature(stats, selected) != visible_signature(previous, previous_selected)
+            updated = now if changed else previous_stamp
+        except Exception:
+            changed = True
+            updated = now
+        return stats, selected, updated, True, changed
     except Exception as error:
         stats, selected, stamp = last_good()
         print(f"GitHub refresh failed ({error}); retaining last-good data from {stamp.isoformat()}")
-        return stats, selected, stamp, False
+        return stats, selected, stamp, False, False
 
 
 def replace_block(text: str, name: str, body: str) -> str:
@@ -131,7 +152,7 @@ def live_markdown(stats: dict, selected: list[dict], updated: dt.datetime) -> st
 
 
 def main() -> None:
-    stats, selected, updated, fresh = collect()
+    stats, selected, updated, fresh, changed = collect()
     text = README.read_text(encoding="utf-8")
     text = replace_block(text, "live", live_markdown(stats, selected, updated))
     content = json.loads(DATA.read_text(encoding="utf-8"))
@@ -139,10 +160,11 @@ def main() -> None:
     index = int(dt.datetime.now(SGT).strftime("%Y%j")) % len(footer_pool)
     text = replace_block(text, "footer", f"<sub>⌁ {footer_pool[index]} ⌁</sub>")
     README.write_text(text, encoding="utf-8", newline="\n")
-    if fresh:
+    if fresh and changed:
         snapshot = {**stats, "selected_external": selected, "updated_at": updated.isoformat()}
         LIVE.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"{'Updated' if fresh else 'Retained'} {stats['contributions']} contributions, {stats['active_public_repos']} active public repos, {stats['upstream_prs']} upstream PRs at {updated.isoformat()}")
+    state = "Updated" if changed else ("Checked" if fresh else "Retained")
+    print(f"{state} {stats['contributions']} contributions, {stats['active_public_repos']} active public repos, {stats['upstream_prs']} upstream PRs at {updated.isoformat()}")
 
 
 if __name__ == "__main__":

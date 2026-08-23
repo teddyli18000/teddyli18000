@@ -2,8 +2,8 @@ name: Refresh profile
 
 on:
   schedule:
-    # 00:17 Singapore time every day (GitHub cron is UTC).
-    - cron: "17 16 * * *"
+    # Check every two hours at minute 17 (GitHub cron is UTC).
+    - cron: "17 */2 * * *"
   workflow_dispatch:
   pull_request:
     paths:
@@ -36,7 +36,7 @@ jobs:
         run: python scripts/generate_profile.py
       - name: Verify generated profile
         run: python scripts/check_profile.py
-      - name: Commit daily refresh
+      - name: Commit profile refresh
         if: ${{ github.event_name != 'pull_request' }}
         run: |
           if git diff --quiet; then

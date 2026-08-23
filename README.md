@@ -1,33 +1,18 @@
-<!-- profile-readme:v4 -->
+<!-- profile-readme:v5 -->
 <div align="center">
   <h1>Xinchen Lee <img src="https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif" width="30" alt="waving hand"></h1>
   <p><strong>AI, systems, and things I felt like building.</strong></p>
-  <p>🧠 small models &nbsp;·&nbsp; 🧩 AI tooling &nbsp;·&nbsp; 🤖 robotics & perception &nbsp;·&nbsp; 🔬 scientific software</p>
+  <p>
+    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Abacus.png" width="21" alt="abacus"> small models
+    &nbsp;·&nbsp;
+    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Gear.png" width="21" alt="gear"> AI tooling
+    &nbsp;·&nbsp;
+    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" width="21" alt="robot"> robotics & perception
+    &nbsp;·&nbsp;
+    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Microscope.png" width="21" alt="microscope"> scientific software
+  </p>
   <p><sub>mostly building · occasionally overengineering · sometimes both</sub></p>
 </div>
-
----
-
-## ✦ Selected work
-
-### 🔬 [Millikan AI](https://github.com/teddyli18000/AiForMillikan)
-
-Human-in-the-loop software for turning the Millikan oil-drop experiment into an inspectable measurement workflow.
-
-`measure → inspect → validate`
-
-<sub>Python · computer vision · desktop · [tests](https://github.com/teddyli18000/AiForMillikan/tree/main/apps/desktop/tests) · [validation](https://github.com/teddyli18000/AiForMillikan/blob/main/docs/technical/validation.md)</sub>
-
-- 🪟 **[Screen Clone Manager](https://github.com/teddyli18000/screen-clone-manager)** — Windows would not clone the display the way I wanted, so I built around it.
-- ☁️ **[Baidu Drive Mover](https://github.com/teddyli18000/baidu-drive-mover)** — resumable transfers from Baidu Netdisk to Google Drive.
-
-### 🧭 Current lines
-
-<sub>mostly experiments; not all of these are public.</sub>
-
-- 🧠 **Small models** — tokenizer, pretraining, post-training, inference.
-- 🧩 **AI tooling** — models, agents, connectors, developer infrastructure.
-- 🤖 **Robotics & perception** — vision, coordination, embodied systems.
 
 ---
 
@@ -46,6 +31,23 @@ Human-in-the-loop software for turning the Millikan oil-drop experiment into an 
 
 <sub>↻ refreshed 24 Aug · 00:42 SGT</sub>
 <!-- profile-live:end -->
+
+---
+
+## ✦ Selected work
+
+- 🔬 **[Millikan AI](https://github.com/teddyli18000/AiForMillikan)** — AI-assisted desktop tooling for the Millikan oil-drop experiment.
+- 🪟 **[Screen Clone Manager](https://github.com/teddyli18000/screen-clone-manager)** — a focused OBS-based workaround for display cloning on Windows.
+- ☁️ **[Baidu Drive Mover](https://github.com/teddyli18000/baidu-drive-mover)** — resumable transfers from Baidu Netdisk to Google Drive.
+- 🧱 **[XCAD](https://github.com/teddyli18000/XCAD)** — my final project for a C/C++ programming course.
+
+### 🧭 Current lines
+
+<sub>mostly experiments; not all of these are public.</sub>
+
+- 🧠 **Small models** — tokenizer, pretraining, post-training, inference.
+- 🧩 **AI tooling** — models, agents, connectors, developer infrastructure.
+- 🤖 **Robotics & perception** — vision, coordination, embodied systems.
 
 ---
 

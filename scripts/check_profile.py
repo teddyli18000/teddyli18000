@@ -11,6 +11,11 @@ README = ROOT / "README.md"
 GENERATOR = ROOT / "scripts" / "generate_profile.py"
 LIVE = ROOT / "data" / "live.json"
 
+APPROVED_IMAGE_PREFIXES = (
+    "https://user-images.githubusercontent.com/",
+    "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/",
+)
+
 
 def fail(message: str) -> None:
     raise SystemExit(f"FAIL: {message}")
@@ -19,12 +24,12 @@ def fail(message: str) -> None:
 def main() -> None:
     readme = README.read_text(encoding="utf-8")
     lower = readme.lower()
-    if "profile-readme:v4" not in readme:
-        fail("README version marker is not v4")
+    if "profile-readme:v5" not in readme:
+        fail("README version marker is not v5")
     for marker in ("profile-live:start", "profile-live:end", "profile-footer:start", "profile-footer:end"):
         if readme.count(marker) != 1:
             fail(f"expected exactly one {marker}")
-    sections = ("## ✦ Selected work", "### 🧭 Current lines", "## ↗ Open source / live", "## 🛸 Side quests")
+    sections = ("## ↗ Open source / live", "## ✦ Selected work", "### 🧭 Current lines", "## 🛸 Side quests")
     positions = []
     for section in sections:
         if readme.count(section) != 1:
@@ -47,11 +52,18 @@ def main() -> None:
         fail("live block lacks freshness timestamp")
     if readme.count("Xinchen Lee") != 1:
         fail("full name should appear exactly once")
+    if "[XCAD](https://github.com/teddyli18000/XCAD)" not in readme:
+        fail("Selected work must include XCAD")
+    if "### 🔬 [Millikan AI]" in readme:
+        fail("Millikan AI should not be visually privileged")
     remote_images = re.findall(r'<img[^>]+src="(https://[^\"]+)"', readme)
-    if any(not url.startswith("https://user-images.githubusercontent.com/") for url in remote_images):
-        fail("remote images must use the approved public GitHub image host")
-    if len(remote_images) > 1:
-        fail("keep remote imagery to one non-critical accent")
+    if any(not url.startswith(APPROVED_IMAGE_PREFIXES) for url in remote_images):
+        fail("remote image uses an unapproved host")
+    if len(remote_images) > 6:
+        fail("keep remote imagery lightweight")
+    animated_fluent = [url for url in remote_images if "Animated-Fluent-Emojis" in url]
+    if not 3 <= len(animated_fluent) <= 5:
+        fail("use a restrained set of animated Fluent emoji accents")
     data = json.loads(LIVE.read_text(encoding="utf-8"))
     for key in ("year", "contributions", "active_public_repos", "upstream_prs", "updated_at"):
         if key not in data:
@@ -59,12 +71,12 @@ def main() -> None:
     if len(data.get("selected_external", [])) != 3:
         fail("live.json must retain three selected upstream PRs")
     generator = GENERATOR.read_text(encoding="utf-8")
-    for token in ("live_markdown", "replace_block", "selected_external", "refreshed"):
+    for token in ("live_markdown", "replace_block", "selected_external", "visible_signature", "refreshed"):
         if token not in generator:
             fail(f"generator missing {token}")
     if "assets/" in generator or "<svg" in generator:
         fail("generator must remain text/data only")
-    print("PASS: text-first profile, truthful live block, no generated visual assets")
+    print("PASS: v5 profile, truthful live block, lightweight public motion accents")
 
 
 if __name__ == "__main__":
