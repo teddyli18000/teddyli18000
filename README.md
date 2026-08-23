@@ -12,6 +12,7 @@
     <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Microscope.png" width="21" alt="microscope"> scientific software
   </p>
   <p><sub>mostly building · occasionally overengineering · sometimes both</sub></p>
+  <img src="https://gradient-svg-generator.vercel.app/api/svg?template=watercolor-dream&amp;height=72&amp;duration=18s" width="100%" alt="soft animated gradient">
 </div>
 
 ---
@@ -36,10 +37,10 @@
 
 ## ✦ Selected work
 
-- 🔬 **[Millikan AI](https://github.com/teddyli18000/AiForMillikan)** — AI-assisted desktop tooling for the Millikan oil-drop experiment.
-- 🪟 **[Screen Clone Manager](https://github.com/teddyli18000/screen-clone-manager)** — a focused OBS-based workaround for display cloning on Windows.
-- ☁️ **[Baidu Drive Mover](https://github.com/teddyli18000/baidu-drive-mover)** — resumable transfers from Baidu Netdisk to Google Drive.
-- 🧱 **[XCAD](https://github.com/teddyli18000/XCAD)** — my final project for a C/C++ programming course.
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Microscope.png" width="20" alt="microscope"> **[Millikan AI](https://github.com/teddyli18000/AiForMillikan)** — AI-assisted desktop tooling for the Millikan oil-drop experiment.
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" width="20" alt="desktop computer"> **[Screen Clone Manager](https://github.com/teddyli18000/screen-clone-manager)** — a focused OBS-based workaround for display cloning on Windows.
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Cloud.png" width="20" alt="cloud"> **[Baidu Drive Mover](https://github.com/teddyli18000/baidu-drive-mover)** — resumable transfers from Baidu Netdisk to Google Drive.
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" width="20" alt="tools"> **[XCAD](https://github.com/teddyli18000/XCAD)** — my final project for a C/C++ programming course.
 
 ### 🧭 Current lines
 
