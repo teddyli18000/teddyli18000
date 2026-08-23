@@ -1,9 +1,25 @@
 {
   "year": 2026,
-  "contributions": 370,
+  "contributions": 374,
   "active_public_repos": 12,
-  "upstream_prs": 8,
+  "upstream_prs": 10,
   "external": [
+    {
+      "repo": "BigPizzaV3/CodexPlusPlus",
+      "number": 1957,
+      "title": "fix(dreamskin): skip invalid community catalog entries",
+      "url": "https://github.com/BigPizzaV3/CodexPlusPlus/pull/1957",
+      "status": "open",
+      "updated_at": "2026-08-23T16:36:05Z"
+    },
+    {
+      "repo": "AprilNEA/OpenLogi",
+      "number": 861,
+      "title": "fix(linux): skip udev reload without control socket",
+      "url": "https://github.com/AprilNEA/OpenLogi/pull/861",
+      "status": "open",
+      "updated_at": "2026-08-23T11:31:41Z"
+    },
     {
       "repo": "omdsh-dev/DSH-better-sidebar",
       "number": 301,
@@ -95,5 +111,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-08-23T00:39:57.698759+08:00"
+  "updated_at": "2026-08-24T00:42:45.283962+08:00"
 }
