@@ -12,7 +12,6 @@
     <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Microscope.png" width="21" alt="microscope"> scientific software
   </p>
   <p><sub>mostly building · occasionally overengineering · sometimes both</sub></p>
-  <img src="https://gradient-svg-generator.vercel.app/api/svg?template=watercolor-dream&amp;height=72&amp;duration=18s" width="100%" alt="soft animated gradient">
 </div>
 
 ---
