@@ -1,16 +1,24 @@
 {
   "year": 2026,
-  "contributions": 386,
+  "contributions": 390,
   "active_public_repos": 12,
-  "upstream_prs": 13,
+  "upstream_prs": 14,
   "external": [
+    {
+      "repo": "openclaw/openclaw",
+      "number": 128524,
+      "title": "test(gateway): disable bundled plugins in kernel fixture",
+      "url": "https://github.com/openclaw/openclaw/pull/128524",
+      "status": "open",
+      "updated_at": "2026-08-24T06:21:07Z"
+    },
     {
       "repo": "openclaw/openclaw",
       "number": 128302,
       "title": "fix(feishu): prevent open account DMs from being silently blocked",
       "url": "https://github.com/openclaw/openclaw/pull/128302",
-      "status": "open",
-      "updated_at": "2026-08-23T18:01:58Z"
+      "status": "draft",
+      "updated_at": "2026-08-24T05:31:39Z"
     },
     {
       "repo": "Waishnav/devspace",
@@ -53,10 +61,10 @@
       "updated_at": "2026-08-22T15:11:28Z"
     },
     {
-      "repo": "zhu1090093659/dsh-web-ui",
+      "repo": "zhu1090093659/dsh-web",
       "number": 878,
       "title": "fix(remote-web-ui): preserve out-of-order polled events (#851)",
-      "url": "https://github.com/zhu1090093659/dsh-web-ui/pull/878",
+      "url": "https://github.com/zhu1090093659/dsh-web/pull/878",
       "status": "closed",
       "updated_at": "2026-08-21T15:48:56Z"
     },
@@ -135,5 +143,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-08-24T09:56:46.758723+08:00"
+  "updated_at": "2026-08-24T15:19:41.014714+08:00"
 }
