@@ -61,6 +61,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub>⌁ there was probably an easier way. ⌁</sub>
+<sub>⌁ turns out the workaround needed a workaround. ⌁</sub>
 <!-- profile-footer:end -->
 </div>
