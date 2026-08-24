@@ -14,7 +14,6 @@ LIVE = ROOT / "data" / "live.json"
 APPROVED_IMAGE_PREFIXES = (
     "https://user-images.githubusercontent.com/",
     "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/",
-    "https://gradient-svg-generator.vercel.app/api/svg?",
 )
 
 
@@ -38,7 +37,7 @@ def main() -> None:
         positions.append(readme.index(section))
     if positions != sorted(positions):
         fail("README section order changed")
-    banned = ("./assets/", "github-readme-stats", "typing-svg", "shields.io", "profile-trophy", "hero-field-source", "liquid glass", "live signal", "field 01")
+    banned = ("./assets/", "github-readme-stats", "typing-svg", "shields.io", "profile-trophy", "hero-field-source", "liquid glass", "live signal", "field 01", "gradient-svg-generator")
     for token in banned:
         if token in lower:
             fail(f"README contains banned visual/template token: {token}")
@@ -60,14 +59,11 @@ def main() -> None:
     remote_images = re.findall(r'<img[^>]+src="(https://[^\"]+)"', readme)
     if any(not url.startswith(APPROVED_IMAGE_PREFIXES) for url in remote_images):
         fail("remote image uses an unapproved host")
-    if len(remote_images) > 11:
+    if len(remote_images) > 10:
         fail("keep remote imagery lightweight")
     animated_fluent = [url for url in remote_images if "Animated-Fluent-Emojis" in url]
     if not 7 <= len(animated_fluent) <= 9:
         fail("use a restrained but visible set of animated Fluent emoji accents")
-    ambient = [url for url in remote_images if url.startswith("https://gradient-svg-generator.vercel.app/api/svg?")]
-    if len(ambient) != 1 or "template=watercolor-dream" not in ambient[0]:
-        fail("profile must keep exactly one soft ambient gradient strip")
     data = json.loads(LIVE.read_text(encoding="utf-8"))
     for key in ("year", "contributions", "active_public_repos", "upstream_prs", "updated_at"):
         if key not in data:
