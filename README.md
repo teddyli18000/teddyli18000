@@ -1,4 +1,4 @@
-<!-- profile-readme:v5 -->
+<!-- profile-readme:v6 -->
 <div align="center">
   <h1>Xinchen Lee <img src="https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif" width="30" alt="waving hand"></h1>
   <p><strong>AI, systems, and things I felt like building.</strong></p>
@@ -19,17 +19,15 @@
 ## ↗ Open source / live
 
 <!-- profile-live:start -->
-<div align="center">
-  <p><strong>393</strong> contributions in 2026 &nbsp;·&nbsp; <strong>12</strong> active public repos &nbsp;·&nbsp; <strong>15</strong> upstream PRs</p>
-</div>
+<p align="center">
+  <img width="100%" src="./assets/activity-card.svg" alt="Public GitHub activity: 393 contributions in 2026, 12 active public repositories, 15 upstream pull requests, 3 merged upstream pull requests.">
+</p>
 
 **Outside my repos**
 
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
-
-<sub>↻ refreshed 25 Aug · 12:53 SGT</sub>
 <!-- profile-live:end -->
 
 ---
