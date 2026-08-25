@@ -59,6 +59,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub>⌁ turns out the workaround needed a workaround. ⌁</sub>
+<sub>⌁ one thing tends to become another. ⌁</sub>
 <!-- profile-footer:end -->
 </div>
