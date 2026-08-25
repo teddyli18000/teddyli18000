@@ -1,9 +1,17 @@
 {
   "year": 2026,
-  "contributions": 391,
+  "contributions": 393,
   "active_public_repos": 12,
-  "upstream_prs": 14,
+  "upstream_prs": 15,
   "external": [
+    {
+      "repo": "ltaoo/wx_channels_download",
+      "number": 535,
+      "title": "fix: match updated finderPcFlow syntax",
+      "url": "https://github.com/ltaoo/wx_channels_download/pull/535",
+      "status": "closed",
+      "updated_at": "2026-08-25T04:12:34Z"
+    },
     {
       "repo": "openclaw/openclaw",
       "number": 128524,
@@ -50,7 +58,7 @@
       "title": "fix(linux): skip udev reload without control socket",
       "url": "https://github.com/AprilNEA/OpenLogi/pull/861",
       "status": "open",
-      "updated_at": "2026-08-23T11:31:41Z"
+      "updated_at": "2026-08-25T03:27:42Z"
     },
     {
       "repo": "omdsh-dev/DSH-better-sidebar",
@@ -69,10 +77,10 @@
       "updated_at": "2026-08-21T15:48:56Z"
     },
     {
-      "repo": "anywhere-labs/deepseek-harness-desktop",
+      "repo": "anywhere-labs/dsh-desktop",
       "number": 61,
       "title": "fix(ci): guard upstream issue lifecycle automation",
-      "url": "https://github.com/anywhere-labs/deepseek-harness-desktop/pull/61",
+      "url": "https://github.com/anywhere-labs/dsh-desktop/pull/61",
       "status": "closed",
       "updated_at": "2026-08-18T15:38:21Z"
     },
@@ -143,5 +151,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-08-24T21:12:33.641785+08:00"
+  "updated_at": "2026-08-25T12:53:19.216223+08:00"
 }
