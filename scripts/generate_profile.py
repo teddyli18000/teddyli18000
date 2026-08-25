@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Refresh truthful public GitHub activity and date-seeded profile microcopy."""
+"""Refresh truthful public GitHub activity, the activity card, and date-seeded microcopy."""
 from __future__ import annotations
 
 import datetime as dt
 import json
+import math
 import os
 import shutil
 import subprocess
@@ -15,6 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
 DATA = ROOT / "data" / "content.json"
 LIVE = ROOT / "data" / "live.json"
+ASSETS = ROOT / "assets"
+ACTIVITY_CARD = ASSETS / "activity-card.svg"
 LOGIN = os.environ.get("PROFILE_LOGIN", "teddyli18000")
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 SGT = dt.timezone(dt.timedelta(hours=8), name="SGT")
@@ -75,6 +78,10 @@ def choose_external(items: list[dict]) -> list[dict]:
     return sorted(items, key=lambda item: (rank.get(item["status"], 4), -dt.datetime.fromisoformat(item["updated_at"].replace("Z", "+00:00")).timestamp()))[:3]
 
 
+def merged_upstream(stats: dict) -> int:
+    return sum(1 for item in stats.get("external", []) if item.get("status") == "merged")
+
+
 def last_good() -> tuple[dict, list[dict], dt.datetime]:
     snapshot = json.loads(LIVE.read_text(encoding="utf-8"))
     required = ("year", "contributions", "active_public_repos", "upstream_prs", "updated_at")
@@ -93,6 +100,7 @@ def visible_signature(stats: dict, selected: list[dict]) -> dict:
         "contributions": stats["contributions"],
         "active_public_repos": stats["active_public_repos"],
         "upstream_prs": stats["upstream_prs"],
+        "upstream_merged": merged_upstream(stats),
         "selected_external": [
             {key: item[key] for key in ("repo", "number", "title", "url", "status")}
             for item in selected
@@ -131,23 +139,79 @@ def replace_block(text: str, name: str, body: str) -> str:
     return f"{before}{start}\n{body.rstrip()}\n{end}{after}"
 
 
+def activity_card_svg(stats: dict, updated: dt.datetime) -> str:
+    merged = merged_upstream(stats)
+    total = max(0, int(stats["upstream_prs"]))
+    ratio = merged / total if total else 0.0
+    circumference = 2 * math.pi * 69
+    active = circumference * ratio
+    inactive = circumference - active
+    stamp = updated.strftime("%d %b · %H:%M SGT").lstrip("0")
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="960" height="260" viewBox="0 0 960 260" role="img" aria-label="Public GitHub activity">
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#62d0a2"/>
+      <stop offset="1" stop-color="#87dfbd"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="1" y="1" width="958" height="258" rx="16" fill="#263746" stroke="#435666"/>
+
+  <text x="48" y="47" class="title">Public activity</text>
+  <text x="49" y="69" class="meta">PUBLIC GITHUB WORK · AUTO-REFRESHED</text>
+
+  <g stroke="#69d2a5" fill="none" stroke-width="2">
+    <path d="M57 103v12M51 109h12"/>
+    <rect x="51.5" y="144.5" width="11" height="11" transform="rotate(45 57 150)"/>
+    <path d="M51 196l12-12M55 184h8v8"/>
+  </g>
+
+  <text x="82" y="116" class="label">Contributions this year</text>
+  <text x="520" y="116" text-anchor="end" class="value">{stats['contributions']}</text>
+  <text x="82" y="158" class="label">Active public repos</text>
+  <text x="520" y="158" text-anchor="end" class="value">{stats['active_public_repos']}</text>
+  <text x="82" y="200" class="label">Upstream pull requests</text>
+  <text x="520" y="200" text-anchor="end" class="value">{stats['upstream_prs']}</text>
+
+  <g transform="translate(790 142)">
+    <circle r="69" fill="none" stroke="#3d5666" stroke-width="12"/>
+    <circle r="69" fill="none" stroke="url(#ring)" stroke-width="12" stroke-linecap="round"
+            stroke-dasharray="{active:.1f} {inactive:.1f}" transform="rotate(-90)"/>
+    <text x="0" y="2" text-anchor="middle" class="ringValue">{merged}</text>
+    <text x="0" y="26" text-anchor="middle" class="ringLabel">MERGED</text>
+  </g>
+
+  <text x="48" y="236" class="refresh">updated {stamp}</text>
+  <text x="909" y="236" text-anchor="end" class="refresh">{merged} / {total} upstream PRs merged</text>
+
+  <style>
+    .title{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:27px;font-weight:600;fill:#69d2a5}}
+    .meta{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:2.1px;fill:#91a5b4}}
+    .label{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:18px;font-weight:600;fill:#f3f6f8}}
+    .value{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:20px;font-weight:700;fill:#ffffff}}
+    .ringValue{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:47px;font-weight:700;fill:#ffffff}}
+    .ringLabel{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;fill:#8ea3b2}}
+    .refresh{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:11px;font-weight:500;fill:#91a5b4}}
+  </style>
+</svg>'''
+
+
 def live_markdown(stats: dict, selected: list[dict], updated: dt.datetime) -> str:
     notes = json.loads(DATA.read_text(encoding="utf-8")).get("external_notes", {})
+    merged = merged_upstream(stats)
     lines = [
-        '<div align="center">',
-        f"  <p><strong>{stats['contributions']}</strong> contributions in {stats['year']} &nbsp;·&nbsp; <strong>{stats['active_public_repos']}</strong> active public repos &nbsp;·&nbsp; <strong>{stats['upstream_prs']}</strong> upstream PRs</p>",
-        "</div>",
-        "",
-        "**Outside my repos**",
-        "",
+        '<p align="center">',
+        f'  <img width="100%" src="./assets/activity-card.svg" alt="Public GitHub activity: {stats["contributions"]} contributions in {stats["year"]}, {stats["active_public_repos"]} active public repositories, {stats["upstream_prs"]} upstream pull requests, {merged} merged upstream pull requests.">',
+        '</p>',
+        '',
+        '**Outside my repos**',
+        '',
     ]
     for item in selected:
         key = f"{item['repo']}#{item['number']}"
         note = notes.get(key, item["title"])
         marker = "✓ merged" if item["status"] == "merged" else f"↗ {item['status']}"
         lines.append(f"- {marker} → [{item['repo']} #{item['number']}]({item['url']}) · {note}")
-    stamp = updated.strftime("%d %b · %H:%M SGT").lstrip("0")
-    lines.extend(["", f"<sub>↻ refreshed {stamp}</sub>"])
     return "\n".join(lines)
 
 
@@ -160,11 +224,15 @@ def main() -> None:
     index = int(dt.datetime.now(SGT).strftime("%Y%j")) % len(footer_pool)
     text = replace_block(text, "footer", f"<sub>⌁ {footer_pool[index]} ⌁</sub>")
     README.write_text(text, encoding="utf-8", newline="\n")
+
+    ASSETS.mkdir(parents=True, exist_ok=True)
+    ACTIVITY_CARD.write_text(activity_card_svg(stats, updated), encoding="utf-8", newline="\n")
+
     if fresh and changed:
         snapshot = {**stats, "selected_external": selected, "updated_at": updated.isoformat()}
         LIVE.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     state = "Updated" if changed else ("Checked" if fresh else "Retained")
-    print(f"{state} {stats['contributions']} contributions, {stats['active_public_repos']} active public repos, {stats['upstream_prs']} upstream PRs at {updated.isoformat()}")
+    print(f"{state} {stats['contributions']} contributions, {stats['active_public_repos']} active public repos, {stats['upstream_prs']} upstream PRs, {merged_upstream(stats)} merged at {updated.isoformat()}")
 
 
 if __name__ == "__main__":
