@@ -20,7 +20,7 @@
 
 <!-- profile-live:start -->
 <p align="center">
-  <img width="100%" src="./assets/activity-card.svg" alt="Public GitHub activity: 394 contributions in 2026, 12 active public repositories, 15 upstream pull requests, 3 merged upstream pull requests.">
+  <img width="100%" src="./assets/activity-card.svg" alt="Public GitHub activity: 398 contributions in 2026, 12 active public repositories, 17 upstream pull requests, 3 merged upstream pull requests.">
 </p>
 
 **Outside my repos**

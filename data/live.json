@@ -1,9 +1,25 @@
 {
   "year": 2026,
-  "contributions": 394,
+  "contributions": 398,
   "active_public_repos": 12,
-  "upstream_prs": 15,
+  "upstream_prs": 17,
   "external": [
+    {
+      "repo": "nelvko/clash-for-linux-install",
+      "number": 620,
+      "title": "fix(install): avoid keeping partial downloads",
+      "url": "https://github.com/nelvko/clash-for-linux-install/pull/620",
+      "status": "open",
+      "updated_at": "2026-08-26T14:40:49Z"
+    },
+    {
+      "repo": "farion1231/cc-switch",
+      "number": 6851,
+      "title": "fix(codex): mark glm-5.3 as text-only",
+      "url": "https://github.com/farion1231/cc-switch/pull/6851",
+      "status": "open",
+      "updated_at": "2026-08-26T14:32:09Z"
+    },
     {
       "repo": "ltaoo/wx_channels_download",
       "number": 535,
@@ -151,5 +167,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-08-25T18:49:02.155974+08:00"
+  "updated_at": "2026-08-26T23:52:10.079120+08:00"
 }

@@ -18,22 +18,22 @@
   </g>
 
   <text x="82" y="116" class="label">Contributions this year</text>
-  <text x="520" y="116" text-anchor="end" class="value">394</text>
+  <text x="520" y="116" text-anchor="end" class="value">398</text>
   <text x="82" y="158" class="label">Active public repos</text>
   <text x="520" y="158" text-anchor="end" class="value">12</text>
   <text x="82" y="200" class="label">Upstream pull requests</text>
-  <text x="520" y="200" text-anchor="end" class="value">15</text>
+  <text x="520" y="200" text-anchor="end" class="value">17</text>
 
   <g transform="translate(790 142)">
     <circle r="69" fill="none" stroke="#3d5666" stroke-width="12"/>
     <circle r="69" fill="none" stroke="url(#ring)" stroke-width="12" stroke-linecap="round"
-            stroke-dasharray="86.7 346.8" transform="rotate(-90)"/>
+            stroke-dasharray="76.5 357.0" transform="rotate(-90)"/>
     <text x="0" y="2" text-anchor="middle" class="ringValue">3</text>
     <text x="0" y="26" text-anchor="middle" class="ringLabel">MERGED</text>
   </g>
 
-  <text x="48" y="236" class="refresh">updated 25 Aug · 18:49 SGT</text>
-  <text x="909" y="236" text-anchor="end" class="refresh">3 / 15 upstream PRs merged</text>
+  <text x="48" y="236" class="refresh">updated 26 Aug · 23:52 SGT</text>
+  <text x="909" y="236" text-anchor="end" class="refresh">3 / 17 upstream PRs merged</text>
 
   <style>
     .title{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:27px;font-weight:600;fill:#69d2a5}
