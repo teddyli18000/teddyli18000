@@ -59,6 +59,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub>⌁ the README has infrastructure now. of course it does. ⌁</sub>
+<sub>⌁ if it looks simple, something underneath probably isn't. ⌁</sub>
 <!-- profile-footer:end -->
 </div>
