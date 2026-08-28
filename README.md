@@ -59,6 +59,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub>⌁ if it looks simple, something underneath probably isn't. ⌁</sub>
+<sub>⌁ computers are very obedient once sufficiently persuaded. ⌁</sub>
 <!-- profile-footer:end -->
 </div>
