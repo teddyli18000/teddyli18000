@@ -59,6 +59,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub>⌁ computers are very obedient once sufficiently persuaded. ⌁</sub>
+<sub>⌁ some side quests became main quests. ⌁</sub>
 <!-- profile-footer:end -->
 </div>
