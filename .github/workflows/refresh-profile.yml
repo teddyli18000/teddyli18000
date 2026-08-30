@@ -9,7 +9,7 @@ on:
     paths:
       - README.md
       - data/**
-      - assets/activity-card.svg
+      - assets/**
       - scripts/generate_profile.py
       - scripts/check_profile.py
       - .github/workflows/refresh-profile.yml
@@ -25,19 +25,41 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v6
+
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Refresh public GitHub data
+
+      - name: Generate GitHub stats card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: "username=${{ github.repository_owner }}&show_icons=true&include_all_commits=true&hide_rank=true&hide=stars,issues&show=prs_merged&custom_title=GitHub%20activity&card_width=470&bg_color=263746&title_color=69D2A5&text_color=F3F6F8&icon_color=69D2A5&border_color=435666&number_format=long"
+          path: assets/stats-card.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Generate top languages card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: "username=${{ github.repository_owner }}&layout=compact&langs_count=8&card_width=470&bg_color=0D1117&title_color=00D8D6&text_color=C9D1D9&border_color=30363D&border_radius=14"
+          path: assets/languages-card.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Refresh upstream activity and footer
         env:
           GH_TOKEN: ${{ github.token }}
           PROFILE_LOGIN: teddyli18000
         run: python scripts/generate_profile.py
+
       - name: Verify generated profile
         run: python scripts/check_profile.py
+
       - name: Commit profile refresh
         if: ${{ github.event_name != 'pull_request' }}
         run: |
@@ -47,6 +69,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md data/live.json assets/activity-card.svg
+          git add README.md data/live.json assets/stats-card.svg assets/languages-card.svg
           git commit -m "chore(profile): refresh public activity"
           git push
