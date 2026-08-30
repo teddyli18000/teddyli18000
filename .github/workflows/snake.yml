@@ -2,12 +2,12 @@ name: Generate contribution snake
 
 on:
   schedule:
+    # Refresh four times a day; contribution data does not need a tighter loop.
     - cron: "7 */6 * * *"
   workflow_dispatch:
   push:
     branches:
       - main
-      - agent/profile-v7-compact-dashboard
     paths:
       - .github/workflows/snake.yml
 
