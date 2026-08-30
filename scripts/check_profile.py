@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
 GENERATOR = ROOT / "scripts" / "generate_profile.py"
+POLISHER = ROOT / "scripts" / "polish_cards.py"
 LIVE = ROOT / "data" / "live.json"
 STATS_CARD = ROOT / "assets" / "stats-card.svg"
 LANGUAGES_CARD = ROOT / "assets" / "languages-card.svg"
@@ -28,15 +29,18 @@ def fail(message: str) -> None:
     raise SystemExit(f"FAIL: {message}")
 
 
-def check_generated_svg(path: Path) -> None:
+def check_generated_svg(path: Path, expected_height: str = "190") -> str:
     if not path.is_file():
         fail(f"missing generated card: {path.name}")
     text = path.read_text(encoding="utf-8")
-    ET.fromstring(text)
+    root = ET.fromstring(text)
+    if root.attrib.get("width") != "470" or root.attrib.get("height") != expected_height:
+        fail(f"{path.name} must stay 470x{expected_height}")
     if path.stat().st_size < 1000:
         fail(f"{path.name} looks like an error/empty card")
     if path.stat().st_size > 256 * 1024:
         fail(f"{path.name} is unexpectedly large")
+    return text
 
 
 def main() -> None:
@@ -75,8 +79,22 @@ def main() -> None:
     local_images = re.findall(r'<img[^>]+src="(\./assets/[^\"]+)"', readme)
     if local_images != ["./assets/stats-card.svg", "./assets/languages-card.svg"]:
         fail("Open source block must use the two locally generated mature stats cards")
-    check_generated_svg(STATS_CARD)
-    check_generated_svg(LANGUAGES_CARD)
+
+    stats = check_generated_svg(STATS_CARD)
+    langs = check_generated_svg(LANGUAGES_CARD)
+    for token in ("Total Commits:", "Total PRs:", "Total PRs Merged:", "Total Contributions:", "MERGED"):
+        if token not in stats:
+            fail(f"stats card missing {token}")
+    if "Contributed to (last year):" in stats or "percentile-top-header">Top" in stats:
+        fail("stats card regressed to weak/ambiguous metrics")
+    if not re.search(r'data-testid="percentile-rank-value"[^>]*>\s*\d+%', stats, flags=re.S):
+        fail("stats card merge-rate ring is missing")
+    if not re.search(r'data-testid="contribs"[^>]*>\s*[1-9][0-9,.kKmM]*', stats, flags=re.S):
+        fail("stats card full-history contributions are missing")
+
+    lang_colors = re.findall(r'data-testid="lang-progress".*?fill="(#[0-9A-Fa-f]{6})"', langs, flags=re.S)
+    if len(set(lang_colors)) < 8:
+        fail("language card needs eight clearly distinct progress colors")
 
     live = readme.split("<!-- profile-live:start -->", 1)[1].split("<!-- profile-live:end -->", 1)[0]
     if len(re.findall(r"https://github\.com/[^)\s]+/pull/\d+", live)) != 3:
@@ -113,15 +131,28 @@ def main() -> None:
     refresh = REFRESH_WORKFLOW.read_text(encoding="utf-8")
     for token in (
         "stats-organization/github-readme-stats-action@v2",
+        "vn7n24fzkq/github-profile-summary-cards@release",
         "card: stats",
         "card: top-langs",
         "include_all_commits=true",
+        "rank_icon=percentile",
+        "line_height=29",
+        "python scripts/polish_cards.py",
         "assets/stats-card.svg",
         "assets/languages-card.svg",
         'cron: "17 */2 * * *"',
     ):
         if token not in refresh:
             fail(f"refresh workflow missing {token}")
+    if "agent/profile-v7-compact-dashboard" in refresh:
+        fail("preview-only branch push trigger must not ship")
+
+    if not POLISHER.is_file():
+        fail("card polisher is missing")
+    polisher = POLISHER.read_text(encoding="utf-8")
+    for token in ("Total Contributions:", "MERGED", "PALETTE", "profile-summary-card-output"):
+        if token not in polisher:
+            fail(f"card polisher missing {token}")
 
     if not SNAKE_WORKFLOW.is_file():
         fail("snake workflow is missing")
@@ -143,7 +174,7 @@ def main() -> None:
         if token not in generator:
             fail(f"generator missing {token}")
 
-    print("PASS: v8 three-column profile with local mature stats cards and contribution snake")
+    print("PASS: v8 three-column profile with mature stats data, contribution total, merge ring, contrast languages, and snake")
 
 
 if __name__ == "__main__":
