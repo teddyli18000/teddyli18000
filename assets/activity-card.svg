@@ -1,25 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="470" height="240" viewBox="0 0 470 240" role="img" aria-label="Public GitHub activity">
-  <rect x="1" y="1" width="468" height="238" rx="14" fill="#263746" stroke="#435666"/>
-  <text x="28" y="40" class="title">Public activity</text>
-  <text x="29" y="59" class="meta">AUTO-REFRESHED · PUBLIC GITHUB</text>
-  <text x="28" y="94" class="label">Contributions</text><text x="292" y="94" text-anchor="end" class="value">398</text>
-  <text x="28" y="126" class="label">Commits</text><text x="292" y="126" text-anchor="end" class="value">—</text>
-  <text x="28" y="158" class="label">Public repos</text><text x="292" y="158" text-anchor="end" class="value">12</text>
-  <text x="28" y="190" class="label">Upstream PRs</text><text x="292" y="190" text-anchor="end" class="value">17</text>
-  <g transform="translate(382 132)">
-    <circle r="49" fill="none" stroke="#3d5666" stroke-width="9"/>
-    <circle r="49" fill="none" stroke="#69d2a5" stroke-width="9" stroke-linecap="round" stroke-dasharray="54 254" transform="rotate(-90)"/>
-    <text x="0" y="2" text-anchor="middle" class="ringValue">3</text>
-    <text x="0" y="22" text-anchor="middle" class="ringLabel">MERGED</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="200" viewBox="0 0 470 200" role="img" aria-label="Public GitHub activity">
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#62d0a2"/>
+      <stop offset="1" stop-color="#87dfbd"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="468" height="198" rx="14" fill="#263746" stroke="#435666"/>
+  <text x="26" y="34" class="title">Public activity</text>
+  <text x="27" y="51" class="meta">AUTO-REFRESHED · PUBLIC GITHUB</text>
+
+  <g stroke="#69d2a5" fill="none" stroke-width="1.7">
+    <path d="M29 69v9M24.5 73.5h9"/>
+    <path d="M25 100h9M29.5 95.5v9" transform="rotate(45 29.5 100)"/>
+    <rect x="24.5" y="122" width="9" height="9" rx="1.8"/>
+    <path d="M24.5 158l9-9M27 149h6.5v6.5"/>
   </g>
-  <text x="28" y="220" class="refresh">refreshing live data…</text>
+
+  <text x="45" y="78" class="label">Contributions</text><text x="282" y="78" text-anchor="end" class="value">398</text>
+  <text x="45" y="105" class="label">Commits / 2026</text><text x="282" y="105" text-anchor="end" class="value">303</text>
+  <text x="45" y="132" class="label">Public repos</text><text x="282" y="132" text-anchor="end" class="value">12</text>
+  <text x="45" y="159" class="label">Upstream PRs</text><text x="282" y="159" text-anchor="end" class="value">17</text>
+
+  <g transform="translate(382 113)">
+    <circle r="42" fill="none" stroke="#3d5666" stroke-width="8"/>
+    <circle r="42" fill="none" stroke="url(#ring)" stroke-width="8" stroke-linecap="round"
+            stroke-dasharray="46.6 217.3" transform="rotate(-90)"/>
+    <text x="0" y="2" text-anchor="middle" class="ringValue">3</text>
+    <text x="0" y="20" text-anchor="middle" class="ringLabel">MERGED</text>
+  </g>
+
+  <text x="26" y="184" class="refresh">updated 31 Aug · 01:57 SGT</text>
   <style>
-    .title{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:23px;font-weight:650;fill:#69d2a5}
-    .meta{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.5px;fill:#91a5b4}
-    .label{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:15px;font-weight:600;fill:#f3f6f8}
-    .value{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:16px;font-weight:700;fill:#ffffff}
-    .ringValue{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:35px;font-weight:700;fill:#ffffff}
-    .ringLabel{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;fill:#8ea3b2}
-    .refresh{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:10px;fill:#91a5b4}
+    .title{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:21px;font-weight:650;fill:#69d2a5}
+    .meta{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:8.5px;font-weight:600;letter-spacing:1.4px;fill:#91a5b4}
+    .label{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:13.5px;font-weight:600;fill:#f3f6f8}
+    .value{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:15px;font-weight:700;fill:#ffffff}
+    .ringValue{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:31px;font-weight:700;fill:#ffffff}
+    .ringLabel{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.3px;fill:#8ea3b2}
+    .refresh{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:9.5px;fill:#91a5b4}
   </style>
 </svg>

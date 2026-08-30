@@ -20,7 +20,7 @@
 
 <!-- profile-live:start -->
 <p align="center">
-  <img width="49%" src="./assets/activity-card.svg" alt="Public GitHub activity: contributions, commits, public repositories, upstream pull requests, and merged upstream pull requests.">
+  <img width="49%" src="./assets/activity-card.svg" alt="Public GitHub activity: 398 contributions in 2026, 303 commits, 12 active public repositories, 17 upstream pull requests, 3 merged upstream pull requests.">
   <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=teddyli18000&amp;layout=compact&amp;langs_count=8&amp;card_width=470&amp;bg_color=0D1117&amp;title_color=00D8D6&amp;text_color=C9D1D9&amp;border_color=30363D&amp;border_radius=14" alt="Most used languages across public GitHub repositories.">
 </p>
 
@@ -81,6 +81,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub>⌁ some side quests became main quests. ⌁</sub>
+<sub>⌁ it worked on my machine. ⌁</sub>
 <!-- profile-footer:end -->
 </div>

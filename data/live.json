@@ -1,6 +1,7 @@
 {
   "year": 2026,
   "contributions": 398,
+  "total_commits": 303,
   "active_public_repos": 12,
   "upstream_prs": 17,
   "external": [
@@ -18,7 +19,7 @@
       "title": "fix(codex): mark glm-5.3 as text-only",
       "url": "https://github.com/farion1231/cc-switch/pull/6851",
       "status": "open",
-      "updated_at": "2026-08-26T14:32:09Z"
+      "updated_at": "2026-08-27T02:04:40Z"
     },
     {
       "repo": "ltaoo/wx_channels_download",
@@ -34,7 +35,7 @@
       "title": "test(gateway): disable bundled plugins in kernel fixture",
       "url": "https://github.com/openclaw/openclaw/pull/128524",
       "status": "open",
-      "updated_at": "2026-08-25T10:29:08Z"
+      "updated_at": "2026-08-30T11:16:50Z"
     },
     {
       "repo": "openclaw/openclaw",
@@ -74,7 +75,7 @@
       "title": "fix(linux): skip udev reload without control socket",
       "url": "https://github.com/AprilNEA/OpenLogi/pull/861",
       "status": "open",
-      "updated_at": "2026-08-25T03:27:42Z"
+      "updated_at": "2026-08-26T18:19:47Z"
     },
     {
       "repo": "omdsh-dev/DSH-better-sidebar",
@@ -167,5 +168,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-08-26T23:52:10.079120+08:00"
+  "updated_at": "2026-08-31T01:57:44.439714+08:00"
 }
