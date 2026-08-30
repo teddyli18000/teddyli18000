@@ -85,7 +85,7 @@ def main() -> None:
     for token in ("Total Commits:", "Total PRs:", "Total PRs Merged:", "Total Contributions:", "MERGED"):
         if token not in stats:
             fail(f"stats card missing {token}")
-    if "Contributed to (last year):" in stats or "percentile-top-header">Top" in stats:
+    if "Contributed to (last year):" in stats or re.search(r'percentile-top-header"[^>]*>\s*Top', stats, flags=re.S):
         fail("stats card regressed to weak/ambiguous metrics")
     if not re.search(r'data-testid="percentile-rank-value"[^>]*>\s*\d+%', stats, flags=re.S):
         fail("stats card merge-rate ring is missing")
