@@ -5,11 +5,17 @@ on:
     # Check every two hours at minute 17 (GitHub cron is UTC).
     - cron: "17 */2 * * *"
   workflow_dispatch:
+  push:
+    branches:
+      - agent/profile-v7-compact-dashboard
+    paths:
+      - scripts/generate_profile.py
   pull_request:
     paths:
       - README.md
       - data/**
       - assets/activity-card.svg
+      - assets/languages-card.svg
       - scripts/generate_profile.py
       - scripts/check_profile.py
       - .github/workflows/refresh-profile.yml
@@ -46,6 +52,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md data/live.json assets/activity-card.svg
+          git add README.md data/live.json assets/activity-card.svg assets/languages-card.svg
           git commit -m "chore(profile): refresh public activity"
           git push
