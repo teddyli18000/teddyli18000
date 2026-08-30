@@ -21,7 +21,7 @@
 <!-- profile-live:start -->
 <p align="center">
   <img width="49%" src="./assets/activity-card.svg" alt="Public GitHub activity: contributions, commits, public repositories, upstream pull requests, and merged upstream pull requests.">
-  <img width="49%" src="./assets/languages-card.svg" alt="Most used languages across active public repositories.">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=teddyli18000&amp;layout=compact&amp;langs_count=8&amp;card_width=470&amp;bg_color=0D1117&amp;title_color=00D8D6&amp;text_color=C9D1D9&amp;border_color=30363D&amp;border_radius=14" alt="Most used languages across public GitHub repositories.">
 </p>
 
 **Outside my repos**
@@ -76,7 +76,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/teddyli18000/teddyli18000/output/github-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/teddyli18000/teddyli18000/output/github-snake.svg">
-  <img width="100%" alt="Contribution snake moving through Xinchen Lee's GitHub contribution grid." src="https://raw.githubusercontent.com/teddyli18000/teddyli18000/output/github-snake.svg">
+  <img width="100%" alt="GitHub contribution snake animation." src="https://raw.githubusercontent.com/teddyli18000/teddyli18000/output/github-snake.svg">
 </picture>
 
 <div align="center">
