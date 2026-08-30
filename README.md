@@ -1,4 +1,4 @@
-<!-- profile-readme:v6 -->
+<!-- profile-readme:v8 -->
 <div align="center">
   <h1>Xinchen Lee <img src="https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif" width="30" alt="waving hand"></h1>
   <p><strong>AI, systems, and things I felt like building.</strong></p>
@@ -11,7 +11,6 @@
     &nbsp;·&nbsp;
     <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Microscope.png" width="21" alt="microscope"> scientific software
   </p>
-  <p><sub>mostly building · occasionally overengineering · sometimes both</sub></p>
 </div>
 
 ---
@@ -20,7 +19,8 @@
 
 <!-- profile-live:start -->
 <p align="center">
-  <img width="100%" src="./assets/activity-card.svg" alt="Public GitHub activity: 398 contributions in 2026, 12 active public repositories, 17 upstream pull requests, 3 merged upstream pull requests.">
+  <img width="49%" src="./assets/stats-card.svg" alt="GitHub activity: total commits, pull requests, merged pull requests, total contributions, and PR merge rate.">
+  <img width="49%" src="./assets/languages-card.svg" alt="Most used languages across public GitHub repositories.">
 </p>
 
 **Outside my repos**
@@ -32,33 +32,59 @@
 
 ---
 
-## ✦ Selected work
-
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Microscope.png" width="20" alt="microscope"> **[Millikan AI](https://github.com/teddyli18000/AiForMillikan)** — AI-assisted desktop tooling for the Millikan oil-drop experiment.
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" width="20" alt="desktop computer"> **[Screen Clone Manager](https://github.com/teddyli18000/screen-clone-manager)** — a focused OBS-based workaround for display cloning on Windows.
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Cloud.png" width="20" alt="cloud"> **[Baidu Drive Mover](https://github.com/teddyli18000/baidu-drive-mover)** — resumable transfers from Baidu Netdisk to Google Drive.
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" width="20" alt="tools"> **[XCAD](https://github.com/teddyli18000/XCAD)** — my final project for a C/C++ programming course.
-
-### 🧭 Current lines
-
-<sub>mostly experiments; not all of these are public.</sub>
-
-- 🧠 **Small models** — tokenizer, pretraining, post-training, inference.
-- 🧩 **AI tooling** — models, agents, connectors, developer infrastructure.
-- 🤖 **Robotics & perception** — vision, coordination, embodied systems.
+<table>
+<tr>
+<td width="42%" valign="top">
+<h3>✦ Selected work</h3>
+🔬 <a href="https://github.com/teddyli18000/AiForMillikan"><strong>Millikan AI</strong></a> — oil-drop desktop tool.<br>
+🖥️ <a href="https://github.com/teddyli18000/screen-clone-manager"><strong>Screen Clone Manager</strong></a> — Windows display cloning.<br>
+☁️ <a href="https://github.com/teddyli18000/baidu-drive-mover"><strong>Baidu Drive Mover</strong></a> — resumable cloud transfers.<br>
+🛠️ <a href="https://github.com/teddyli18000/XCAD"><strong>XCAD</strong></a> — C/C++ course final project.
+</td>
+<td width="27%" valign="top">
+<h3>🧭 Current</h3>
+🧠 <strong>Small models</strong><br>
+🧩 <strong>AI tooling</strong><br>
+🤖 <strong>Robotics &amp; perception</strong>
+</td>
+<td width="31%" valign="top">
+<h3>🛸 Side quests</h3>
+📬 <a href="https://github.com/teddyli18000/outlook-mail-helper"><strong>Outlook Mail Helper</strong></a> — inbox utility.<br>
+🩻 <a href="https://github.com/teddyli18000/medical-img-preparer"><strong>Medical image preparer</strong></a> — preprocessing checks.<br>
+🧪 <a href="https://github.com/teddyli18000/millikan-drop-processor"><strong>Millikan drop processor</strong></a> — oil-drop processing.
+</td>
+</tr>
+</table>
 
 ---
 
-## 🛸 Side quests
+## 🛠 Tech stack
 
-> not everything needed to exist.
+<div align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&amp;logo=cplusplus&amp;logoColor=white" alt="C++">
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&amp;logo=pytorch&amp;logoColor=white" alt="PyTorch">
+  <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&amp;logo=huggingface&amp;logoColor=111" alt="Hugging Face">
+  <img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&amp;logo=nvidia&amp;logoColor=white" alt="CUDA">
+  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&amp;logo=opencv&amp;logoColor=white" alt="OpenCV">
+  <img src="https://img.shields.io/badge/ROS-22314E?style=flat-square&amp;logo=ros&amp;logoColor=white" alt="ROS">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&amp;logo=docker&amp;logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&amp;logo=git&amp;logoColor=white" alt="Git">
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&amp;logo=linux&amp;logoColor=111" alt="Linux">
+</div>
 
-- 📬 **[Outlook Mail Helper](https://github.com/teddyli18000/outlook-mail-helper)** — multi-account inbox checks and verification-code extraction.
-- 🩻 **[Medical image preparer](https://github.com/teddyli18000/medical-img-preparer)** — NIfTI/MSD Pancreas preprocessing with shape, spacing, orientation, and mask-overlap checks.
-- 🧪 **[Millikan drop processor](https://github.com/teddyli18000/millikan-drop-processor)** — an online and offline processor for the oil-drop experiment.
+---
+
+## 🐍 Contribution trail
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/teddyli18000/teddyli18000/output/github-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/teddyli18000/teddyli18000/output/github-snake.svg">
+  <img width="100%" alt="GitHub contribution snake animation." src="https://raw.githubusercontent.com/teddyli18000/teddyli18000/output/github-snake.svg">
+</picture>
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub>⌁ some side quests became main quests. ⌁</sub>
+<sub><em>“What I cannot create, I do not understand.”</em> — Richard Feynman</sub>
 <!-- profile-footer:end -->
 </div>

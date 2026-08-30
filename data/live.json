@@ -1,81 +1,5 @@
 {
-  "year": 2026,
-  "contributions": 398,
-  "active_public_repos": 12,
-  "upstream_prs": 17,
   "external": [
-    {
-      "repo": "nelvko/clash-for-linux-install",
-      "number": 620,
-      "title": "fix(install): avoid keeping partial downloads",
-      "url": "https://github.com/nelvko/clash-for-linux-install/pull/620",
-      "status": "open",
-      "updated_at": "2026-08-26T14:40:49Z"
-    },
-    {
-      "repo": "farion1231/cc-switch",
-      "number": 6851,
-      "title": "fix(codex): mark glm-5.3 as text-only",
-      "url": "https://github.com/farion1231/cc-switch/pull/6851",
-      "status": "open",
-      "updated_at": "2026-08-26T14:32:09Z"
-    },
-    {
-      "repo": "ltaoo/wx_channels_download",
-      "number": 535,
-      "title": "fix: match updated finderPcFlow syntax",
-      "url": "https://github.com/ltaoo/wx_channels_download/pull/535",
-      "status": "closed",
-      "updated_at": "2026-08-25T04:12:34Z"
-    },
-    {
-      "repo": "openclaw/openclaw",
-      "number": 128524,
-      "title": "test(gateway): disable bundled plugins in kernel fixture",
-      "url": "https://github.com/openclaw/openclaw/pull/128524",
-      "status": "open",
-      "updated_at": "2026-08-25T10:29:08Z"
-    },
-    {
-      "repo": "openclaw/openclaw",
-      "number": 128302,
-      "title": "fix(feishu): prevent open account DMs from being silently blocked",
-      "url": "https://github.com/openclaw/openclaw/pull/128302",
-      "status": "draft",
-      "updated_at": "2026-08-24T05:31:39Z"
-    },
-    {
-      "repo": "Waishnav/devspace",
-      "number": 230,
-      "title": "fix: reject non-http public base URLs",
-      "url": "https://github.com/Waishnav/devspace/pull/230",
-      "status": "open",
-      "updated_at": "2026-08-23T17:00:36Z"
-    },
-    {
-      "repo": "cline/cline",
-      "number": 13493,
-      "title": "docs: remove outdated diff editing claim",
-      "url": "https://github.com/cline/cline/pull/13493",
-      "status": "open",
-      "updated_at": "2026-08-23T16:53:57Z"
-    },
-    {
-      "repo": "BigPizzaV3/CodexPlusPlus",
-      "number": 1957,
-      "title": "fix(dreamskin): skip invalid community catalog entries",
-      "url": "https://github.com/BigPizzaV3/CodexPlusPlus/pull/1957",
-      "status": "closed",
-      "updated_at": "2026-08-23T18:16:26Z"
-    },
-    {
-      "repo": "AprilNEA/OpenLogi",
-      "number": 861,
-      "title": "fix(linux): skip udev reload without control socket",
-      "url": "https://github.com/AprilNEA/OpenLogi/pull/861",
-      "status": "open",
-      "updated_at": "2026-08-25T03:27:42Z"
-    },
     {
       "repo": "omdsh-dev/DSH-better-sidebar",
       "number": 301,
@@ -83,22 +7,6 @@
       "url": "https://github.com/omdsh-dev/DSH-better-sidebar/pull/301",
       "status": "merged",
       "updated_at": "2026-08-22T15:11:28Z"
-    },
-    {
-      "repo": "zhu1090093659/dsh-web",
-      "number": 878,
-      "title": "fix(remote-web-ui): preserve out-of-order polled events (#851)",
-      "url": "https://github.com/zhu1090093659/dsh-web/pull/878",
-      "status": "closed",
-      "updated_at": "2026-08-21T15:48:56Z"
-    },
-    {
-      "repo": "anywhere-labs/dsh-desktop",
-      "number": 61,
-      "title": "fix(ci): guard upstream issue lifecycle automation",
-      "url": "https://github.com/anywhere-labs/dsh-desktop/pull/61",
-      "status": "closed",
-      "updated_at": "2026-08-18T15:38:21Z"
     },
     {
       "repo": "pandas-dev/pandas",
@@ -109,36 +17,12 @@
       "updated_at": "2026-08-14T01:53:24Z"
     },
     {
-      "repo": "Waishnav/devspace",
-      "number": 181,
-      "title": "fix: allow Git write operations through bash tool",
-      "url": "https://github.com/Waishnav/devspace/pull/181",
-      "status": "open",
-      "updated_at": "2026-08-23T17:09:50Z"
-    },
-    {
       "repo": "open-city-ai/haidian",
       "number": 61,
       "title": "投稿：京张元枢｜JING-ZHANG AI KERNEL — 城市 AI 公共内核",
       "url": "https://github.com/open-city-ai/haidian/pull/61",
       "status": "merged",
       "updated_at": "2026-08-07T16:24:08Z"
-    },
-    {
-      "repo": "nexu-io/nexu",
-      "number": 1088,
-      "title": "fix(desktop): localize update fetch-failure message on Windows",
-      "url": "https://github.com/nexu-io/nexu/pull/1088",
-      "status": "closed",
-      "updated_at": "2026-04-30T10:47:59Z"
-    },
-    {
-      "repo": "nexu-io/nexu",
-      "number": 1081,
-      "title": "fix: add missing favicon references to login page",
-      "url": "https://github.com/nexu-io/nexu/pull/1081",
-      "status": "closed",
-      "updated_at": "2026-04-30T10:47:59Z"
     }
   ],
   "selected_external": [
@@ -167,5 +51,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-08-26T23:52:10.079120+08:00"
+  "updated_at": "2026-08-31T01:57:44.439714+08:00"
 }

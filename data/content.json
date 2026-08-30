@@ -1,14 +1,29 @@
 {
   "footer_lines": [
-    "some side quests became main quests.",
-    "it worked on my machine.",
-    "probably overengineered. definitely worth it.",
-    "there was probably an easier way.",
-    "turns out the workaround needed a workaround.",
-    "one thing tends to become another.",
-    "the README has infrastructure now. of course it does.",
-    "if it looks simple, something underneath probably isn't.",
-    "computers are very obedient once sufficiently persuaded."
+    {
+      "text": "The purpose of computing is insight, not numbers.",
+      "author": "Richard W. Hamming"
+    },
+    {
+      "text": "What I cannot create, I do not understand.",
+      "author": "Richard Feynman"
+    },
+    {
+      "text": "Simplicity is prerequisite for reliability.",
+      "author": "Edsger W. Dijkstra"
+    },
+    {
+      "text": "Any sufficiently advanced technology is indistinguishable from magic.",
+      "author": "Arthur C. Clarke"
+    },
+    {
+      "text": "Clarity is not the absence of complexity; it is complexity put in its place.",
+      "author": null
+    },
+    {
+      "text": "A good abstraction does not erase difficulty; it gives difficulty a boundary.",
+      "author": null
+    }
   ],
   "external_notes": {
     "omdsh-dev/DSH-better-sidebar#301": "hide spawned git windows on Windows",
