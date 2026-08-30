@@ -13,7 +13,7 @@
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
-            fill: #00D8D6;
+            fill: #69D2A5;
             animation: fadeInAnimation 0.8s ease-in-out forwards;
           }
           @supports(-moz-appearance: auto) {
@@ -38,7 +38,7 @@
       }
     }
     .stat {
-      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #C9D1D9;
+      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #F3F6F8;
     }
     @supports(-moz-appearance: auto) {
       /* Selector detects Firefox */
@@ -47,7 +47,7 @@
     .bold { font-weight: 700 }
     .lang-name {
       font: 400 11px "Segoe UI", Ubuntu, Sans-Serif;
-      fill: #C9D1D9;
+      fill: #F3F6F8;
     }
     .stagger {
       opacity: 0;
@@ -91,9 +91,9 @@
           y="0.5"
           rx="14"
           height="99%"
-          stroke="#30363D"
+          stroke="#435666"
           width="469"
-          fill="#0D1117"
+          fill="#263746"
           stroke-opacity="1"
         />
 
@@ -132,7 +132,7 @@
           y="0"
           width="150.15"
           height="8"
-          fill="#3572A5"
+          fill="#FFD43B"
         />
       
         <rect
@@ -142,7 +142,7 @@
           y="0"
           width="104.76"
           height="8"
-          fill="#00ADD8"
+          fill="#00C2FF"
         />
       
         <rect
@@ -152,7 +152,7 @@
           y="0"
           width="38.71"
           height="8"
-          fill="#7355dd"
+          fill="#A855F7"
         />
       
         <rect
@@ -162,7 +162,7 @@
           y="0"
           width="38.05"
           height="8"
-          fill="#3178c6"
+          fill="#3B82F6"
         />
       
         <rect
@@ -172,7 +172,7 @@
           y="0"
           width="34.55"
           height="8"
-          fill="#4F5D95"
+          fill="#FF6B6B"
         />
       
         <rect
@@ -182,7 +182,7 @@
           y="0"
           width="27.17"
           height="8"
-          fill="#f34b7d"
+          fill="#F43F8C"
         />
       
         <rect
@@ -192,7 +192,7 @@
           y="0"
           width="17.97"
           height="8"
-          fill="#e34c26"
+          fill="#F97316"
         />
       
         <rect
@@ -202,63 +202,63 @@
           y="0"
           width="18.630000000000003"
           height="8"
-          fill="#663399"
+          fill="#22C55E"
         />
       
       
     <g transform="translate(0, 25)">
       <g transform="translate(0, 0)"><g transform="translate(0, 0)">
     <g class="stagger" style="animation-delay: 450ms">
-      <circle cx="5" cy="6" r="5" fill="#3572A5" />
+      <circle cx="5" cy="6" r="5" fill="#FFD43B" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
         Python 35.75%
       </text>
     </g>
   </g><g transform="translate(0, 25)">
     <g class="stagger" style="animation-delay: 600ms">
-      <circle cx="5" cy="6" r="5" fill="#00ADD8" />
+      <circle cx="5" cy="6" r="5" fill="#00C2FF" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
         Go 24.94%
       </text>
     </g>
   </g><g transform="translate(0, 50)">
     <g class="stagger" style="animation-delay: 750ms">
-      <circle cx="5" cy="6" r="5" fill="#7355dd" />
+      <circle cx="5" cy="6" r="5" fill="#A855F7" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
         C# 9.22%
       </text>
     </g>
   </g><g transform="translate(0, 75)">
     <g class="stagger" style="animation-delay: 900ms">
-      <circle cx="5" cy="6" r="5" fill="#3178c6" />
+      <circle cx="5" cy="6" r="5" fill="#3B82F6" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
         TypeScript 9.06%
       </text>
     </g>
   </g></g><g transform="translate(150, 0)"><g transform="translate(0, 0)">
     <g class="stagger" style="animation-delay: 450ms">
-      <circle cx="5" cy="6" r="5" fill="#4F5D95" />
+      <circle cx="5" cy="6" r="5" fill="#FF6B6B" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
         PHP 8.23%
       </text>
     </g>
   </g><g transform="translate(0, 25)">
     <g class="stagger" style="animation-delay: 600ms">
-      <circle cx="5" cy="6" r="5" fill="#f34b7d" />
+      <circle cx="5" cy="6" r="5" fill="#F43F8C" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
         C++ 6.47%
       </text>
     </g>
   </g><g transform="translate(0, 50)">
     <g class="stagger" style="animation-delay: 750ms">
-      <circle cx="5" cy="6" r="5" fill="#e34c26" />
+      <circle cx="5" cy="6" r="5" fill="#F97316" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
         HTML 4.28%
       </text>
     </g>
   </g><g transform="translate(0, 75)">
     <g class="stagger" style="animation-delay: 900ms">
-      <circle cx="5" cy="6" r="5" fill="#663399" />
+      <circle cx="5" cy="6" r="5" fill="#22C55E" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
         CSS 2.05%
       </text>
