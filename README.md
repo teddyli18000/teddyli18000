@@ -1,4 +1,4 @@
-<!-- profile-readme:v7 -->
+<!-- profile-readme:v8 -->
 <div align="center">
   <h1>Xinchen Lee <img src="https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif" width="30" alt="waving hand"></h1>
   <p><strong>AI, systems, and things I felt like building.</strong></p>
@@ -11,7 +11,6 @@
     &nbsp;·&nbsp;
     <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Microscope.png" width="21" alt="microscope"> scientific software
   </p>
-  <p><sub>mostly building · occasionally overengineering · sometimes both</sub></p>
 </div>
 
 ---
@@ -20,8 +19,8 @@
 
 <!-- profile-live:start -->
 <p align="center">
-  <img width="49%" src="./assets/activity-card.svg" alt="Public GitHub activity: 398 contributions in 2026, 303 commits, 12 active public repositories, 17 upstream pull requests, 3 merged upstream pull requests.">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=teddyli18000&amp;layout=compact&amp;langs_count=8&amp;card_width=470&amp;bg_color=0D1117&amp;title_color=00D8D6&amp;text_color=C9D1D9&amp;border_color=30363D&amp;border_radius=14" alt="Most used languages across public GitHub repositories.">
+  <img width="49%" src="./assets/stats-card.svg" alt="GitHub activity statistics.">
+  <img width="49%" src="./assets/languages-card.svg" alt="Most used languages across public GitHub repositories.">
 </p>
 
 **Outside my repos**
@@ -33,16 +32,29 @@
 
 ---
 
-## ✦ Selected work
-
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Microscope.png" width="20" alt="microscope"> **[Millikan AI](https://github.com/teddyli18000/AiForMillikan)** — AI-assisted Millikan oil-drop desktop tool.
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" width="20" alt="desktop computer"> **[Screen Clone Manager](https://github.com/teddyli18000/screen-clone-manager)** — OBS-based Windows display-cloning workaround.
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Cloud.png" width="20" alt="cloud"> **[Baidu Drive Mover](https://github.com/teddyli18000/baidu-drive-mover)** — resumable Baidu Netdisk → Google Drive transfers.
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" width="20" alt="tools"> **[XCAD](https://github.com/teddyli18000/XCAD)** — C/C++ programming course final project.
-
-### 🧭 Current lines
-
-🧠 **Small models** · 🧩 **AI tooling** · 🤖 **Robotics & perception**
+<table>
+<tr>
+<td width="42%" valign="top">
+<h3>✦ Selected work</h3>
+🔬 <a href="https://github.com/teddyli18000/AiForMillikan"><strong>Millikan AI</strong></a> — oil-drop desktop tool.<br>
+🖥️ <a href="https://github.com/teddyli18000/screen-clone-manager"><strong>Screen Clone Manager</strong></a> — Windows display cloning.<br>
+☁️ <a href="https://github.com/teddyli18000/baidu-drive-mover"><strong>Baidu Drive Mover</strong></a> — resumable cloud transfers.<br>
+🛠️ <a href="https://github.com/teddyli18000/XCAD"><strong>XCAD</strong></a> — C/C++ course final project.
+</td>
+<td width="27%" valign="top">
+<h3>🧭 Current</h3>
+🧠 <strong>Small models</strong><br>
+🧩 <strong>AI tooling</strong><br>
+🤖 <strong>Robotics &amp; perception</strong>
+</td>
+<td width="31%" valign="top">
+<h3>🛸 Side quests</h3>
+📬 <a href="https://github.com/teddyli18000/outlook-mail-helper"><strong>Outlook Mail Helper</strong></a> — inbox utility.<br>
+🩻 <a href="https://github.com/teddyli18000/medical-img-preparer"><strong>Medical image preparer</strong></a> — preprocessing checks.<br>
+🧪 <a href="https://github.com/teddyli18000/millikan-drop-processor"><strong>Millikan drop processor</strong></a> — oil-drop processing.
+</td>
+</tr>
+</table>
 
 ---
 
@@ -63,14 +75,6 @@
 
 ---
 
-## 🛸 Side quests
-
-- 📬 **[Outlook Mail Helper](https://github.com/teddyli18000/outlook-mail-helper)** — inbox checks + verification codes.
-- 🩻 **[Medical image preparer](https://github.com/teddyli18000/medical-img-preparer)** — NIfTI/MSD preprocessing checks.
-- 🧪 **[Millikan drop processor](https://github.com/teddyli18000/millikan-drop-processor)** — online/offline oil-drop processing.
-
----
-
 ## 🐍 Contribution trail
 
 <picture>
@@ -81,6 +85,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub>⌁ it worked on my machine. ⌁</sub>
+<sub><em>“The purpose of computing is insight, not numbers.”</em> — Richard W. Hamming</sub>
 <!-- profile-footer:end -->
 </div>
