@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Refresh truthful public activity, the custom activity card, and rotating microcopy."""
+"""Refresh truthful public activity, one custom data card, and rotating microcopy.
+
+Generic language statistics are deliberately delegated to github-readme-stats.
+"""
 from __future__ import annotations
 
 import datetime as dt
