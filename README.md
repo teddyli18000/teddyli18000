@@ -85,6 +85,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“The purpose of computing is insight, not numbers.”</em> — Richard W. Hamming</sub>
+<sub><em>“What I cannot create, I do not understand.”</em> — Richard Feynman</sub>
 <!-- profile-footer:end -->
 </div>
