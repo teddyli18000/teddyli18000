@@ -5,12 +5,19 @@ on:
     # Check every two hours at minute 17 (GitHub cron is UTC).
     - cron: "17 */2 * * *"
   workflow_dispatch:
+  push:
+    branches:
+      - agent/profile-v7-compact-dashboard
+    paths:
+      - .github/workflows/refresh-profile.yml
+      - scripts/polish_cards.py
   pull_request:
     paths:
       - README.md
       - data/**
       - assets/**
       - scripts/generate_profile.py
+      - scripts/polish_cards.py
       - scripts/check_profile.py
       - .github/workflows/refresh-profile.yml
       - .github/workflows/snake.yml
@@ -25,7 +32,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v6
 
@@ -37,7 +44,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
-          options: "username=${{ github.repository_owner }}&show_icons=true&include_all_commits=true&hide_rank=true&hide=stars,issues&show=prs_merged&custom_title=GitHub%20activity&card_width=470&bg_color=263746&title_color=69D2A5&text_color=F3F6F8&icon_color=69D2A5&border_color=435666&number_format=long"
+          options: "username=${{ github.repository_owner }}&show_icons=true&include_all_commits=true&rank_icon=percentile&hide=stars,issues&show=prs_merged&custom_title=GitHub%20activity&card_width=470&line_height=30&border_radius=14&bg_color=263746&title_color=69D2A5&text_color=F3F6F8&icon_color=69D2A5&border_color=435666&number_format=long"
           path: assets/stats-card.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
@@ -46,10 +53,22 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
-          options: "username=${{ github.repository_owner }}&layout=compact&langs_count=8&card_width=470&bg_color=0D1117&title_color=00D8D6&text_color=C9D1D9&border_color=30363D&border_radius=14"
+          options: "username=${{ github.repository_owner }}&layout=compact&langs_count=8&card_width=470&bg_color=263746&title_color=69D2A5&text_color=F3F6F8&border_color=435666&border_radius=14"
           path: assets/languages-card.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
+
+      - name: Generate full-history contribution source
+        uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          AUTO_PUSH: false
+          THEME: github_dark
+
+      - name: Apply profile card polish
+        run: python scripts/polish_cards.py
 
       - name: Refresh upstream activity and footer
         env:
