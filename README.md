@@ -19,7 +19,7 @@
 
 <!-- profile-live:start -->
 <p align="center">
-  <img width="49%" src="./assets/stats-card.svg" alt="GitHub activity: total commits, pull requests, merged pull requests, total contributions, and PR merge rate.">
+  <img width="49%" src="./assets/stats-card.svg" alt="GitHub activity statistics.">
   <img width="49%" src="./assets/languages-card.svg" alt="Most used languages across public GitHub repositories.">
 </p>
 
