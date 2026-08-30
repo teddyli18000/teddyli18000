@@ -5,11 +5,6 @@ on:
     # Check every two hours at minute 17 (GitHub cron is UTC).
     - cron: "17 */2 * * *"
   workflow_dispatch:
-  push:
-    branches:
-      - agent/profile-v7-compact-dashboard
-    paths:
-      - scripts/generate_profile.py
   pull_request:
     paths:
       - README.md
