@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-"""Refresh truthful public activity, compact data cards, and date-seeded microcopy."""
+"""Refresh truthful public activity, the custom activity card, and rotating microcopy."""
 from __future__ import annotations
 
 import datetime as dt
-import html
 import json
 import math
 import os
-import re
 import shutil
 import subprocess
 import urllib.parse
@@ -20,26 +18,15 @@ DATA = ROOT / "data" / "content.json"
 LIVE = ROOT / "data" / "live.json"
 ASSETS = ROOT / "assets"
 ACTIVITY_CARD = ASSETS / "activity-card.svg"
-LANGUAGES_CARD = ASSETS / "languages-card.svg"
 LOGIN = os.environ.get("PROFILE_LOGIN", "teddyli18000")
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 SGT = dt.timezone(dt.timedelta(hours=8), name="SGT")
-
-LANGUAGE_FALLBACKS = {
-    "Python": "#3572A5",
-    "C++": "#f34b7d",
-    "C": "#555555",
-    "C#": "#178600",
-    "Go": "#00ADD8",
-    "JavaScript": "#f1e05a",
-    "TypeScript": "#3178c6",
-    "HTML": "#e34c26",
-    "CSS": "#663399",
-    "Shell": "#89e051",
-    "Jupyter Notebook": "#DA5B0B",
-    "Rust": "#dea584",
-    "Java": "#b07219",
-}
+LANGUAGES_CARD_HTML = (
+    "https://github-readme-stats.vercel.app/api/top-langs/?username=teddyli18000"
+    "&amp;layout=compact&amp;langs_count=8&amp;card_width=470"
+    "&amp;bg_color=0D1117&amp;title_color=00D8D6&amp;text_color=C9D1D9"
+    "&amp;border_color=30363D&amp;border_radius=14"
+)
 
 
 def api(path: str, *, graphql: dict[str, object] | None = None) -> dict:
@@ -72,41 +59,6 @@ def api(path: str, *, graphql: dict[str, object] | None = None) -> dict:
         return json.loads(proc.stdout)
 
 
-def language_color(name: str, color: str | None) -> str:
-    if color and re.fullmatch(r"#[0-9a-fA-F]{6}", color):
-        return color
-    return LANGUAGE_FALLBACKS.get(name, "#8b949e")
-
-
-def aggregate_languages(repositories: list[dict]) -> list[dict]:
-    totals: dict[str, int] = {}
-    colors: dict[str, str] = {}
-    for repo in repositories:
-        if repo.get("isFork") or repo.get("isArchived"):
-            continue
-        for edge in repo.get("languages", {}).get("edges", []):
-            node = edge.get("node") or {}
-            name = node.get("name")
-            size = int(edge.get("size") or 0)
-            if not name or size <= 0:
-                continue
-            totals[name] = totals.get(name, 0) + size
-            colors.setdefault(name, language_color(name, node.get("color")))
-    total = sum(totals.values())
-    if not total:
-        return []
-    ranked = sorted(totals.items(), key=lambda item: (-item[1], item[0].lower()))[:6]
-    return [
-        {
-            "name": name,
-            "bytes": size,
-            "percent": round(size * 100 / total, 2),
-            "color": colors.get(name, language_color(name, None)),
-        }
-        for name, size in ranked
-    ]
-
-
 def fetch_profile() -> dict:
     now = dt.datetime.now(dt.timezone.utc)
     start = dt.datetime(now.year, 1, 1, tzinfo=dt.timezone.utc)
@@ -118,14 +70,7 @@ def fetch_profile() -> dict:
           contributionCalendar{totalContributions}
         }
         repositories(first:100,privacy:PUBLIC,ownerAffiliations:OWNER){
-          nodes{
-            name
-            isFork
-            isArchived
-            languages(first:20,orderBy:{field:SIZE,direction:DESC}){
-              edges{size node{name color}}
-            }
-          }
+          nodes{name isFork isArchived}
         }
       }
     }
@@ -141,8 +86,8 @@ def fetch_profile() -> dict:
             },
         },
     )["data"]["user"]
-    repos = graph["repositories"]["nodes"]
     contributions = graph["contributionsCollection"]
+    repos = graph["repositories"]["nodes"]
 
     query_string = urllib.parse.urlencode({"q": f"author:{LOGIN} type:pr -user:{LOGIN}", "per_page": 100})
     pulls = api(f"search/issues?{query_string}")
@@ -152,16 +97,14 @@ def fetch_profile() -> dict:
         number = item["number"]
         detail = api(f"repos/{repo}/pulls/{number}")
         status = "merged" if detail.get("merged") else ("draft" if detail.get("draft") else item["state"])
-        external.append(
-            {
-                "repo": repo,
-                "number": number,
-                "title": item["title"],
-                "url": item["html_url"],
-                "status": status,
-                "updated_at": item["updated_at"],
-            }
-        )
+        external.append({
+            "repo": repo,
+            "number": number,
+            "title": item["title"],
+            "url": item["html_url"],
+            "status": status,
+            "updated_at": item["updated_at"],
+        })
 
     return {
         "year": now.year,
@@ -169,7 +112,6 @@ def fetch_profile() -> dict:
         "total_commits": contributions["totalCommitContributions"],
         "active_public_repos": sum(1 for repo in repos if not repo["isFork"] and not repo["isArchived"]),
         "upstream_prs": pulls["total_count"],
-        "languages": aggregate_languages(repos),
         "external": external,
     }
 
@@ -209,10 +151,6 @@ def visible_signature(stats: dict, selected: list[dict]) -> dict:
         "active_public_repos": stats["active_public_repos"],
         "upstream_prs": stats["upstream_prs"],
         "upstream_merged": merged_upstream(stats),
-        "languages": [
-            {key: item.get(key) for key in ("name", "bytes", "color")}
-            for item in stats.get("languages", [])
-        ],
         "selected_external": [
             {key: item[key] for key in ("repo", "number", "title", "url", "status")}
             for item in selected
@@ -255,101 +193,52 @@ def activity_card_svg(stats: dict, updated: dt.datetime) -> str:
     merged = merged_upstream(stats)
     total = max(0, int(stats["upstream_prs"]))
     ratio = merged / total if total else 0.0
-    circumference = 2 * math.pi * 49
+    circumference = 2 * math.pi * 42
     active = circumference * ratio
     inactive = circumference - active
     stamp = updated.strftime("%d %b · %H:%M SGT").lstrip("0")
     commits = stats.get("total_commits")
     commit_text = str(commits) if commits is not None else "—"
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="470" height="240" viewBox="0 0 470 240" role="img" aria-label="Public GitHub activity">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="470" height="200" viewBox="0 0 470 200" role="img" aria-label="Public GitHub activity">
   <defs>
     <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#62d0a2"/>
       <stop offset="1" stop-color="#87dfbd"/>
     </linearGradient>
   </defs>
-  <rect x="1" y="1" width="468" height="238" rx="14" fill="#263746" stroke="#435666"/>
-  <text x="28" y="40" class="title">Public activity</text>
-  <text x="29" y="59" class="meta">AUTO-REFRESHED · PUBLIC GITHUB</text>
+  <rect x="1" y="1" width="468" height="198" rx="14" fill="#263746" stroke="#435666"/>
+  <text x="26" y="34" class="title">Public activity</text>
+  <text x="27" y="51" class="meta">AUTO-REFRESHED · PUBLIC GITHUB</text>
 
-  <g stroke="#69d2a5" fill="none" stroke-width="1.8">
-    <path d="M31 81v10M26 86h10"/>
-    <path d="M26 118h10M31 113v10" transform="rotate(45 31 118)"/>
-    <rect x="26" y="145" width="10" height="10" rx="2"/>
-    <path d="M26 184l10-10M29 174h7v7"/>
+  <g stroke="#69d2a5" fill="none" stroke-width="1.7">
+    <path d="M29 69v9M24.5 73.5h9"/>
+    <path d="M25 100h9M29.5 95.5v9" transform="rotate(45 29.5 100)"/>
+    <rect x="24.5" y="122" width="9" height="9" rx="1.8"/>
+    <path d="M24.5 158l9-9M27 149h6.5v6.5"/>
   </g>
 
-  <text x="48" y="91" class="label">Contributions</text><text x="292" y="91" text-anchor="end" class="value">{stats['contributions']}</text>
-  <text x="48" y="123" class="label">Commits</text><text x="292" y="123" text-anchor="end" class="value">{commit_text}</text>
-  <text x="48" y="155" class="label">Public repos</text><text x="292" y="155" text-anchor="end" class="value">{stats['active_public_repos']}</text>
-  <text x="48" y="187" class="label">Upstream PRs</text><text x="292" y="187" text-anchor="end" class="value">{stats['upstream_prs']}</text>
+  <text x="45" y="78" class="label">Contributions</text><text x="282" y="78" text-anchor="end" class="value">{stats['contributions']}</text>
+  <text x="45" y="105" class="label">Commits / {stats['year']}</text><text x="282" y="105" text-anchor="end" class="value">{commit_text}</text>
+  <text x="45" y="132" class="label">Public repos</text><text x="282" y="132" text-anchor="end" class="value">{stats['active_public_repos']}</text>
+  <text x="45" y="159" class="label">Upstream PRs</text><text x="282" y="159" text-anchor="end" class="value">{stats['upstream_prs']}</text>
 
-  <g transform="translate(382 132)">
-    <circle r="49" fill="none" stroke="#3d5666" stroke-width="9"/>
-    <circle r="49" fill="none" stroke="url(#ring)" stroke-width="9" stroke-linecap="round"
+  <g transform="translate(382 113)">
+    <circle r="42" fill="none" stroke="#3d5666" stroke-width="8"/>
+    <circle r="42" fill="none" stroke="url(#ring)" stroke-width="8" stroke-linecap="round"
             stroke-dasharray="{active:.1f} {inactive:.1f}" transform="rotate(-90)"/>
     <text x="0" y="2" text-anchor="middle" class="ringValue">{merged}</text>
-    <text x="0" y="22" text-anchor="middle" class="ringLabel">MERGED</text>
+    <text x="0" y="20" text-anchor="middle" class="ringLabel">MERGED</text>
   </g>
 
-  <text x="28" y="220" class="refresh">updated {stamp}</text>
+  <text x="26" y="184" class="refresh">updated {stamp}</text>
   <style>
-    .title{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:23px;font-weight:650;fill:#69d2a5}}
-    .meta{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.5px;fill:#91a5b4}}
-    .label{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:15px;font-weight:600;fill:#f3f6f8}}
-    .value{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:16px;font-weight:700;fill:#ffffff}}
-    .ringValue{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:35px;font-weight:700;fill:#ffffff}}
-    .ringLabel{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;fill:#8ea3b2}}
-    .refresh{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:10px;fill:#91a5b4}}
-  </style>
-</svg>'''
-
-
-def languages_card_svg(stats: dict) -> str:
-    languages = stats.get("languages", [])[:6]
-    bar_x, bar_y, bar_w, bar_h = 28.0, 82.0, 414.0, 9.0
-    bar_parts: list[str] = []
-    cursor = bar_x
-    used = 0.0
-    for language in languages:
-        percent = max(0.0, float(language.get("percent") or 0.0))
-        width = bar_w * percent / 100.0
-        if width <= 0:
-            continue
-        color = language_color(str(language.get("name", "")), language.get("color"))
-        bar_parts.append(f'<rect x="{cursor:.1f}" y="{bar_y}" width="{width:.1f}" height="{bar_h}" fill="{color}"/>')
-        cursor += width
-        used += width
-    if used < bar_w:
-        bar_parts.append(f'<rect x="{cursor:.1f}" y="{bar_y}" width="{bar_w-used:.1f}" height="{bar_h}" fill="#30363d"/>')
-
-    legend: list[str] = []
-    positions = ((28, 123), (245, 123), (28, 154), (245, 154), (28, 185), (245, 185))
-    for language, (x, y) in zip(languages, positions):
-        name = html.escape(str(language.get("name", "Unknown")))
-        percent = float(language.get("percent") or 0.0)
-        color = language_color(name, language.get("color"))
-        legend.append(
-            f'<circle cx="{x+5}" cy="{y-5}" r="5" fill="{color}"/>'
-            f'<text x="{x+17}" y="{y}" class="lang">{name} {percent:.1f}%</text>'
-        )
-    if not languages:
-        legend.append('<text x="28" y="126" class="lang">language data unavailable</text>')
-
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="470" height="240" viewBox="0 0 470 240" role="img" aria-label="Code mix across active public repositories">
-  <rect x="1" y="1" width="468" height="238" rx="14" fill="#0d1117" stroke="#30363d"/>
-  <text x="28" y="40" class="title">Code mix</text>
-  <text x="29" y="59" class="meta">ACTIVE PUBLIC REPOS · GITHUB LANGUAGE BYTES</text>
-  <rect x="28" y="82" width="414" height="9" rx="4.5" fill="#30363d"/>
-  <clipPath id="barClip"><rect x="28" y="82" width="414" height="9" rx="4.5"/></clipPath>
-  <g clip-path="url(#barClip)">{''.join(bar_parts)}</g>
-  {''.join(legend)}
-  <text x="28" y="220" class="refresh">top {len(languages)} languages · auto-refreshed</text>
-  <style>
-    .title{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:23px;font-weight:650;fill:#00d8d6}}
-    .meta{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.35px;fill:#8b949e}}
-    .lang{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:11.5px;font-weight:550;fill:#c9d1d9}}
-    .refresh{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:10px;fill:#8b949e}}
+    .title{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:21px;font-weight:650;fill:#69d2a5}}
+    .meta{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:8.5px;font-weight:600;letter-spacing:1.4px;fill:#91a5b4}}
+    .label{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:13.5px;font-weight:600;fill:#f3f6f8}}
+    .value{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:15px;font-weight:700;fill:#ffffff}}
+    .ringValue{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:31px;font-weight:700;fill:#ffffff}}
+    .ringLabel{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.3px;fill:#8ea3b2}}
+    .refresh{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:9.5px;fill:#91a5b4}}
   </style>
 </svg>'''
 
@@ -357,12 +246,10 @@ def languages_card_svg(stats: dict) -> str:
 def live_markdown(stats: dict, selected: list[dict], updated: dt.datetime) -> str:
     notes = json.loads(DATA.read_text(encoding="utf-8")).get("external_notes", {})
     merged = merged_upstream(stats)
-    languages = stats.get("languages", [])[:3]
-    language_alt = ", ".join(f"{item['name']} {float(item['percent']):.1f}%" for item in languages) or "language data unavailable"
     lines = [
         '<p align="center">',
         f'  <img width="49%" src="./assets/activity-card.svg" alt="Public GitHub activity: {stats["contributions"]} contributions in {stats["year"]}, {stats.get("total_commits", "unknown")} commits, {stats["active_public_repos"]} active public repositories, {stats["upstream_prs"]} upstream pull requests, {merged} merged upstream pull requests.">',
-        f'  <img width="49%" src="./assets/languages-card.svg" alt="Code mix across active public repositories: {html.escape(language_alt)}.">',
+        f'  <img width="49%" src="{LANGUAGES_CARD_HTML}" alt="Most used languages across public GitHub repositories.">',
         '</p>',
         '',
         '**Outside my repos**',
@@ -388,18 +275,16 @@ def main() -> None:
 
     ASSETS.mkdir(parents=True, exist_ok=True)
     ACTIVITY_CARD.write_text(activity_card_svg(stats, updated), encoding="utf-8", newline="\n")
-    LANGUAGES_CARD.write_text(languages_card_svg(stats), encoding="utf-8", newline="\n")
 
     if fresh and changed:
         snapshot = {**stats, "selected_external": selected, "updated_at": updated.isoformat()}
         LIVE.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
-    top_language = stats.get("languages", [{}])[0].get("name", "n/a") if stats.get("languages") else "n/a"
     state = "Updated" if changed else ("Checked" if fresh else "Retained")
     print(
         f"{state} {stats['contributions']} contributions, {stats.get('total_commits', 'n/a')} commits, "
         f"{stats['active_public_repos']} public repos, {stats['upstream_prs']} upstream PRs, "
-        f"{merged_upstream(stats)} merged, top language {top_language} at {updated.isoformat()}"
+        f"{merged_upstream(stats)} merged at {updated.isoformat()}"
     )
 
 
