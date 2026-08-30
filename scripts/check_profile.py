@@ -12,33 +12,19 @@ README = ROOT / "README.md"
 GENERATOR = ROOT / "scripts" / "generate_profile.py"
 LIVE = ROOT / "data" / "live.json"
 ACTIVITY_CARD = ROOT / "assets" / "activity-card.svg"
-LANGUAGES_CARD = ROOT / "assets" / "languages-card.svg"
 SNAKE_WORKFLOW = ROOT / ".github" / "workflows" / "snake.yml"
 
 APPROVED_IMAGE_PREFIXES = (
     "https://user-images.githubusercontent.com/",
     "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/",
     "https://img.shields.io/badge/",
+    "https://github-readme-stats.vercel.app/api/top-langs/",
     "https://raw.githubusercontent.com/teddyli18000/teddyli18000/output/",
 )
 
 
 def fail(message: str) -> None:
     raise SystemExit(f"FAIL: {message}")
-
-
-def check_card(path: Path, width: str, height: str, tokens: tuple[str, ...]) -> None:
-    if not path.is_file():
-        fail(f"missing generated card: {path.name}")
-    text = path.read_text(encoding="utf-8")
-    root = ET.fromstring(text)
-    if root.attrib.get("width") != width or root.attrib.get("height") != height:
-        fail(f"{path.name} must stay {width}x{height}")
-    for token in tokens:
-        if token not in text:
-            fail(f"{path.name} missing {token}")
-    if path.stat().st_size > 64 * 1024:
-        fail(f"{path.name} is too large")
 
 
 def main() -> None:
@@ -66,23 +52,27 @@ def main() -> None:
     if positions != sorted(positions):
         fail("README section order changed")
 
-    for token in ("github-readme-stats", "typing-svg", "profile-trophy", "gradient-svg-generator", "A+", "visitor counter"):
+    for token in ("typing-svg", "profile-trophy", "gradient-svg-generator", "visitor counter"):
         if token.lower() in lower:
-            fail(f"README contains banned template/gamified token: {token}")
+            fail(f"README contains banned template token: {token}")
 
     local_images = re.findall(r'<img[^>]+src="(\./assets/[^\"]+)"', readme)
-    if local_images != ["./assets/activity-card.svg", "./assets/languages-card.svg"]:
-        fail("live block must use exactly the activity and language cards")
+    if local_images != ["./assets/activity-card.svg"]:
+        fail("README should keep exactly one custom local visual: activity-card.svg")
 
-    check_card(
-        ACTIVITY_CARD,
-        "470",
-        "240",
-        ("Public activity", "Contributions", "Commits", "Public repos", "Upstream PRs", "MERGED"),
-    )
-    check_card(LANGUAGES_CARD, "470", "240", ("Code mix", "ACTIVE PUBLIC REPOS"))
+    card_text = ACTIVITY_CARD.read_text(encoding="utf-8")
+    root = ET.fromstring(card_text)
+    if root.attrib.get("width") != "470" or root.attrib.get("height") != "200":
+        fail("activity card must stay 470x200")
+    for token in ("Public activity", "Contributions", "Commits", "Public repos", "Upstream PRs", "MERGED"):
+        if token not in card_text:
+            fail(f"activity card missing {token}")
+    if ACTIVITY_CARD.stat().st_size > 64 * 1024:
+        fail("activity card is too large")
 
     live = readme.split("<!-- profile-live:start -->", 1)[1].split("<!-- profile-live:end -->", 1)[0]
+    if "github-readme-stats.vercel.app/api/top-langs/" not in live:
+        fail("live block must use the proven github-readme-stats language card")
     if len(re.findall(r"https://github\.com/[^)\s]+/pull/\d+", live)) != 3:
         fail("live block must list exactly three upstream PRs")
     if "Outside my repos" not in live:
@@ -98,8 +88,8 @@ def main() -> None:
     if selected.count("\n-") != 4:
         fail("Selected work should stay four compact bullets")
     current = readme.split("### 🧭 Current lines", 1)[1].split("---", 1)[0]
-    if current.count("\n-") > 1:
-        fail("Current lines should stay compact")
+    if current.count("\n-") != 0:
+        fail("Current lines should be one compact inline row")
     side = readme.split("## 🛸 Side quests", 1)[1].split("---", 1)[0]
     if side.count("\n-") != 3:
         fail("Side quests should stay three compact bullets")
@@ -113,6 +103,8 @@ def main() -> None:
     fluent = [url for url in remote_images if "Animated-Fluent-Emojis" in url]
     if not 7 <= len(fluent) <= 9:
         fail("keep the existing restrained animated emoji set")
+    if len([url for url in remote_images if "github-readme-stats.vercel.app/api/top-langs/" in url]) != 1:
+        fail("use exactly one external language card")
     snake_urls = re.findall(r'https://raw\.githubusercontent\.com/teddyli18000/teddyli18000/output/github-snake(?:-dark)?\.svg', readme)
     if len(snake_urls) < 2:
         fail("Contribution trail must include light/dark snake assets")
@@ -132,11 +124,13 @@ def main() -> None:
         fail("live.json must retain three selected upstream PRs")
 
     generator = GENERATOR.read_text(encoding="utf-8")
-    for token in ("totalCommitContributions", "languages(first:20", "languages_card_svg", "activity_card_svg", "visible_signature"):
+    for token in ("totalCommitContributions", "activity_card_svg", "visible_signature", "github-readme-stats.vercel.app/api/top-langs/"):
         if token not in generator:
             fail(f"generator missing {token}")
+    if "languages_card_svg" in generator or "languages(first:20" in generator:
+        fail("do not reimplement mature language-card generation")
 
-    print("PASS: v7 compact dashboard, live cards, focused stack, contribution snake")
+    print("PASS: v7 compact dashboard, proven language card, focused stack, contribution snake")
 
 
 if __name__ == "__main__":
