@@ -1,6 +1,22 @@
 {
   "external": [
     {
+      "repo": "alibaba/open-code-review",
+      "number": 1122,
+      "title": "fix(rules): route JavaScript module files to JS rules",
+      "url": "https://github.com/alibaba/open-code-review/pull/1122",
+      "status": "open",
+      "updated_at": "2026-08-31T21:14:15Z"
+    },
+    {
+      "repo": "farion1231/cc-switch",
+      "number": 7027,
+      "title": "fix(settings): avoid launching OpenCode Desktop during env check",
+      "url": "https://github.com/farion1231/cc-switch/pull/7027",
+      "status": "open",
+      "updated_at": "2026-08-31T21:11:38Z"
+    },
+    {
       "repo": "nelvko/clash-for-linux-install",
       "number": 620,
       "title": "fix(install): avoid keeping partial downloads",
@@ -163,5 +179,5 @@
       "updated_at": "2026-08-14T01:53:24Z"
     }
   ],
-  "updated_at": "2026-09-01T02:02:57.119323+08:00"
+  "updated_at": "2026-09-01T06:47:35.486503+08:00"
 }
