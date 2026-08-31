@@ -101,6 +101,8 @@ def main() -> None:
         fail("live block must list exactly three upstream PRs")
     if "Outside my repos" not in live:
         fail("live block lost Outside my repos")
+    if not re.search(r"<sub>↻ refreshed \d{1,2} [A-Z][a-z]{2} \d{4} · \d{2}:\d{2} SGT</sub>", live):
+        fail("live block must show its last successful refresh time")
 
     if readme.count("Xinchen Lee") != 1:
         fail("full name should appear exactly once")
@@ -170,11 +172,11 @@ def main() -> None:
     generator = GENERATOR.read_text(encoding="utf-8")
     if "activity_card_svg" in generator or "contributionCalendar" in generator:
         fail("custom generic stats generation must stay removed")
-    for token in ("fetch_external", "footer_markdown", "assets/stats-card.svg", "assets/languages-card.svg"):
+    for token in ("fetch_external", "footer_markdown", "assets/stats-card.svg", "assets/languages-card.svg", "↻ refreshed"):
         if token not in generator:
             fail(f"generator missing {token}")
 
-    print("PASS: v8 three-column profile with mature stats data, contribution total, merge ring, contrast languages, and snake")
+    print("PASS: v8 three-column profile with mature stats data, contribution total, merge ring, contrast languages, snake, and live refresh stamp")
 
 
 if __name__ == "__main__":
