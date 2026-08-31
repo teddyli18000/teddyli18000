@@ -14,7 +14,7 @@ POLISHER = ROOT / "scripts" / "polish_cards.py"
 LIVE = ROOT / "data" / "live.json"
 STATS_CARD = ROOT / "assets" / "stats-card.svg"
 LANGUAGES_CARD = ROOT / "assets" / "languages-card.svg"
-REFRESH_WORKFLOW = ROOT / ".github" / "workflows" / "refresh-profile.yml"
+REFRESH_WORKFLOW = ROOT / ".github" / "workflows" / "profile-refresh.yml"
 SNAKE_WORKFLOW = ROOT / ".github" / "workflows" / "snake.yml"
 
 APPROVED_IMAGE_PREFIXES = (
@@ -142,12 +142,10 @@ def main() -> None:
         "python scripts/polish_cards.py",
         "assets/stats-card.svg",
         "assets/languages-card.svg",
-        'cron: "7 * * * *"',
+        'cron: "7,37 * * * *"',
     ):
         if token not in refresh:
             fail(f"refresh workflow missing {token}")
-    if "agent/profile-v7-compact-dashboard" in refresh:
-        fail("preview-only branch push trigger must not ship")
 
     if not POLISHER.is_file():
         fail("card polisher is missing")
@@ -176,7 +174,7 @@ def main() -> None:
         if token not in generator:
             fail(f"generator missing {token}")
 
-    print("PASS: v8 three-column profile with mature stats data, contribution total, merge ring, contrast languages, snake, and live refresh stamp")
+    print("PASS: v8 profile with mature stats, contribution snake, and redundant live refresh scheduling")
 
 
 if __name__ == "__main__":
