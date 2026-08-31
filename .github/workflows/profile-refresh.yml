@@ -1,10 +1,12 @@
 name: Profile refresh
 
 on:
-  # Two staggered windows per hour. GitHub schedule delivery is best-effort;
-  # the second window gives us a fallback if one scheduled event is dropped.
+  # GitHub scheduled workflows are best-effort and may occasionally drop a
+  # delivery. Use several off-peak windows per hour; the generator itself only
+  # advances the visible timestamp once per SGT hour, so successful fallbacks
+  # do not create duplicate hourly refresh commits.
   schedule:
-    - cron: "7,37 * * * *"
+    - cron: "2,12,22,32,42,52 * * * *"
   workflow_dispatch:
   push:
     branches:
