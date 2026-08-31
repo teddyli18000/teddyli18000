@@ -142,7 +142,7 @@ def main() -> None:
         "python scripts/polish_cards.py",
         "assets/stats-card.svg",
         "assets/languages-card.svg",
-        'cron: "17 */2 * * *"',
+        'cron: "0 * * * *"',
     ):
         if token not in refresh:
             fail(f"refresh workflow missing {token}")
