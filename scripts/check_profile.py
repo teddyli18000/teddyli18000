@@ -142,7 +142,7 @@ def main() -> None:
         "python scripts/polish_cards.py",
         "assets/stats-card.svg",
         "assets/languages-card.svg",
-        'cron: "7,37 * * * *"',
+        'cron: "2,12,22,32,42,52 * * * *"',
     ):
         if token not in refresh:
             fail(f"refresh workflow missing {token}")
@@ -174,7 +174,7 @@ def main() -> None:
         if token not in generator:
             fail(f"generator missing {token}")
 
-    print("PASS: v8 profile with mature stats, contribution snake, and redundant live refresh scheduling")
+    print("PASS: v8 profile with mature stats, contribution snake, and hardened hourly refresh scheduling")
 
 
 if __name__ == "__main__":
