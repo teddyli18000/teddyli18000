@@ -2,8 +2,8 @@ name: Refresh profile
 
 on:
   schedule:
-    # Check hourly on the hour (GitHub cron is UTC).
-    - cron: "0 * * * *"
+    # Check hourly at minute 07 (GitHub cron is UTC).
+    - cron: "7 * * * *"
   workflow_dispatch:
   pull_request:
     paths:
