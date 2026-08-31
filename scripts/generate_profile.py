@@ -83,6 +83,11 @@ def signature(items: list[dict]) -> list[dict]:
     ]
 
 
+def hour_bucket(value: dt.datetime) -> tuple[int, int, int, int]:
+    local = value.astimezone(SGT)
+    return local.year, local.month, local.day, local.hour
+
+
 def last_good() -> tuple[list[dict], list[dict], dt.datetime]:
     snapshot = json.loads(LIVE.read_text(encoding="utf-8"))
     external = snapshot.get("external") or []
@@ -104,13 +109,18 @@ def collect() -> tuple[list[dict], list[dict], dt.datetime, bool, bool]:
             raise ValueError(f"expected three upstream pull requests, got {len(selected)}")
         now = dt.datetime.now(SGT)
         try:
-            _, previous_selected, _ = last_good()
-            changed = signature(selected) != signature(previous_selected)
+            _, previous_selected, previous_stamp = last_good()
+            content_changed = signature(selected) != signature(previous_selected)
+            # The workflow has :07 and :37 trigger windows for reliability. Only
+            # advance the visible timestamp once per SGT hour unless visible PR
+            # content changed, so the fallback window does not create extra commits.
+            refresh_due = hour_bucket(now) != hour_bucket(previous_stamp)
+            changed = content_changed or refresh_due
+            updated = now if changed else previous_stamp
         except Exception:
             changed = True
-        # The visible timestamp means "last successful refresh", so it advances on
-        # every successful scheduled check even when the selected PRs are unchanged.
-        return external, selected, now, True, changed
+            updated = now
+        return external, selected, updated, True, changed
     except Exception as error:
         external, selected, stamp = last_good()
         print(f"GitHub refresh failed ({error}); retaining last-good data from {stamp.isoformat()}")
@@ -165,9 +175,9 @@ def main() -> None:
     text = replace_block(text, "footer", footer_markdown(dt.datetime.now(SGT)))
     README.write_text(text, encoding="utf-8", newline="\n")
 
-    # Persist every successful refresh because updated_at is now a visible live
-    # signal. On failure we keep the last-good snapshot and timestamp untouched.
-    if fresh:
+    # Persist only when the visible hourly refresh/content state advances. On
+    # failure, retain the last-good snapshot and timestamp untouched.
+    if fresh and changed:
         snapshot = {
             "external": external,
             "selected_external": selected,
@@ -175,7 +185,7 @@ def main() -> None:
         }
         LIVE.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
-    state = "Updated" if changed else ("Refreshed" if fresh else "Retained")
+    state = "Updated" if changed else ("Checked" if fresh else "Retained")
     print(f"{state} {len(external)} upstream PRs; showing {len(selected)} at {updated.isoformat()}")
 
 
