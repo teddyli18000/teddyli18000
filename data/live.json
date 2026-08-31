@@ -13,8 +13,8 @@
       "number": 6851,
       "title": "fix(codex): mark glm-5.3 as text-only",
       "url": "https://github.com/farion1231/cc-switch/pull/6851",
-      "status": "open",
-      "updated_at": "2026-08-27T02:04:40Z"
+      "status": "merged",
+      "updated_at": "2026-08-31T15:00:39Z"
     },
     {
       "repo": "ltaoo/wx_channels_download",
@@ -30,7 +30,7 @@
       "title": "test(gateway): disable bundled plugins in kernel fixture",
       "url": "https://github.com/openclaw/openclaw/pull/128524",
       "status": "open",
-      "updated_at": "2026-08-30T11:16:50Z"
+      "updated_at": "2026-08-31T13:21:55Z"
     },
     {
       "repo": "openclaw/openclaw",
@@ -139,6 +139,14 @@
   ],
   "selected_external": [
     {
+      "repo": "farion1231/cc-switch",
+      "number": 6851,
+      "title": "fix(codex): mark glm-5.3 as text-only",
+      "url": "https://github.com/farion1231/cc-switch/pull/6851",
+      "status": "merged",
+      "updated_at": "2026-08-31T15:00:39Z"
+    },
+    {
       "repo": "omdsh-dev/DSH-better-sidebar",
       "number": 301,
       "title": "fix(git): hide spawned git windows on Windows",
@@ -153,15 +161,7 @@
       "url": "https://github.com/pandas-dev/pandas/pull/66739",
       "status": "merged",
       "updated_at": "2026-08-14T01:53:24Z"
-    },
-    {
-      "repo": "open-city-ai/haidian",
-      "number": 61,
-      "title": "投稿：京张元枢｜JING-ZHANG AI KERNEL — 城市 AI 公共内核",
-      "url": "https://github.com/open-city-ai/haidian/pull/61",
-      "status": "merged",
-      "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-08-31T19:18:15.005096+08:00"
+  "updated_at": "2026-09-01T02:02:57.119323+08:00"
 }

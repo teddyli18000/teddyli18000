@@ -25,11 +25,11 @@
 
 **Outside my repos**
 
+- ✓ merged → [farion1231/cc-switch #6851](https://github.com/farion1231/cc-switch/pull/6851) · fix(codex): mark glm-5.3 as text-only
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
-- ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 31 Aug 2026 · 19:18 SGT</sub>
+<sub>↻ refreshed 1 Sep 2026 · 02:02 SGT</sub>
 <!-- profile-live:end -->
 
 ---
@@ -87,6 +87,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“What I cannot create, I do not understand.”</em> — Richard Feynman</sub>
+<sub><em>“Simplicity is prerequisite for reliability.”</em> — Edsger W. Dijkstra</sub>
 <!-- profile-footer:end -->
 </div>
