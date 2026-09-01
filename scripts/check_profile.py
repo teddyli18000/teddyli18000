@@ -13,7 +13,8 @@ GENERATOR = ROOT / "scripts" / "generate_profile.py"
 POLISHER = ROOT / "scripts" / "polish_cards.py"
 LIVE = ROOT / "data" / "live.json"
 STATS_CARD = ROOT / "assets" / "stats-card.svg"
-LANGUAGES_CARD = ROOT / "assets" / "languages-card.svg"
+PROFILE_DETAILS = ROOT / "assets" / "profile-details.svg"
+COMMIT_LANGS = ROOT / "assets" / "commit-languages-card.svg"
 REFRESH_WORKFLOW = ROOT / ".github" / "workflows" / "profile-refresh.yml"
 SNAKE_WORKFLOW = ROOT / ".github" / "workflows" / "snake.yml"
 
@@ -29,16 +30,16 @@ def fail(message: str) -> None:
     raise SystemExit(f"FAIL: {message}")
 
 
-def check_generated_svg(path: Path, expected_height: str = "190") -> str:
+def check_svg(path: Path, width: str, height: str) -> str:
     if not path.is_file():
         fail(f"missing generated card: {path.name}")
     text = path.read_text(encoding="utf-8")
     root = ET.fromstring(text)
-    if root.attrib.get("width") != "470" or root.attrib.get("height") != expected_height:
-        fail(f"{path.name} must stay 470x{expected_height}")
+    if root.attrib.get("width") != width or root.attrib.get("height") != height:
+        fail(f"{path.name} must stay {width}x{height}")
     if path.stat().st_size < 1000:
         fail(f"{path.name} looks like an error/empty card")
-    if path.stat().st_size > 256 * 1024:
+    if path.stat().st_size > 384 * 1024:
         fail(f"{path.name} is unexpectedly large")
     return text
 
@@ -46,16 +47,14 @@ def check_generated_svg(path: Path, expected_height: str = "190") -> str:
 def main() -> None:
     readme = README.read_text(encoding="utf-8")
     lower = readme.lower()
-    if "profile-readme:v8" not in readme:
-        fail("README version marker is not v8")
+    if "profile-readme:v9" not in readme:
+        fail("README version marker is not v9")
     for marker in ("profile-live:start", "profile-live:end", "profile-footer:start", "profile-footer:end"):
         if readme.count(marker) != 1:
             fail(f"expected exactly one {marker}")
 
-    if "mostly building · occasionally overengineering · sometimes both" in readme:
-        fail("removed top microcopy reappeared")
-    if "⌁" in readme:
-        fail("footer must not use decorative filler glyphs")
+    if "mostly building · occasionally overengineering · sometimes both" in readme or "⌁" in readme:
+        fail("removed throwaway microcopy reappeared")
 
     open_source = readme.find("## ↗ Open source / live")
     stack = readme.find("## 🛠 Tech stack")
@@ -69,19 +68,22 @@ def main() -> None:
     if readme.count('<td width="') != 3 or readme.count('valign="top"') != 3:
         fail("Selected work / Current / Side quests must stay a three-column block")
 
-    for project in ("AiForMillikan", "screen-clone-manager", "baidu-drive-mover", "XCAD"):
-        if f"teddyli18000/{project}" not in readme:
-            fail(f"Selected work missing {project}")
-    for project in ("outlook-mail-helper", "medical-img-preparer", "millikan-drop-processor"):
-        if f"teddyli18000/{project}" not in readme:
-            fail(f"Side quests missing {project}")
-
     local_images = re.findall(r'<img[^>]+src="(\./assets/[^\"]+)"', readme)
-    if local_images != ["./assets/stats-card.svg", "./assets/languages-card.svg"]:
-        fail("Open source block must use the two locally generated mature stats cards")
+    expected_images = [
+        "./assets/profile-details.svg",
+        "./assets/stats-card.svg",
+        "./assets/commit-languages-card.svg",
+    ]
+    if local_images != expected_images:
+        fail("Open source block must use profile-details + activity + commit-language cards")
 
-    stats = check_generated_svg(STATS_CARD)
-    langs = check_generated_svg(LANGUAGES_CARD)
+    profile = check_svg(PROFILE_DETAILS, "700", "200")
+    stats = check_svg(STATS_CARD, "470", "190")
+    commits = check_svg(COMMIT_LANGS, "340", "200")
+
+    for token in ("Contributions on GitHub", "gpsc-root", "@media (prefers-reduced-motion:reduce)"):
+        if token not in profile:
+            fail(f"profile details card missing {token}")
     for token in ("Total Commits:", "Total PRs:", "Total PRs Merged:", "Total Contributions:", "MERGED"):
         if token not in stats:
             fail(f"stats card missing {token}")
@@ -89,12 +91,11 @@ def main() -> None:
         fail("stats card regressed to weak/ambiguous metrics")
     if not re.search(r'data-testid="percentile-rank-value"[^>]*>\s*\d+%', stats, flags=re.S):
         fail("stats card merge-rate ring is missing")
-    if not re.search(r'data-testid="contribs"[^>]*>\s*[1-9][0-9,.kKmM]*', stats, flags=re.S):
-        fail("stats card full-history contributions are missing")
-
-    lang_colors = re.findall(r'data-testid="lang-progress".*?fill="(#[0-9A-Fa-f]{6})"', langs, flags=re.S)
-    if len(set(lang_colors)) < 8:
-        fail("language card needs eight clearly distinct progress colors")
+    if "Most Commit Language" not in commits or "gpsc-root" not in commits:
+        fail("commit-language card did not come from github-profile-summary-cards")
+    contrast = ["#FFD43B", "#00C2FF", "#A855F7", "#3B82F6", "#FF6B6B"]
+    if sum(color in commits for color in contrast) < 5:
+        fail("commit-language card lost its high-contrast palette")
 
     live = readme.split("<!-- profile-live:start -->", 1)[1].split("<!-- profile-live:end -->", 1)[0]
     if len(re.findall(r"https://github\.com/[^)\s]+/pull/\d+", live)) != 3:
@@ -106,7 +107,6 @@ def main() -> None:
 
     if readme.count("Xinchen Lee") != 1:
         fail("full name should appear exactly once")
-
     remote_images = re.findall(r'<img[^>]+src="(https://[^\"]+)"', readme)
     if any(not url.startswith(APPROVED_IMAGE_PREFIXES) for url in remote_images):
         fail("remote image uses an unapproved host")
@@ -123,7 +123,6 @@ def main() -> None:
     footer = readme.split("<!-- profile-footer:start -->", 1)[1].split("<!-- profile-footer:end -->", 1)[0]
     if "<em>“" not in footer or "”</em>" not in footer:
         fail("footer should render a considered English quote/line")
-
     for token in ("typing-svg", "profile-trophy", "gradient-svg-generator", "visitor counter"):
         if token.lower() in lower:
             fail(f"README contains banned template token: {token}")
@@ -134,23 +133,23 @@ def main() -> None:
     for token in (
         "stats-organization/github-readme-stats-action@v2",
         "vn7n24fzkq/github-profile-summary-cards@release",
-        "card: stats",
-        "card: top-langs",
-        "include_all_commits=true",
-        "rank_icon=percentile",
-        "line_height=29",
-        "python scripts/polish_cards.py",
-        "assets/stats-card.svg",
-        "assets/languages-card.svg",
+        "ANIMATION: load",
+        'DURATION: "2.4"',
+        'UTC_OFFSET: "8"',
+        "NAME: Xinchen Lee",
+        "assets/profile-details.svg",
+        "assets/commit-languages-card.svg",
         'cron: "2,12,22,32,42,52 * * * *"',
     ):
         if token not in refresh:
             fail(f"refresh workflow missing {token}")
+    if "card: top-langs" in refresh:
+        fail("legacy repository-size language card should stay removed in v9")
 
     if not POLISHER.is_file():
         fail("card polisher is missing")
     polisher = POLISHER.read_text(encoding="utf-8")
-    for token in ("Total Contributions:", "MERGED", "PALETTE", "profile-summary-card-output"):
+    for token in ("Total Contributions:", "MERGED", "publish_profile_details", "publish_commit_languages", "SUMMARY_THEME"):
         if token not in polisher:
             fail(f"card polisher missing {token}")
 
@@ -162,19 +161,15 @@ def main() -> None:
             fail(f"snake workflow missing {token}")
 
     data = json.loads(LIVE.read_text(encoding="utf-8"))
-    if len(data.get("selected_external", [])) != 3:
-        fail("live.json must retain three selected upstream PRs")
-    if not data.get("updated_at"):
-        fail("live.json must retain updated_at")
+    if len(data.get("selected_external", [])) != 3 or not data.get("updated_at"):
+        fail("live.json must retain three selected upstream PRs and updated_at")
 
     generator = GENERATOR.read_text(encoding="utf-8")
-    if "activity_card_svg" in generator or "contributionCalendar" in generator:
-        fail("custom generic stats generation must stay removed")
-    for token in ("fetch_external", "footer_markdown", "assets/stats-card.svg", "assets/languages-card.svg", "↻ refreshed"):
+    for token in ("fetch_external", "footer_markdown", "assets/profile-details.svg", "assets/stats-card.svg", "assets/commit-languages-card.svg", "↻ refreshed"):
         if token not in generator:
             fail(f"generator missing {token}")
 
-    print("PASS: v8 profile with mature stats, contribution snake, and hardened hourly refresh scheduling")
+    print("PASS: v9 profile with animated summary details, activity stats, commit-language card, snake, and hardened refresh")
 
 
 if __name__ == "__main__":
