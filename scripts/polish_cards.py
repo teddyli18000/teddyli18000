@@ -5,6 +5,7 @@ Data/layout come from github-readme-stats and github-profile-summary-cards.
 This script only:
 - swaps the weak `Contributed to (last year)` row for full-history contributions;
 - repurposes github-readme-stats' existing rank ring as a truthful PR merge-rate ring;
+- preserves the last-good nonzero commit count if the upstream stats action transiently returns zero;
 - publishes the mature summary-cards profile-details and most-commit-language SVGs;
 - maps generated cards onto the profile's shared visual palette.
 """
@@ -17,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
 STATS = ASSETS / "stats-card.svg"
+PREVIOUS_STATS = Path("/tmp/profile-previous-stats-card.svg")
 PROFILE_DETAILS = ASSETS / "profile-details.svg"
 COMMIT_LANGS = ASSETS / "commit-languages-card.svg"
 SUMMARY_ROOT = ROOT / "profile-summary-card-output"
@@ -68,22 +70,44 @@ def metric_number(text: str, testid: str) -> int:
     return int(match.group(1).replace(",", ""))
 
 
+def replace_metric(text: str, testid: str, value: int | str) -> str:
+    updated, count = re.subn(
+        rf'(<text[^>]*data-testid="{re.escape(testid)}"[^>]*>\s*)[^<]+(</text>)',
+        rf"\g<1>{value}\g<2>",
+        text,
+        count=1,
+        flags=re.S,
+    )
+    if count != 1:
+        raise SystemExit(f"could not replace {testid} in stats card")
+    return updated
+
+
+def last_good_commits() -> int:
+    if not PREVIOUS_STATS.is_file():
+        raise SystemExit("generated stats returned zero commits and no last-good stats card is available")
+    previous = PREVIOUS_STATS.read_text(encoding="utf-8")
+    commits = metric_number(previous, "commits")
+    if commits <= 0:
+        raise SystemExit("generated stats returned zero commits and the last-good card is also zero")
+    return commits
+
+
 def polish_stats(total_contributions: str) -> None:
     text = STATS.read_text(encoding="utf-8")
     commits = metric_number(text, "commits")
+    if commits <= 0:
+        commits = last_good_commits()
+        text = replace_metric(text, "commits", commits)
+        print(f"Upstream stats returned zero commits; retained last-good value {commits}")
+
     prs = metric_number(text, "prs")
     merged = metric_number(text, "prs_merged")
     merge_rate = merged / prs if prs else 0.0
     merge_percent = round(merge_rate * 100)
 
     text = text.replace("Contributed to (last year):", "Total Contributions:")
-    text = re.sub(
-        r'(<text[^>]*data-testid="contribs"[^>]*>\s*)[^<]+(</text>)',
-        rf"\g<1>{total_contributions}\g<2>",
-        text,
-        count=1,
-        flags=re.S,
-    )
+    text = replace_metric(text, "contribs", total_contributions)
 
     desc = (
         f"Total Commits: {commits}, Total PRs: {prs}, Total PRs Merged: {merged}, "
