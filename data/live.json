@@ -1,6 +1,22 @@
 {
   "external": [
     {
+      "repo": "Lampese/codex-switcher",
+      "number": 149,
+      "title": "fix(web): serve requests concurrently",
+      "url": "https://github.com/Lampese/codex-switcher/pull/149",
+      "status": "open",
+      "updated_at": "2026-09-01T13:00:46Z"
+    },
+    {
+      "repo": "CreoEnMi-p/CreoEnMi-p.github.io",
+      "number": 2,
+      "title": "fix: load all memo issue comments",
+      "url": "https://github.com/CreoEnMi-p/CreoEnMi-p.github.io/pull/2",
+      "status": "open",
+      "updated_at": "2026-09-01T12:29:29Z"
+    },
+    {
       "repo": "vn7n24fzkq/github-profile-summary-cards",
       "number": 330,
       "title": "fix: make language aliases case-insensitive",
@@ -54,7 +70,7 @@
       "title": "test(gateway): disable bundled plugins in kernel fixture",
       "url": "https://github.com/openclaw/openclaw/pull/128524",
       "status": "open",
-      "updated_at": "2026-08-31T13:21:55Z"
+      "updated_at": "2026-09-01T15:01:39Z"
     },
     {
       "repo": "openclaw/openclaw",
@@ -187,5 +203,5 @@
       "updated_at": "2026-08-22T15:11:28Z"
     }
   ],
-  "updated_at": "2026-09-01T20:00:26.782649+08:00"
+  "updated_at": "2026-09-02T00:30:52.923855+08:00"
 }
