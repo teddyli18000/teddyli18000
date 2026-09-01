@@ -14,7 +14,7 @@
       "title": "fix(settings): avoid launching OpenCode Desktop during env check",
       "url": "https://github.com/farion1231/cc-switch/pull/7027",
       "status": "open",
-      "updated_at": "2026-08-31T21:11:38Z"
+      "updated_at": "2026-09-01T02:05:45Z"
     },
     {
       "repo": "nelvko/clash-for-linux-install",
@@ -179,5 +179,5 @@
       "updated_at": "2026-08-14T01:53:24Z"
     }
   ],
-  "updated_at": "2026-09-01T09:26:36.421633+08:00"
+  "updated_at": "2026-09-01T14:37:25.708796+08:00"
 }
