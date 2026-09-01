@@ -29,7 +29,7 @@
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 
-<sub>↻ refreshed 1 Sep 2026 · 06:47 SGT</sub>
+<sub>↻ refreshed 1 Sep 2026 · 09:26 SGT</sub>
 <!-- profile-live:end -->
 
 ---

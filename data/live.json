@@ -6,7 +6,7 @@
       "title": "fix(rules): route JavaScript module files to JS rules",
       "url": "https://github.com/alibaba/open-code-review/pull/1122",
       "status": "open",
-      "updated_at": "2026-08-31T21:14:15Z"
+      "updated_at": "2026-08-31T23:19:02Z"
     },
     {
       "repo": "farion1231/cc-switch",
@@ -179,5 +179,5 @@
       "updated_at": "2026-08-14T01:53:24Z"
     }
   ],
-  "updated_at": "2026-09-01T06:47:35.486503+08:00"
+  "updated_at": "2026-09-01T09:26:36.421633+08:00"
 }
