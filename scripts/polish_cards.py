@@ -3,12 +3,10 @@
 
 Data/layout come from github-readme-stats and github-profile-summary-cards.
 This script only:
-- swaps the weak `Contributed to (last year)` row for full-history contributions
-  reported by github-profile-summary-cards;
-- repurposes github-readme-stats' existing rank ring as a truthful PR merge-rate
-  ring using the card's own PR / merged-PR values;
-- remaps top-language colors to a higher-contrast palette while preserving all
-  language names and percentages.
+- swaps the weak `Contributed to (last year)` row for full-history contributions;
+- repurposes github-readme-stats' existing rank ring as a truthful PR merge-rate ring;
+- publishes the mature summary-cards profile-details and most-commit-language SVGs;
+- maps generated cards onto the profile's shared visual palette.
 """
 from __future__ import annotations
 
@@ -17,27 +15,42 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-STATS = ROOT / "assets" / "stats-card.svg"
-LANGS = ROOT / "assets" / "languages-card.svg"
+ASSETS = ROOT / "assets"
+STATS = ASSETS / "stats-card.svg"
+PROFILE_DETAILS = ASSETS / "profile-details.svg"
+COMMIT_LANGS = ASSETS / "commit-languages-card.svg"
 SUMMARY_ROOT = ROOT / "profile-summary-card-output"
 
 PALETTE = [
-    "#FFD43B",  # yellow
-    "#00C2FF",  # cyan
-    "#A855F7",  # violet
-    "#3B82F6",  # blue
-    "#FF6B6B",  # coral
-    "#F43F8C",  # magenta
-    "#F97316",  # orange
-    "#22C55E",  # green
+    "#FFD43B",
+    "#00C2FF",
+    "#A855F7",
+    "#3B82F6",
+    "#FF6B6B",
+    "#F43F8C",
+    "#F97316",
+    "#22C55E",
 ]
+
+SUMMARY_THEME = {
+    "#0366d6": "#69D2A5",
+    "#77909c": "#F3F6F8",
+    "#0d1117": "#263746",
+    "#2e343b": "#435666",
+    "#8b949e": "#69D2A5",
+    "#40c463": "#69D2A5",
+}
+
+
+def summary_source(filename: str) -> Path:
+    candidates = list(SUMMARY_ROOT.glob(f"**/{filename}"))
+    if not candidates:
+        raise SystemExit(f"profile-summary-cards did not generate {filename}")
+    return candidates[0]
 
 
 def find_total_contributions() -> str:
-    candidates = list(SUMMARY_ROOT.glob("**/0-profile-details.svg"))
-    if not candidates:
-        raise SystemExit("profile-summary-cards did not generate 0-profile-details.svg")
-    text = candidates[0].read_text(encoding="utf-8")
+    text = summary_source("0-profile-details.svg").read_text(encoding="utf-8")
     match = re.search(r"([0-9][0-9.,]*[kKmM]?)\s+Contributions on GitHub", text)
     if not match:
         raise SystemExit("could not extract full-history contributions from profile-details card")
@@ -76,20 +89,33 @@ def polish_stats(total_contributions: str) -> None:
         f"Total Commits: {commits}, Total PRs: {prs}, Total PRs Merged: {merged}, "
         f"Total Contributions: {total_contributions}, PR merge rate: {merge_percent}%"
     )
-    text = re.sub(r"<title id=\"titleId\">.*?</title>",
-                  f'<title id="titleId">GitHub activity, PR merge rate: {merge_percent}%</title>',
-                  text, count=1, flags=re.S)
-    text = re.sub(r"<desc id=\"descId\">.*?</desc>",
-                  f'<desc id="descId">{desc}</desc>',
-                  text, count=1, flags=re.S)
-
+    text = re.sub(
+        r'<title id="titleId">.*?</title>',
+        f'<title id="titleId">GitHub activity, PR merge rate: {merge_percent}%</title>',
+        text,
+        count=1,
+        flags=re.S,
+    )
+    text = re.sub(
+        r'<desc id="descId">.*?</desc>',
+        f'<desc id="descId">{desc}</desc>',
+        text,
+        count=1,
+        flags=re.S,
+    )
     text = re.sub(
         r'(data-testid="percentile-top-header"[^>]*>\s*)[^<]+(</text>)',
-        r"\g<1>MERGED\g<2>", text, count=1, flags=re.S,
+        r"\g<1>MERGED\g<2>",
+        text,
+        count=1,
+        flags=re.S,
     )
     text = re.sub(
         r'(data-testid="percentile-rank-value"[^>]*>\s*)[^<]+(</text>)',
-        rf"\g<1>{merge_percent}%\g<2>", text, count=1, flags=re.S,
+        rf"\g<1>{merge_percent}%\g<2>",
+        text,
+        count=1,
+        flags=re.S,
     )
 
     circumference = 2 * math.pi * 40
@@ -104,28 +130,37 @@ def polish_stats(total_contributions: str) -> None:
     STATS.write_text(text, encoding="utf-8", newline="\n")
 
 
-def polish_languages() -> None:
-    text = LANGS.read_text(encoding="utf-8")
+def restyle_summary(text: str) -> str:
+    for old, new in SUMMARY_THEME.items():
+        text = text.replace(old, new).replace(old.upper(), new)
+    text = text.replace('rx="5" ry="5"', 'rx="14" ry="14"')
+    return text
+
+
+def publish_profile_details() -> None:
+    text = restyle_summary(summary_source("0-profile-details.svg").read_text(encoding="utf-8"))
+    PROFILE_DETAILS.write_text(text, encoding="utf-8", newline="\n")
+
+
+def publish_commit_languages() -> None:
+    text = restyle_summary(summary_source("2-most-commit-language.svg").read_text(encoding="utf-8"))
     colors: list[str] = []
-    for color in re.findall(
-        r'data-testid="lang-progress".*?fill="(#[0-9A-Fa-f]{6})"',
-        text,
-        flags=re.S,
-    ):
-        if color not in colors:
+    for color in re.findall(r'<rect[^>]+fill="(#[0-9A-Fa-f]{6})"[^>]+stroke=', text):
+        if color not in colors and color not in SUMMARY_THEME.values():
             colors.append(color)
-    if len(colors) < 6:
-        raise SystemExit(f"expected at least six language colors, found {len(colors)}")
+    if len(colors) < 5:
+        raise SystemExit(f"expected at least five commit-language colors, found {len(colors)}")
     for old, new in zip(colors[: len(PALETTE)], PALETTE):
         text = text.replace(old, new)
-    LANGS.write_text(text, encoding="utf-8", newline="\n")
+    COMMIT_LANGS.write_text(text, encoding="utf-8", newline="\n")
 
 
 def main() -> None:
     total = find_total_contributions()
     polish_stats(total)
-    polish_languages()
-    print(f"Polished cards with {total} full-history contributions and {len(PALETTE)} contrast colors")
+    publish_profile_details()
+    publish_commit_languages()
+    print(f"Published summary cards with {total} full-history contributions")
 
 
 if __name__ == "__main__":
