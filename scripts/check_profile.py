@@ -137,8 +137,6 @@ def main() -> None:
         "stats-organization/github-readme-stats-action@v2",
         "vn7n24fzkq/github-profile-summary-cards@release",
         "ANIMATION: load",
-        'DURATION: "2.4"',
-        'UTC_OFFSET: "8"',
         "NAME: Xinchen Lee",
         "/tmp/profile-previous-stats-card.svg",
         "assets/profile-details.svg",
@@ -147,6 +145,10 @@ def main() -> None:
     ):
         if token not in refresh:
             fail(f"refresh workflow missing {token}")
+    for key, value in (("DURATION", "2.4"), ("UTC_OFFSET", "8")):
+        scalar = rf"(?m)^\s*{re.escape(key)}:\s*(['\"]?){re.escape(value)}\1\s*(?:#.*)?$"
+        if not re.search(scalar, refresh):
+            fail(f"refresh workflow missing {key}: {value}")
     if "card: top-langs" in refresh:
         fail("legacy repository-size language card should stay removed in v9")
 
