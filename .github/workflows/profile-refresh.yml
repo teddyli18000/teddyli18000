@@ -46,6 +46,11 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Preserve last-good activity card
+        run: |
+          git fetch origin main --depth=1
+          git show origin/main:assets/stats-card.svg > /tmp/profile-previous-stats-card.svg
+
       - name: Generate GitHub activity card
         uses: stats-organization/github-readme-stats-action@v2
         with:
