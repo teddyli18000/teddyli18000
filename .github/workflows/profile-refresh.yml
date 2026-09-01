@@ -11,6 +11,7 @@ on:
   push:
     branches:
       - main
+      - agent/profile-v9-summary-cards
     paths:
       - .github/workflows/profile-refresh.yml
       - scripts/generate_profile.py
@@ -45,7 +46,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Generate GitHub stats card
+      - name: Generate GitHub activity card
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
@@ -54,16 +55,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
 
-      - name: Generate top languages card
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: top-langs
-          options: "username=${{ github.repository_owner }}&layout=compact&langs_count=8&card_width=470&bg_color=263746&title_color=69D2A5&text_color=F3F6F8&border_color=435666&border_radius=14"
-          path: assets/languages-card.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fail_on_error: true
-
-      - name: Generate full-history contribution source
+      - name: Generate profile summary cards
         uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -71,8 +63,12 @@ jobs:
           USERNAME: ${{ github.repository_owner }}
           AUTO_PUSH: false
           THEME: github_dark
+          UTC_OFFSET: "8"
+          ANIMATION: load
+          DURATION: "2.4"
+          NAME: Xinchen Lee
 
-      - name: Apply profile card polish
+      - name: Apply shared card palette and publish selected summary cards
         run: python scripts/polish_cards.py
 
       - name: Refresh upstream activity and visible timestamp
@@ -93,6 +89,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md data/live.json assets/stats-card.svg assets/languages-card.svg
+          git add README.md data/live.json assets/stats-card.svg assets/profile-details.svg assets/commit-languages-card.svg
           git commit -m "chore(profile): refresh public activity"
           git push
