@@ -11,7 +11,6 @@ on:
   push:
     branches:
       - main
-      - agent/profile-v9-summary-cards
     paths:
       - .github/workflows/profile-refresh.yml
       - scripts/generate_profile.py
