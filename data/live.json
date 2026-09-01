@@ -13,8 +13,8 @@
       "number": 1122,
       "title": "fix(rules): route JavaScript module files to JS rules",
       "url": "https://github.com/alibaba/open-code-review/pull/1122",
-      "status": "open",
-      "updated_at": "2026-09-01T11:24:55Z"
+      "status": "merged",
+      "updated_at": "2026-09-01T11:47:22Z"
     },
     {
       "repo": "farion1231/cc-switch",
@@ -163,6 +163,14 @@
   ],
   "selected_external": [
     {
+      "repo": "alibaba/open-code-review",
+      "number": 1122,
+      "title": "fix(rules): route JavaScript module files to JS rules",
+      "url": "https://github.com/alibaba/open-code-review/pull/1122",
+      "status": "merged",
+      "updated_at": "2026-09-01T11:47:22Z"
+    },
+    {
       "repo": "farion1231/cc-switch",
       "number": 6851,
       "title": "fix(codex): mark glm-5.3 as text-only",
@@ -177,15 +185,7 @@
       "url": "https://github.com/omdsh-dev/DSH-better-sidebar/pull/301",
       "status": "merged",
       "updated_at": "2026-08-22T15:11:28Z"
-    },
-    {
-      "repo": "pandas-dev/pandas",
-      "number": 66739,
-      "title": "CLN: share checked integer extern declarations",
-      "url": "https://github.com/pandas-dev/pandas/pull/66739",
-      "status": "merged",
-      "updated_at": "2026-08-14T01:53:24Z"
     }
   ],
-  "updated_at": "2026-09-01T19:46:38.667966+08:00"
+  "updated_at": "2026-09-01T20:00:26.782649+08:00"
 }

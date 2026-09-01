@@ -28,11 +28,11 @@
 
 **Outside my repos**
 
+- ✓ merged → [alibaba/open-code-review #1122](https://github.com/alibaba/open-code-review/pull/1122) · fix(rules): route JavaScript module files to JS rules
 - ✓ merged → [farion1231/cc-switch #6851](https://github.com/farion1231/cc-switch/pull/6851) · fix(codex): mark glm-5.3 as text-only
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
-- ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 
-<sub>↻ refreshed 1 Sep 2026 · 19:46 SGT</sub>
+<sub>↻ refreshed 1 Sep 2026 · 20:00 SGT</sub>
 <!-- profile-live:end -->
 
 ---
