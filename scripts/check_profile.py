@@ -91,8 +91,9 @@ def main() -> None:
         fail("stats card regressed to weak/ambiguous metrics")
     if not re.search(r'data-testid="percentile-rank-value"[^>]*>\s*\d+%', stats, flags=re.S):
         fail("stats card merge-rate ring is missing")
-    if "Most Commit Language" not in commits or "gpsc-root" not in commits:
-        fail("commit-language card did not come from github-profile-summary-cards")
+    for token in ("@keyframes gpsc-fade", 'class="arc"', "gpsc-item"):
+        if token not in commits:
+            fail(f"commit-language summary card missing {token}")
     contrast = ["#FFD43B", "#00C2FF", "#A855F7", "#3B82F6", "#FF6B6B"]
     if sum(color in commits for color in contrast) < 5:
         fail("commit-language card lost its high-contrast palette")
