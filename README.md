@@ -1,4 +1,4 @@
-<!-- profile-readme:v8 -->
+<!-- profile-readme:v9 -->
 <div align="center">
   <h1>Xinchen Lee <img src="https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif" width="30" alt="waving hand"></h1>
   <p><strong>AI, systems, and things I felt like building.</strong></p>
@@ -19,8 +19,11 @@
 
 <!-- profile-live:start -->
 <p align="center">
-  <img width="49%" src="./assets/stats-card.svg" alt="GitHub activity statistics.">
-  <img width="49%" src="./assets/languages-card.svg" alt="Most used languages across public GitHub repositories.">
+  <img width="100%" src="./assets/profile-details.svg" alt="GitHub profile details and contribution trend.">
+</p>
+<p align="center">
+  <img width="57%" src="./assets/stats-card.svg" alt="GitHub activity statistics.">
+  <img width="41%" src="./assets/commit-languages-card.svg" alt="Most used languages across GitHub commits.">
 </p>
 
 **Outside my repos**
