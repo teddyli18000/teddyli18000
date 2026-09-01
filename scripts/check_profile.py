@@ -89,6 +89,8 @@ def main() -> None:
             fail(f"stats card missing {token}")
     if "Contributed to (last year):" in stats or re.search(r'percentile-top-header"[^>]*>\s*Top', stats, flags=re.S):
         fail("stats card regressed to weak/ambiguous metrics")
+    if not re.search(r'data-testid="commits"[^>]*>\s*[1-9][0-9,]*', stats, flags=re.S):
+        fail("stats card must retain a nonzero commit count")
     if not re.search(r'data-testid="percentile-rank-value"[^>]*>\s*\d+%', stats, flags=re.S):
         fail("stats card merge-rate ring is missing")
     for token in ("@keyframes gpsc-fade", 'class="arc"', "gpsc-item"):
@@ -138,6 +140,7 @@ def main() -> None:
         'DURATION: "2.4"',
         'UTC_OFFSET: "8"',
         "NAME: Xinchen Lee",
+        "/tmp/profile-previous-stats-card.svg",
         "assets/profile-details.svg",
         "assets/commit-languages-card.svg",
         'cron: "2,12,22,32,42,52 * * * *"',
@@ -150,7 +153,7 @@ def main() -> None:
     if not POLISHER.is_file():
         fail("card polisher is missing")
     polisher = POLISHER.read_text(encoding="utf-8")
-    for token in ("Total Contributions:", "MERGED", "publish_profile_details", "publish_commit_languages", "SUMMARY_THEME"):
+    for token in ("Total Contributions:", "MERGED", "last_good_commits", "publish_profile_details", "publish_commit_languages", "SUMMARY_THEME"):
         if token not in polisher:
             fail(f"card polisher missing {token}")
 
