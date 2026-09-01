@@ -1,12 +1,20 @@
 {
   "external": [
     {
+      "repo": "vn7n24fzkq/github-profile-summary-cards",
+      "number": 330,
+      "title": "fix: make language aliases case-insensitive",
+      "url": "https://github.com/vn7n24fzkq/github-profile-summary-cards/pull/330",
+      "status": "open",
+      "updated_at": "2026-09-01T11:15:58Z"
+    },
+    {
       "repo": "alibaba/open-code-review",
       "number": 1122,
       "title": "fix(rules): route JavaScript module files to JS rules",
       "url": "https://github.com/alibaba/open-code-review/pull/1122",
       "status": "open",
-      "updated_at": "2026-08-31T23:19:02Z"
+      "updated_at": "2026-09-01T11:24:55Z"
     },
     {
       "repo": "farion1231/cc-switch",
@@ -14,7 +22,7 @@
       "title": "fix(settings): avoid launching OpenCode Desktop during env check",
       "url": "https://github.com/farion1231/cc-switch/pull/7027",
       "status": "open",
-      "updated_at": "2026-09-01T07:31:36Z"
+      "updated_at": "2026-09-01T07:39:19Z"
     },
     {
       "repo": "nelvko/clash-for-linux-install",
@@ -179,5 +187,5 @@
       "updated_at": "2026-08-14T01:53:24Z"
     }
   ],
-  "updated_at": "2026-09-01T15:38:08.711778+08:00"
+  "updated_at": "2026-09-01T19:46:38.667966+08:00"
 }
