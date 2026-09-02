@@ -8,8 +8,8 @@
         role="img"
         aria-labelledby="descId"
       >
-        <title id="titleId">GitHub activity, PR merge rate: 65%</title>
-        <desc id="descId">Total Commits: 468, Total PRs: 84, Total PRs Merged: 55, Total Contributions: 539, PR merge rate: 65%</desc>
+        <title id="titleId">GitHub activity, PR merge rate: 66%</title>
+        <desc id="descId">Total Commits: 566, Total PRs: 86, Total PRs Merged: 57, Total Contributions: 601, PR merge rate: 66%</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 86.7678;
+        stroke-dashoffset: 84.7499;
       }
     }
   
@@ -145,7 +145,7 @@
         <text x="-5" y="-12" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" data-testid="percentile-top-header" class="rank-percentile-header">
           MERGED</text>
         <text x="-5" y="12" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" data-testid="percentile-rank-value" class="rank-percentile-text">
-          65%</text>
+          66%</text>
       
         </g>
       </g>
@@ -163,7 +163,7 @@
         x="224.01"
         y="12.5"
         data-testid="commits"
-      >468</text>
+      >566</text>
     </g>
   </g><g transform="translate(0, 29)">
     <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
@@ -178,7 +178,7 @@
         x="224.01"
         y="12.5"
         data-testid="prs"
-      >84</text>
+      >86</text>
     </g>
   </g><g transform="translate(0, 58)">
     <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
@@ -193,7 +193,7 @@
         x="224.01"
         y="12.5"
         data-testid="prs_merged"
-      >55</text>
+      >57</text>
     </g>
   </g><g transform="translate(0, 87)">
     <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
@@ -208,7 +208,7 @@
         x="224.01"
         y="12.5"
         data-testid="contribs"
-      >539</text>
+      >601</text>
     </g>
   </g>
     </svg>
