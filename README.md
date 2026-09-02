@@ -32,7 +32,7 @@
 - ✓ merged → [farion1231/cc-switch #6851](https://github.com/farion1231/cc-switch/pull/6851) · fix(codex): mark glm-5.3 as text-only
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 
-<sub>↻ refreshed 2 Sep 2026 · 23:15 SGT</sub>
+<sub>↻ refreshed 3 Sep 2026 · 02:47 SGT</sub>
 <!-- profile-live:end -->
 
 ---
@@ -90,6 +90,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“Any sufficiently advanced technology is indistinguishable from magic.”</em> — Arthur C. Clarke</sub>
+<sub><em>“Clarity is not the absence of complexity; it is complexity put in its place.”</em></sub>
 <!-- profile-footer:end -->
 </div>
