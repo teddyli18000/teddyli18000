@@ -32,7 +32,7 @@
 - ✓ merged → [farion1231/cc-switch #6851](https://github.com/farion1231/cc-switch/pull/6851) · fix(codex): mark glm-5.3 as text-only
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 
-<sub>↻ refreshed 3 Sep 2026 · 22:45 SGT</sub>
+<sub>↻ refreshed 4 Sep 2026 · 02:08 SGT</sub>
 <!-- profile-live:end -->
 
 ---
@@ -90,6 +90,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“Clarity is not the absence of complexity; it is complexity put in its place.”</em></sub>
+<sub><em>“A good abstraction does not erase difficulty; it gives difficulty a boundary.”</em></sub>
 <!-- profile-footer:end -->
 </div>
