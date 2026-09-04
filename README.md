@@ -32,7 +32,7 @@
 - ✓ merged → [farion1231/cc-switch #6851](https://github.com/farion1231/cc-switch/pull/6851) · fix(codex): mark glm-5.3 as text-only
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 
-<sub>↻ refreshed 5 Sep 2026 · 03:51 SGT</sub>
+<sub>↻ refreshed 5 Sep 2026 · 05:53 SGT</sub>
 <!-- profile-live:end -->
 
 ---
