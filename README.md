@@ -32,7 +32,7 @@
 - ✓ merged → [farion1231/cc-switch #6851](https://github.com/farion1231/cc-switch/pull/6851) · fix(codex): mark glm-5.3 as text-only
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 
-<sub>↻ refreshed 4 Sep 2026 · 22:04 SGT</sub>
+<sub>↻ refreshed 5 Sep 2026 · 01:35 SGT</sub>
 <!-- profile-live:end -->
 
 ---
@@ -90,6 +90,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“A good abstraction does not erase difficulty; it gives difficulty a boundary.”</em></sub>
+<sub><em>“The purpose of computing is insight, not numbers.”</em> — Richard W. Hamming</sub>
 <!-- profile-footer:end -->
 </div>
