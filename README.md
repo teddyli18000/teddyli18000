@@ -32,7 +32,7 @@
 - ✓ merged → [farion1231/cc-switch #6851](https://github.com/farion1231/cc-switch/pull/6851) · fix(codex): mark glm-5.3 as text-only
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 
-<sub>↻ refreshed 5 Sep 2026 · 21:32 SGT</sub>
+<sub>↻ refreshed 6 Sep 2026 · 00:15 SGT</sub>
 <!-- profile-live:end -->
 
 ---
@@ -90,6 +90,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“The purpose of computing is insight, not numbers.”</em> — Richard W. Hamming</sub>
+<sub><em>“What I cannot create, I do not understand.”</em> — Richard Feynman</sub>
 <!-- profile-footer:end -->
 </div>
