@@ -149,8 +149,8 @@
       "number": 181,
       "title": "fix: allow Git write operations through bash tool",
       "url": "https://github.com/Waishnav/devspace/pull/181",
-      "status": "open",
-      "updated_at": "2026-08-23T17:09:50Z"
+      "status": "closed",
+      "updated_at": "2026-09-06T02:51:03Z"
     },
     {
       "repo": "open-city-ai/haidian",
@@ -203,5 +203,5 @@
       "updated_at": "2026-08-22T15:11:28Z"
     }
   ],
-  "updated_at": "2026-09-06T07:59:52.743022+08:00"
+  "updated_at": "2026-09-06T12:10:33.694755+08:00"
 }
