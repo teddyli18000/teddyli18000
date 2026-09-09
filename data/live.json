@@ -1,14 +1,6 @@
 {
   "external": [
     {
-      "repo": "Lampese/codex-switcher",
-      "number": 149,
-      "title": "fix(web): serve requests concurrently",
-      "url": "https://github.com/Lampese/codex-switcher/pull/149",
-      "status": "open",
-      "updated_at": "2026-09-01T13:00:46Z"
-    },
-    {
       "repo": "CreoEnMi-p/CreoEnMi-p.github.io",
       "number": 2,
       "title": "fix: load all memo issue comments",
@@ -81,22 +73,6 @@
       "updated_at": "2026-08-24T05:31:39Z"
     },
     {
-      "repo": "Waishnav/devspace",
-      "number": 230,
-      "title": "fix: reject non-http public base URLs",
-      "url": "https://github.com/Waishnav/devspace/pull/230",
-      "status": "open",
-      "updated_at": "2026-08-23T17:00:36Z"
-    },
-    {
-      "repo": "cline/cline",
-      "number": 13493,
-      "title": "docs: remove outdated diff editing claim",
-      "url": "https://github.com/cline/cline/pull/13493",
-      "status": "open",
-      "updated_at": "2026-08-23T16:53:57Z"
-    },
-    {
       "repo": "BigPizzaV3/CodexPlusPlus",
       "number": 1957,
       "title": "fix(dreamskin): skip invalid community catalog entries",
@@ -113,28 +89,12 @@
       "updated_at": "2026-08-26T18:19:47Z"
     },
     {
-      "repo": "omdsh-dev/DSH-better-sidebar",
-      "number": 301,
-      "title": "fix(git): hide spawned git windows on Windows",
-      "url": "https://github.com/omdsh-dev/DSH-better-sidebar/pull/301",
-      "status": "merged",
-      "updated_at": "2026-08-22T15:11:28Z"
-    },
-    {
       "repo": "zhu1090093659/dsh-web",
       "number": 878,
       "title": "fix(remote-web-ui): preserve out-of-order polled events (#851)",
       "url": "https://github.com/zhu1090093659/dsh-web/pull/878",
       "status": "closed",
       "updated_at": "2026-08-21T15:48:56Z"
-    },
-    {
-      "repo": "anywhere-labs/dsh-desktop",
-      "number": 61,
-      "title": "fix(ci): guard upstream issue lifecycle automation",
-      "url": "https://github.com/anywhere-labs/dsh-desktop/pull/61",
-      "status": "closed",
-      "updated_at": "2026-08-18T15:38:21Z"
     },
     {
       "repo": "pandas-dev/pandas",
@@ -145,36 +105,12 @@
       "updated_at": "2026-08-14T01:53:24Z"
     },
     {
-      "repo": "Waishnav/devspace",
-      "number": 181,
-      "title": "fix: allow Git write operations through bash tool",
-      "url": "https://github.com/Waishnav/devspace/pull/181",
-      "status": "closed",
-      "updated_at": "2026-09-06T02:51:03Z"
-    },
-    {
       "repo": "open-city-ai/haidian",
       "number": 61,
       "title": "投稿：京张元枢｜JING-ZHANG AI KERNEL — 城市 AI 公共内核",
       "url": "https://github.com/open-city-ai/haidian/pull/61",
       "status": "merged",
       "updated_at": "2026-08-07T16:24:08Z"
-    },
-    {
-      "repo": "nexu-io/nexu",
-      "number": 1088,
-      "title": "fix(desktop): localize update fetch-failure message on Windows",
-      "url": "https://github.com/nexu-io/nexu/pull/1088",
-      "status": "closed",
-      "updated_at": "2026-04-30T10:47:59Z"
-    },
-    {
-      "repo": "nexu-io/nexu",
-      "number": 1081,
-      "title": "fix: add missing favicon references to login page",
-      "url": "https://github.com/nexu-io/nexu/pull/1081",
-      "status": "closed",
-      "updated_at": "2026-04-30T10:47:59Z"
     }
   ],
   "selected_external": [
@@ -195,13 +131,13 @@
       "updated_at": "2026-08-31T15:00:39Z"
     },
     {
-      "repo": "omdsh-dev/DSH-better-sidebar",
-      "number": 301,
-      "title": "fix(git): hide spawned git windows on Windows",
-      "url": "https://github.com/omdsh-dev/DSH-better-sidebar/pull/301",
+      "repo": "pandas-dev/pandas",
+      "number": 66739,
+      "title": "CLN: share checked integer extern declarations",
+      "url": "https://github.com/pandas-dev/pandas/pull/66739",
       "status": "merged",
-      "updated_at": "2026-08-22T15:11:28Z"
+      "updated_at": "2026-08-14T01:53:24Z"
     }
   ],
-  "updated_at": "2026-09-09T18:02:09.560717+08:00"
+  "updated_at": "2026-09-09T22:26:37.660362+08:00"
 }
