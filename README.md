@@ -30,9 +30,9 @@
 
 - ✓ merged → [alibaba/open-code-review #1122](https://github.com/alibaba/open-code-review/pull/1122) · fix(rules): route JavaScript module files to JS rules
 - ✓ merged → [farion1231/cc-switch #6851](https://github.com/farion1231/cc-switch/pull/6851) · fix(codex): mark glm-5.3 as text-only
-- ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
+- ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 
-<sub>↻ refreshed 9 Sep 2026 · 22:26 SGT</sub>
+<sub>↻ refreshed 10 Sep 2026 · 01:56 SGT</sub>
 <!-- profile-live:end -->
 
 ---
@@ -90,6 +90,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“Clarity is not the absence of complexity; it is complexity put in its place.”</em></sub>
+<sub><em>“A good abstraction does not erase difficulty; it gives difficulty a boundary.”</em></sub>
 <!-- profile-footer:end -->
 </div>
