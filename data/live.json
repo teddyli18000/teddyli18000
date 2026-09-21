@@ -110,7 +110,7 @@
       "title": "fix(linux): skip udev reload without control socket",
       "url": "https://github.com/AprilNEA/OpenLogi/pull/861",
       "status": "open",
-      "updated_at": "2026-08-26T18:19:47Z"
+      "updated_at": "2026-09-21T11:38:26Z"
     },
     {
       "repo": "omdsh-dev/DSH-better-sidebar",
@@ -203,5 +203,5 @@
       "updated_at": "2026-08-22T15:11:28Z"
     }
   ],
-  "updated_at": "2026-09-21T18:59:44.021439+08:00"
+  "updated_at": "2026-09-22T00:57:34.468157+08:00"
 }
