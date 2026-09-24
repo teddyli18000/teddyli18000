@@ -6,7 +6,7 @@
       "title": "fix(panel): /health 报真实鉴权状态 + 单模型限流(429)在看板可见",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/50",
       "status": "open",
-      "updated_at": "2026-09-23T17:54:11Z"
+      "updated_at": "2026-09-24T01:14:10Z"
     },
     {
       "repo": "Lampese/codex-switcher",
@@ -211,5 +211,5 @@
       "updated_at": "2026-08-22T15:11:28Z"
     }
   ],
-  "updated_at": "2026-09-24T08:47:59.792951+08:00"
+  "updated_at": "2026-09-24T13:32:16.744703+08:00"
 }
