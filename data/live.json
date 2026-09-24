@@ -2,11 +2,19 @@
   "external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 52,
+      "title": "fix(health): 报告实际生效的 API Key 鉴权状态",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/52",
+      "status": "open",
+      "updated_at": "2026-09-24T07:06:37Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 50,
-      "title": "fix(panel): /health 报真实鉴权状态 + 单模型限流(429)在看板可见",
+      "title": "fix(dashboard): 显示单模型限流及恢复时间",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/50",
       "status": "open",
-      "updated_at": "2026-09-24T01:14:10Z"
+      "updated_at": "2026-09-24T06:59:58Z"
     },
     {
       "repo": "Lampese/codex-switcher",
@@ -211,5 +219,5 @@
       "updated_at": "2026-08-22T15:11:28Z"
     }
   ],
-  "updated_at": "2026-09-24T13:32:16.744703+08:00"
+  "updated_at": "2026-09-24T18:28:10.622689+08:00"
 }
