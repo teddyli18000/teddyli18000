@@ -28,11 +28,11 @@
 
 **Outside my repos**
 
+- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #50](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/50) · fix(dashboard): 显示单模型限流及恢复时间
+- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #52](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/52) · fix(health): 报告实际生效的 API Key 鉴权状态
 - ✓ merged → [alibaba/open-code-review #1122](https://github.com/alibaba/open-code-review/pull/1122) · fix(rules): route JavaScript module files to JS rules
-- ✓ merged → [farion1231/cc-switch #6851](https://github.com/farion1231/cc-switch/pull/6851) · fix(codex): mark glm-5.3 as text-only
-- ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 
-<sub>↻ refreshed 24 Sep 2026 · 18:28 SGT</sub>
+<sub>↻ refreshed 24 Sep 2026 · 23:25 SGT</sub>
 <!-- profile-live:end -->
 
 ---
