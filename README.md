@@ -48,7 +48,7 @@
 </td>
 <td width="27%" valign="top">
 <h3>🧭 Current</h3>
-🧠 <strong>Small models</strong><br>
+🧠 <strong>Models</strong><br>
 🧩 <strong>AI tooling</strong><br>
 🤖 <strong>Robotics &amp; perception</strong>
 </td>
