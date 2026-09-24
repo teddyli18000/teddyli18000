@@ -32,7 +32,7 @@
 - ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #52](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/52) · fix(health): 报告实际生效的 API Key 鉴权状态
 - ✓ merged → [alibaba/open-code-review #1122](https://github.com/alibaba/open-code-review/pull/1122) · fix(rules): route JavaScript module files to JS rules
 
-<sub>↻ refreshed 24 Sep 2026 · 23:25 SGT</sub>
+<sub>↻ refreshed 25 Sep 2026 · 03:25 SGT</sub>
 <!-- profile-live:end -->
 
 ---
@@ -90,6 +90,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“What I cannot create, I do not understand.”</em> — Richard Feynman</sub>
+<sub><em>“Simplicity is prerequisite for reliability.”</em> — Edsger W. Dijkstra</sub>
 <!-- profile-footer:end -->
 </div>

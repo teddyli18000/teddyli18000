@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">GitHub activity, PR merge rate: 69%</title>
-        <desc id="descId">Total Commits: 640, Total PRs: 93, Total PRs Merged: 64, Total Contributions: 651, PR merge rate: 69%</desc>
+        <desc id="descId">Total Commits: 639, Total PRs: 93, Total PRs Merged: 64, Total Contributions: 651, PR merge rate: 69%</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -170,7 +170,7 @@
         x="224.01"
         y="12.5"
         data-testid="commits"
-      >640</text>
+      >639</text>
     </g>
   </g><g transform="translate(0, 29)">
     <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
