@@ -2,8 +2,8 @@
 """Refresh the profile's upstream activity list, refresh stamp, and footer.
 
 Generic GitHub statistics come from mature profile-card actions. This script owns
-the profile-specific upstream PR list (every PR authored outside the owner's repos),
-visible refresh timestamp, and footer rotation.
+the profile-specific upstream PR list (every merged PR authored outside the owner's
+repos), visible refresh timestamp, and footer rotation.
 """
 from __future__ import annotations
 
@@ -48,9 +48,9 @@ def api(path: str) -> dict:
 def pull_status(repo: str, item: dict) -> str:
     """Resolve merged/open/draft/closed for one search hit.
 
-    Every outside PR is published, so one flaky detail request must not freeze the
-    whole refresh. Search hits already carry `state` and `pull_request.merged_at`;
-    the per-PR detail only refines an open PR into a draft.
+    Only merged PRs are published, so a transient detail failure must never demote
+    a merged PR: `pull_request.merged_at` from the search hit is authoritative on
+    its own. The per-PR detail only refines an open PR into a draft.
     """
     detail: dict | None = None
     try:
@@ -58,8 +58,7 @@ def pull_status(repo: str, item: dict) -> str:
     except Exception as error:
         print(f"pull detail unavailable for {repo}#{item['number']} ({error}); using search metadata")
 
-    merged = bool(detail.get("merged")) if detail else bool((item.get("pull_request") or {}).get("merged_at"))
-    if merged:
+    if (item.get("pull_request") or {}).get("merged_at") or (detail and detail.get("merged")):
         return "merged"
     if item["state"] == "open" and detail and detail.get("draft"):
         return "draft"
@@ -94,15 +93,11 @@ def fetch_external() -> list[dict]:
     return external
 
 
-def order_external(items: list[dict]) -> list[dict]:
-    """Merged first, then open, draft, closed; newest activity first inside a group."""
-    rank = {"merged": 0, "open": 1, "draft": 2, "closed": 3}
+def published_external(items: list[dict]) -> list[dict]:
+    """The merged PRs only, newest activity first; the profile shows shipped work."""
     return sorted(
-        items,
-        key=lambda item: (
-            rank.get(item["status"], 4),
-            -dt.datetime.fromisoformat(item["updated_at"].replace("Z", "+00:00")).timestamp(),
-        ),
+        (item for item in items if item["status"] == "merged"),
+        key=lambda item: -dt.datetime.fromisoformat(item["updated_at"].replace("Z", "+00:00")).timestamp(),
     )
 
 
@@ -121,9 +116,9 @@ def hour_bucket(value: dt.datetime) -> tuple[int, int, int, int]:
 def last_good() -> tuple[list[dict], list[dict], dt.datetime]:
     snapshot = json.loads(LIVE.read_text(encoding="utf-8"))
     external = snapshot.get("external") or []
-    selected = snapshot.get("selected_external") or order_external(external)
+    selected = snapshot.get("selected_external") or published_external(external)
     if not selected:
-        raise ValueError("live.json does not contain a last-good upstream PR list")
+        raise ValueError("live.json does not contain a last-good merged upstream PR list")
     stamp_raw = snapshot.get("updated_at")
     if not stamp_raw:
         raise ValueError("live.json is missing updated_at")
@@ -134,9 +129,9 @@ def last_good() -> tuple[list[dict], list[dict], dt.datetime]:
 def collect() -> tuple[list[dict], list[dict], dt.datetime, bool, bool]:
     try:
         external = fetch_external()
-        selected = order_external(external)
+        selected = published_external(external)
         if not selected:
-            raise ValueError("no upstream pull requests found")
+            raise ValueError("no merged upstream pull requests found")
         now = dt.datetime.now(SGT)
         try:
             _, previous_selected, previous_stamp = last_good()
@@ -181,6 +176,8 @@ def live_markdown(selected: list[dict], updated: dt.datetime) -> str:
     for item in selected:
         key = f"{item['repo']}#{item['number']}"
         note = notes.get(key, item["title"])
+        # `published_external` only hands over merged PRs; render any other status
+        # honestly so a regression shows up instead of being mislabelled.
         marker = "✓ merged" if item["status"] == "merged" else f"↗ {item['status']}"
         lines.append(f"- {marker} → [{item['repo']} #{item['number']}]({item['url']}) · {note}")
     stamp = updated.strftime("%d %b %Y · %H:%M SGT").lstrip("0")

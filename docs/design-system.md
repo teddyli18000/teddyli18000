@@ -7,7 +7,7 @@ The profile intentionally avoids generated hero artwork. Its visual language is 
 1. **Identity** — name, one-line axis, four compact focus cues.
 2. **Selected work** — one featured project, then two concise shipped utilities.
 3. **Current lines** — quieter exploratory work.
-4. **Open source / live** — three truthful metrics and the complete list of PRs authored outside these repos, refreshed automatically.
+4. **Open source / live** — three truthful metrics and every merged PR authored outside these repos, refreshed automatically.
 5. **Side quests** — personality through odd, real utilities rather than abstract decoration.
 
 ## Rules

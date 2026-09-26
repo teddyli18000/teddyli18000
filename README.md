@@ -35,25 +35,8 @@
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
-- ↗ open → [openclaw/openclaw #128524](https://github.com/openclaw/openclaw/pull/128524) · test(gateway): disable bundled plugins in kernel fixture
-- ↗ open → [AprilNEA/OpenLogi #861](https://github.com/AprilNEA/OpenLogi/pull/861) · fix(linux): skip udev reload without control socket
-- ↗ open → [Lampese/codex-switcher #149](https://github.com/Lampese/codex-switcher/pull/149) · fix(web): serve requests concurrently
-- ↗ open → [CreoEnMi-p/CreoEnMi-p.github.io #2](https://github.com/CreoEnMi-p/CreoEnMi-p.github.io/pull/2) · fix: load all memo issue comments
-- ↗ open → [vn7n24fzkq/github-profile-summary-cards #330](https://github.com/vn7n24fzkq/github-profile-summary-cards/pull/330) · fix: make language aliases case-insensitive
-- ↗ open → [farion1231/cc-switch #7027](https://github.com/farion1231/cc-switch/pull/7027) · fix(settings): avoid launching OpenCode Desktop during env check
-- ↗ open → [nelvko/clash-for-linux-install #620](https://github.com/nelvko/clash-for-linux-install/pull/620) · fix(install): avoid keeping partial downloads
-- ↗ open → [Waishnav/devspace #230](https://github.com/Waishnav/devspace/pull/230) · fix: reject non-http public base URLs
-- ↗ open → [cline/cline #13493](https://github.com/cline/cline/pull/13493) · docs: remove outdated diff editing claim
-- ↗ closed → [Waishnav/devspace #181](https://github.com/Waishnav/devspace/pull/181) · Git write operations through its Bash tool
-- ↗ closed → [ltaoo/wx_channels_download #535](https://github.com/ltaoo/wx_channels_download/pull/535) · fix: match updated finderPcFlow syntax
-- ↗ closed → [openclaw/openclaw #128302](https://github.com/openclaw/openclaw/pull/128302) · fix(feishu): prevent open account DMs from being silently blocked
-- ↗ closed → [BigPizzaV3/CodexPlusPlus #1957](https://github.com/BigPizzaV3/CodexPlusPlus/pull/1957) · fix(dreamskin): skip invalid community catalog entries
-- ↗ closed → [zhu1090093659/dsh-web #878](https://github.com/zhu1090093659/dsh-web/pull/878) · fix(remote-web-ui): preserve out-of-order polled events (#851)
-- ↗ closed → [anywhere-labs/dsh-desktop #61](https://github.com/anywhere-labs/dsh-desktop/pull/61) · fix(ci): guard upstream issue lifecycle automation
-- ↗ closed → [nexu-io/nexu #1088](https://github.com/nexu-io/nexu/pull/1088) · fix(desktop): localize update fetch-failure message on Windows
-- ↗ closed → [nexu-io/nexu #1081](https://github.com/nexu-io/nexu/pull/1081) · fix: add missing favicon references to login page
 
-<sub>↻ refreshed 26 Sep 2026 · 14:45 SGT</sub>
+<sub>↻ refreshed 26 Sep 2026 · 14:55 SGT</sub>
 <!-- profile-live:end -->
 
 ---

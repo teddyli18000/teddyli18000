@@ -106,6 +106,8 @@ def main() -> None:
         fail("live block lost its upstream PR list")
     if len(linked_pulls) != len(set(linked_pulls)):
         fail("live block lists the same upstream PR more than once")
+    if re.search(r"^- ↗ ", live, flags=re.M):
+        fail("live block must only list merged upstream PRs")
     if "Outside my repos" not in live:
         fail("live block lost Outside my repos")
     if not re.search(r"<sub>↻ refreshed \d{1,2} [A-Z][a-z]{2} \d{4} · \d{2}:\d{2} SGT</sub>", live):
@@ -173,13 +175,15 @@ def main() -> None:
     selected = data.get("selected_external") or []
     if not selected or not data.get("updated_at"):
         fail("live.json must retain the published upstream PRs and updated_at")
+    if any(item.get("status") != "merged" for item in selected):
+        fail("live.json must only retain merged upstream PRs")
     if set(linked_pulls) != {item["url"] for item in selected}:
         fail(
             f"live block lists {len(linked_pulls)} upstream PRs but live.json retains {len(selected)}"
         )
 
     generator = GENERATOR.read_text(encoding="utf-8")
-    for token in ("fetch_external", "footer_markdown", "assets/profile-details.svg", "assets/stats-card.svg", "assets/commit-languages-card.svg", "↻ refreshed"):
+    for token in ("fetch_external", "published_external", "footer_markdown", "assets/profile-details.svg", "assets/stats-card.svg", "assets/commit-languages-card.svg", "↻ refreshed"):
         if token not in generator:
             fail(f"generator missing {token}")
 
