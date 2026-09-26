@@ -94,10 +94,19 @@ def fetch_external() -> list[dict]:
 
 
 def published_external(items: list[dict]) -> list[dict]:
-    """The merged PRs only, newest activity first; the profile shows shipped work."""
+    """The merged PRs only, newest activity first; the profile shows shipped work.
+
+    `repo`/`number` break ties so the order is total: two PRs can share an
+    `updated_at`, and an order that depended on the API's result ordering would
+    make `signature()` see phantom changes and commit a new stamp every run.
+    """
     return sorted(
         (item for item in items if item["status"] == "merged"),
-        key=lambda item: -dt.datetime.fromisoformat(item["updated_at"].replace("Z", "+00:00")).timestamp(),
+        key=lambda item: (
+            -dt.datetime.fromisoformat(item["updated_at"].replace("Z", "+00:00")).timestamp(),
+            item["repo"],
+            item["number"],
+        ),
     )
 
 
