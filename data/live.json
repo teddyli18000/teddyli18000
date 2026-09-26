@@ -2,6 +2,14 @@
   "external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 65,
+      "title": "chore(tests): collect the suites under tests/ and run them in CI",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/65",
+      "status": "merged",
+      "updated_at": "2026-09-26T12:33:07Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 64,
       "title": "fix(docker): start the image in LAN mode so it is not an open proxy",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/64",
@@ -212,6 +220,14 @@
   "selected_external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 65,
+      "title": "chore(tests): collect the suites under tests/ and run them in CI",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/65",
+      "status": "merged",
+      "updated_at": "2026-09-26T12:33:07Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 64,
       "title": "fix(docker): start the image in LAN mode so it is not an open proxy",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/64",
@@ -283,5 +299,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-09-26T18:59:11.663411+08:00"
+  "updated_at": "2026-09-26T22:56:31.316575+08:00"
 }
