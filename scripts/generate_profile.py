@@ -2,7 +2,8 @@
 """Refresh the profile's upstream activity list, refresh stamp, and footer.
 
 Generic GitHub statistics come from mature profile-card actions. This script owns
-the profile-specific upstream PR list, visible refresh timestamp, and footer rotation.
+the profile-specific upstream PR list (every PR authored outside the owner's repos),
+visible refresh timestamp, and footer rotation.
 """
 from __future__ import annotations
 
@@ -23,6 +24,8 @@ LIVE = ROOT / "data" / "live.json"
 LOGIN = os.environ.get("PROFILE_LOGIN", "teddyli18000")
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 SGT = dt.timezone(dt.timedelta(hours=8), name="SGT")
+PAGE_SIZE = 100
+MAX_PAGES = 10  # GitHub search caps at 1000 results; ten full pages reach it
 
 
 def api(path: str) -> dict:
@@ -42,29 +45,57 @@ def api(path: str) -> dict:
         return json.loads(proc.stdout)
 
 
+def pull_status(repo: str, item: dict) -> str:
+    """Resolve merged/open/draft/closed for one search hit.
+
+    Every outside PR is published, so one flaky detail request must not freeze the
+    whole refresh. Search hits already carry `state` and `pull_request.merged_at`;
+    the per-PR detail only refines an open PR into a draft.
+    """
+    detail: dict | None = None
+    try:
+        detail = api(f"repos/{repo}/pulls/{item['number']}")
+    except Exception as error:
+        print(f"pull detail unavailable for {repo}#{item['number']} ({error}); using search metadata")
+
+    merged = bool(detail.get("merged")) if detail else bool((item.get("pull_request") or {}).get("merged_at"))
+    if merged:
+        return "merged"
+    if item["state"] == "open" and detail and detail.get("draft"):
+        return "draft"
+    return item["state"]
+
+
 def fetch_external() -> list[dict]:
-    query_string = urllib.parse.urlencode({"q": f"author:{LOGIN} type:pr -user:{LOGIN}", "per_page": 50})
-    pulls = api(f"search/issues?{query_string}")
+    """Every PR the owner authored outside their own repos, across all search pages."""
+    query_string = urllib.parse.urlencode(
+        {"q": f"author:{LOGIN} type:pr -user:{LOGIN}", "per_page": PAGE_SIZE}
+    )
+    hits: list[dict] = []
+    for page in range(1, MAX_PAGES + 1):
+        batch = api(f"search/issues?{query_string}&page={page}").get("items") or []
+        hits.extend(batch)
+        if len(batch) < PAGE_SIZE:
+            break
+
     external: list[dict] = []
-    for item in pulls["items"]:
+    for item in hits:
         repo = item["repository_url"].split("/repos/", 1)[1]
-        number = item["number"]
-        detail = api(f"repos/{repo}/pulls/{number}")
-        status = "merged" if detail.get("merged") else ("draft" if detail.get("draft") else item["state"])
         external.append(
             {
                 "repo": repo,
-                "number": number,
+                "number": item["number"],
                 "title": item["title"],
                 "url": item["html_url"],
-                "status": status,
+                "status": pull_status(repo, item),
                 "updated_at": item["updated_at"],
             }
         )
     return external
 
 
-def choose_external(items: list[dict]) -> list[dict]:
+def order_external(items: list[dict]) -> list[dict]:
+    """Merged first, then open, draft, closed; newest activity first inside a group."""
     rank = {"merged": 0, "open": 1, "draft": 2, "closed": 3}
     return sorted(
         items,
@@ -72,7 +103,7 @@ def choose_external(items: list[dict]) -> list[dict]:
             rank.get(item["status"], 4),
             -dt.datetime.fromisoformat(item["updated_at"].replace("Z", "+00:00")).timestamp(),
         ),
-    )[:3]
+    )
 
 
 def signature(items: list[dict]) -> list[dict]:
@@ -90,9 +121,9 @@ def hour_bucket(value: dt.datetime) -> tuple[int, int, int, int]:
 def last_good() -> tuple[list[dict], list[dict], dt.datetime]:
     snapshot = json.loads(LIVE.read_text(encoding="utf-8"))
     external = snapshot.get("external") or []
-    selected = snapshot.get("selected_external") or choose_external(external)
-    if len(selected) != 3:
-        raise ValueError("live.json does not contain three last-good upstream PRs")
+    selected = snapshot.get("selected_external") or order_external(external)
+    if not selected:
+        raise ValueError("live.json does not contain a last-good upstream PR list")
     stamp_raw = snapshot.get("updated_at")
     if not stamp_raw:
         raise ValueError("live.json is missing updated_at")
@@ -103,9 +134,9 @@ def last_good() -> tuple[list[dict], list[dict], dt.datetime]:
 def collect() -> tuple[list[dict], list[dict], dt.datetime, bool, bool]:
     try:
         external = fetch_external()
-        selected = choose_external(external)
-        if len(selected) != 3:
-            raise ValueError(f"expected three upstream pull requests, got {len(selected)}")
+        selected = order_external(external)
+        if not selected:
+            raise ValueError("no upstream pull requests found")
         now = dt.datetime.now(SGT)
         try:
             _, previous_selected, previous_stamp = last_good()
@@ -180,7 +211,11 @@ def main() -> None:
             "selected_external": selected,
             "updated_at": updated.isoformat(),
         }
-        LIVE.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        LIVE.write_text(
+            json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+            newline="\n",
+        )
 
     state = "Updated" if changed else ("Checked" if fresh else "Retained")
     print(f"{state} {len(external)} upstream PRs; showing {len(selected)} at {updated.isoformat()}")

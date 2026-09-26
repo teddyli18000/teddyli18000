@@ -7,7 +7,7 @@ The profile intentionally avoids generated hero artwork. Its visual language is 
 1. **Identity** — name, one-line axis, four compact focus cues.
 2. **Selected work** — one featured project, then two concise shipped utilities.
 3. **Current lines** — quieter exploratory work.
-4. **Open source / live** — three truthful metrics and three external PRs, refreshed automatically.
+4. **Open source / live** — three truthful metrics and the complete list of PRs authored outside these repos, refreshed automatically.
 5. **Side quests** — personality through odd, real utilities rather than abstract decoration.
 
 ## Rules
@@ -20,4 +20,4 @@ The profile intentionally avoids generated hero artwork. Its visual language is 
 
 ## Automation
 
-`.github/workflows/refresh-profile.yml` runs every day at 00:17 SGT and can also be dispatched manually. It refreshes GitHub contribution data, upstream PRs, the freshness timestamp, and one date-seeded footer line. Pull requests run the same generator/checker without committing.
+`.github/workflows/profile-refresh.yml` runs on several off-peak windows per hour and can also be dispatched manually. It refreshes GitHub contribution data, the full upstream PR list, the freshness timestamp, and one date-seeded footer line; the visible timestamp advances at most once per SGT hour. Pull requests run the same generator/checker without committing.

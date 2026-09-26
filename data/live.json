@@ -93,7 +93,7 @@
       "number": 128302,
       "title": "fix(feishu): prevent open account DMs from being silently blocked",
       "url": "https://github.com/openclaw/openclaw/pull/128302",
-      "status": "draft",
+      "status": "closed",
       "updated_at": "2026-08-24T05:31:39Z"
     },
     {
@@ -217,7 +217,175 @@
       "url": "https://github.com/alibaba/open-code-review/pull/1122",
       "status": "merged",
       "updated_at": "2026-09-01T11:47:22Z"
+    },
+    {
+      "repo": "farion1231/cc-switch",
+      "number": 6851,
+      "title": "fix(codex): mark glm-5.3 as text-only",
+      "url": "https://github.com/farion1231/cc-switch/pull/6851",
+      "status": "merged",
+      "updated_at": "2026-08-31T15:00:39Z"
+    },
+    {
+      "repo": "omdsh-dev/DSH-better-sidebar",
+      "number": 301,
+      "title": "fix(git): hide spawned git windows on Windows",
+      "url": "https://github.com/omdsh-dev/DSH-better-sidebar/pull/301",
+      "status": "merged",
+      "updated_at": "2026-08-22T15:11:28Z"
+    },
+    {
+      "repo": "pandas-dev/pandas",
+      "number": 66739,
+      "title": "CLN: share checked integer extern declarations",
+      "url": "https://github.com/pandas-dev/pandas/pull/66739",
+      "status": "merged",
+      "updated_at": "2026-08-14T01:53:24Z"
+    },
+    {
+      "repo": "open-city-ai/haidian",
+      "number": 61,
+      "title": "投稿：京张元枢｜JING-ZHANG AI KERNEL — 城市 AI 公共内核",
+      "url": "https://github.com/open-city-ai/haidian/pull/61",
+      "status": "merged",
+      "updated_at": "2026-08-07T16:24:08Z"
+    },
+    {
+      "repo": "openclaw/openclaw",
+      "number": 128524,
+      "title": "test(gateway): disable bundled plugins in kernel fixture",
+      "url": "https://github.com/openclaw/openclaw/pull/128524",
+      "status": "open",
+      "updated_at": "2026-09-22T10:56:12Z"
+    },
+    {
+      "repo": "AprilNEA/OpenLogi",
+      "number": 861,
+      "title": "fix(linux): skip udev reload without control socket",
+      "url": "https://github.com/AprilNEA/OpenLogi/pull/861",
+      "status": "open",
+      "updated_at": "2026-09-21T11:38:26Z"
+    },
+    {
+      "repo": "Lampese/codex-switcher",
+      "number": 149,
+      "title": "fix(web): serve requests concurrently",
+      "url": "https://github.com/Lampese/codex-switcher/pull/149",
+      "status": "open",
+      "updated_at": "2026-09-01T13:00:46Z"
+    },
+    {
+      "repo": "CreoEnMi-p/CreoEnMi-p.github.io",
+      "number": 2,
+      "title": "fix: load all memo issue comments",
+      "url": "https://github.com/CreoEnMi-p/CreoEnMi-p.github.io/pull/2",
+      "status": "open",
+      "updated_at": "2026-09-01T12:29:29Z"
+    },
+    {
+      "repo": "vn7n24fzkq/github-profile-summary-cards",
+      "number": 330,
+      "title": "fix: make language aliases case-insensitive",
+      "url": "https://github.com/vn7n24fzkq/github-profile-summary-cards/pull/330",
+      "status": "open",
+      "updated_at": "2026-09-01T11:15:58Z"
+    },
+    {
+      "repo": "farion1231/cc-switch",
+      "number": 7027,
+      "title": "fix(settings): avoid launching OpenCode Desktop during env check",
+      "url": "https://github.com/farion1231/cc-switch/pull/7027",
+      "status": "open",
+      "updated_at": "2026-09-01T07:39:19Z"
+    },
+    {
+      "repo": "nelvko/clash-for-linux-install",
+      "number": 620,
+      "title": "fix(install): avoid keeping partial downloads",
+      "url": "https://github.com/nelvko/clash-for-linux-install/pull/620",
+      "status": "open",
+      "updated_at": "2026-08-26T14:40:49Z"
+    },
+    {
+      "repo": "Waishnav/devspace",
+      "number": 230,
+      "title": "fix: reject non-http public base URLs",
+      "url": "https://github.com/Waishnav/devspace/pull/230",
+      "status": "open",
+      "updated_at": "2026-08-23T17:00:36Z"
+    },
+    {
+      "repo": "cline/cline",
+      "number": 13493,
+      "title": "docs: remove outdated diff editing claim",
+      "url": "https://github.com/cline/cline/pull/13493",
+      "status": "open",
+      "updated_at": "2026-08-23T16:53:57Z"
+    },
+    {
+      "repo": "Waishnav/devspace",
+      "number": 181,
+      "title": "fix: allow Git write operations through bash tool",
+      "url": "https://github.com/Waishnav/devspace/pull/181",
+      "status": "closed",
+      "updated_at": "2026-09-06T02:51:03Z"
+    },
+    {
+      "repo": "ltaoo/wx_channels_download",
+      "number": 535,
+      "title": "fix: match updated finderPcFlow syntax",
+      "url": "https://github.com/ltaoo/wx_channels_download/pull/535",
+      "status": "closed",
+      "updated_at": "2026-08-25T04:12:34Z"
+    },
+    {
+      "repo": "openclaw/openclaw",
+      "number": 128302,
+      "title": "fix(feishu): prevent open account DMs from being silently blocked",
+      "url": "https://github.com/openclaw/openclaw/pull/128302",
+      "status": "closed",
+      "updated_at": "2026-08-24T05:31:39Z"
+    },
+    {
+      "repo": "BigPizzaV3/CodexPlusPlus",
+      "number": 1957,
+      "title": "fix(dreamskin): skip invalid community catalog entries",
+      "url": "https://github.com/BigPizzaV3/CodexPlusPlus/pull/1957",
+      "status": "closed",
+      "updated_at": "2026-08-23T18:16:26Z"
+    },
+    {
+      "repo": "zhu1090093659/dsh-web",
+      "number": 878,
+      "title": "fix(remote-web-ui): preserve out-of-order polled events (#851)",
+      "url": "https://github.com/zhu1090093659/dsh-web/pull/878",
+      "status": "closed",
+      "updated_at": "2026-08-21T15:48:56Z"
+    },
+    {
+      "repo": "anywhere-labs/dsh-desktop",
+      "number": 61,
+      "title": "fix(ci): guard upstream issue lifecycle automation",
+      "url": "https://github.com/anywhere-labs/dsh-desktop/pull/61",
+      "status": "closed",
+      "updated_at": "2026-08-18T15:38:21Z"
+    },
+    {
+      "repo": "nexu-io/nexu",
+      "number": 1088,
+      "title": "fix(desktop): localize update fetch-failure message on Windows",
+      "url": "https://github.com/nexu-io/nexu/pull/1088",
+      "status": "closed",
+      "updated_at": "2026-04-30T10:47:59Z"
+    },
+    {
+      "repo": "nexu-io/nexu",
+      "number": 1081,
+      "title": "fix: add missing favicon references to login page",
+      "url": "https://github.com/nexu-io/nexu/pull/1081",
+      "status": "closed",
+      "updated_at": "2026-04-30T10:47:59Z"
     }
   ],
-  "updated_at": "2026-09-26T13:56:37.940790+08:00"
+  "updated_at": "2026-09-26T14:45:26.157048+08:00"
 }

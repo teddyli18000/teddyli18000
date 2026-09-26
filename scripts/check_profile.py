@@ -101,8 +101,11 @@ def main() -> None:
         fail("commit-language card lost its high-contrast palette")
 
     live = readme.split("<!-- profile-live:start -->", 1)[1].split("<!-- profile-live:end -->", 1)[0]
-    if len(re.findall(r"https://github\.com/[^)\s]+/pull/\d+", live)) != 3:
-        fail("live block must list exactly three upstream PRs")
+    linked_pulls = re.findall(r"https://github\.com/[^)\s]+/pull/\d+", live)
+    if not linked_pulls:
+        fail("live block lost its upstream PR list")
+    if len(linked_pulls) != len(set(linked_pulls)):
+        fail("live block lists the same upstream PR more than once")
     if "Outside my repos" not in live:
         fail("live block lost Outside my repos")
     if not re.search(r"<sub>↻ refreshed \d{1,2} [A-Z][a-z]{2} \d{4} · \d{2}:\d{2} SGT</sub>", live):
@@ -167,8 +170,13 @@ def main() -> None:
             fail(f"snake workflow missing {token}")
 
     data = json.loads(LIVE.read_text(encoding="utf-8"))
-    if len(data.get("selected_external", [])) != 3 or not data.get("updated_at"):
-        fail("live.json must retain three selected upstream PRs and updated_at")
+    selected = data.get("selected_external") or []
+    if not selected or not data.get("updated_at"):
+        fail("live.json must retain the published upstream PRs and updated_at")
+    if set(linked_pulls) != {item["url"] for item in selected}:
+        fail(
+            f"live block lists {len(linked_pulls)} upstream PRs but live.json retains {len(selected)}"
+        )
 
     generator = GENERATOR.read_text(encoding="utf-8")
     for token in ("fetch_external", "footer_markdown", "assets/profile-details.svg", "assets/stats-card.svg", "assets/commit-languages-card.svg", "↻ refreshed"):
