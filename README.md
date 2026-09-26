@@ -28,6 +28,8 @@
 
 **Outside my repos**
 
+- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #64](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/64) · fix(docker): start the image in LAN mode so it is not an open proxy
+- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #63](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/63) · fix(dashboard): keep the realm view when an account action finishes
 - ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #50](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/50) · fix(dashboard): 显示单模型限流及恢复时间
 - ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #52](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/52) · fix(health): 报告实际生效的 API Key 鉴权状态
 - ✓ merged → [alibaba/open-code-review #1122](https://github.com/alibaba/open-code-review/pull/1122) · fix(rules): route JavaScript module files to JS rules
@@ -36,7 +38,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 26 Sep 2026 · 15:15 SGT</sub>
+<sub>↻ refreshed 26 Sep 2026 · 18:59 SGT</sub>
 <!-- profile-live:end -->
 
 ---

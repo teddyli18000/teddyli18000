@@ -2,6 +2,22 @@
   "external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 64,
+      "title": "fix(docker): start the image in LAN mode so it is not an open proxy",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/64",
+      "status": "merged",
+      "updated_at": "2026-09-26T10:11:18Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 63,
+      "title": "fix(dashboard): keep the realm view when an account action finishes",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/63",
+      "status": "merged",
+      "updated_at": "2026-09-26T10:11:17Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 52,
       "title": "fix(health): 报告实际生效的 API Key 鉴权状态",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/52",
@@ -196,6 +212,22 @@
   "selected_external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 64,
+      "title": "fix(docker): start the image in LAN mode so it is not an open proxy",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/64",
+      "status": "merged",
+      "updated_at": "2026-09-26T10:11:18Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 63,
+      "title": "fix(dashboard): keep the realm view when an account action finishes",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/63",
+      "status": "merged",
+      "updated_at": "2026-09-26T10:11:17Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 50,
       "title": "fix(dashboard): 显示单模型限流及恢复时间",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/50",
@@ -251,5 +283,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-09-26T15:15:02.965004+08:00"
+  "updated_at": "2026-09-26T18:59:11.663411+08:00"
 }
