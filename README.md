@@ -39,7 +39,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 27 Sep 2026 · 21:21 SGT</sub>
+<sub>↻ refreshed 28 Sep 2026 · 01:50 SGT</sub>
 <!-- profile-live:end -->
 
 ---
@@ -97,6 +97,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“Clarity is not the absence of complexity; it is complexity put in its place.”</em></sub>
+<sub><em>“A good abstraction does not erase difficulty; it gives difficulty a boundary.”</em></sub>
 <!-- profile-footer:end -->
 </div>
