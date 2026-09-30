@@ -39,7 +39,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 30 Sep 2026 · 07:07 SGT</sub>
+<sub>↻ refreshed 30 Sep 2026 · 10:04 SGT</sub>
 <!-- profile-live:end -->
 
 ---
