@@ -45,8 +45,8 @@
       "number": 149,
       "title": "fix(web): serve requests concurrently",
       "url": "https://github.com/Lampese/codex-switcher/pull/149",
-      "status": "open",
-      "updated_at": "2026-09-01T13:00:46Z"
+      "status": "closed",
+      "updated_at": "2026-09-30T08:47:48Z"
     },
     {
       "repo": "CreoEnMi-p/CreoEnMi-p.github.io",
@@ -299,5 +299,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-09-30T16:28:31.118935+08:00"
+  "updated_at": "2026-09-30T23:09:58.299960+08:00"
 }
