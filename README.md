@@ -28,6 +28,7 @@
 
 **Outside my repos**
 
+- ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 - ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #65](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/65) · chore(tests): collect the suites under tests/ and run them in CI
 - ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #64](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/64) · fix(docker): start the image in LAN mode so it is not an open proxy
 - ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #63](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/63) · fix(dashboard): keep the realm view when an account action finishes
@@ -35,11 +36,10 @@
 - ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #52](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/52) · fix(health): 报告实际生效的 API Key 鉴权状态
 - ✓ merged → [alibaba/open-code-review #1122](https://github.com/alibaba/open-code-review/pull/1122) · fix(rules): route JavaScript module files to JS rules
 - ✓ merged → [farion1231/cc-switch #6851](https://github.com/farion1231/cc-switch/pull/6851) · fix(codex): mark glm-5.3 as text-only
-- ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 1 Oct 2026 · 10:25 SGT</sub>
+<sub>↻ refreshed 1 Oct 2026 · 17:18 SGT</sub>
 <!-- profile-live:end -->
 
 ---
