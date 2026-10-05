@@ -2,6 +2,38 @@
   "external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 120,
+      "title": "fix(slots): keep a known exit when the geo lookup fails, and keep the auto label out of the name",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/120",
+      "status": "open",
+      "updated_at": "2026-10-05T17:22:11Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 119,
+      "title": "feat(usage): record the reasoning effort each request ran at",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/119",
+      "status": "open",
+      "updated_at": "2026-10-05T17:02:59Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 118,
+      "title": "fix(dashboard): the multiplier badge follows the fetched value",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/118",
+      "status": "open",
+      "updated_at": "2026-10-05T16:43:05Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 117,
+      "title": "fix(models): let the live catalogue own the reasoning efforts",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/117",
+      "status": "open",
+      "updated_at": "2026-10-05T16:25:57Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 65,
       "title": "chore(tests): collect the suites under tests/ and run them in CI",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/65",
@@ -299,5 +331,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-05T16:33:43.312603+08:00"
+  "updated_at": "2026-10-06T01:24:06.487456+08:00"
 }
