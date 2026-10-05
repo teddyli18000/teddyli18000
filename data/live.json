@@ -6,7 +6,7 @@
       "title": "fix(slots): keep a known exit when the geo lookup fails, and keep the auto label out of the name",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/120",
       "status": "open",
-      "updated_at": "2026-10-05T17:22:11Z"
+      "updated_at": "2026-10-05T17:31:18Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
@@ -14,7 +14,7 @@
       "title": "feat(usage): record the reasoning effort each request ran at",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/119",
       "status": "open",
-      "updated_at": "2026-10-05T17:02:59Z"
+      "updated_at": "2026-10-05T17:25:52Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
@@ -22,7 +22,7 @@
       "title": "fix(dashboard): the multiplier badge follows the fetched value",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/118",
       "status": "open",
-      "updated_at": "2026-10-05T16:43:05Z"
+      "updated_at": "2026-10-05T17:25:35Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
@@ -331,5 +331,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-06T01:24:06.487456+08:00"
+  "updated_at": "2026-10-06T07:17:40.977686+08:00"
 }
