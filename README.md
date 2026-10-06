@@ -28,6 +28,10 @@
 
 **Outside my repos**
 
+- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #120](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/120) · fix(slots): keep a known exit when the geo lookup fails, and keep the auto label out of the name
+- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #119](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/119) · feat(usage): record the reasoning effort each request ran at
+- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #118](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/118) · fix(dashboard): the multiplier badge follows the fetched value
+- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #117](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/117) · fix(models): let the live catalogue own the reasoning efforts
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 - ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #65](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/65) · chore(tests): collect the suites under tests/ and run them in CI
 - ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #64](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/64) · fix(docker): start the image in LAN mode so it is not an open proxy
@@ -39,7 +43,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 6 Oct 2026 · 11:07 SGT</sub>
+<sub>↻ refreshed 6 Oct 2026 · 18:11 SGT</sub>
 <!-- profile-live:end -->
 
 ---

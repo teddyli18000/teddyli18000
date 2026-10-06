@@ -5,32 +5,32 @@
       "number": 120,
       "title": "fix(slots): keep a known exit when the geo lookup fails, and keep the auto label out of the name",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/120",
-      "status": "open",
-      "updated_at": "2026-10-05T17:31:18Z"
+      "status": "merged",
+      "updated_at": "2026-10-06T03:13:15Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 119,
       "title": "feat(usage): record the reasoning effort each request ran at",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/119",
-      "status": "open",
-      "updated_at": "2026-10-05T17:25:52Z"
+      "status": "merged",
+      "updated_at": "2026-10-06T03:13:03Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 118,
       "title": "fix(dashboard): the multiplier badge follows the fetched value",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/118",
-      "status": "open",
-      "updated_at": "2026-10-05T17:25:35Z"
+      "status": "merged",
+      "updated_at": "2026-10-06T03:11:07Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 117,
       "title": "fix(models): let the live catalogue own the reasoning efforts",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/117",
-      "status": "open",
-      "updated_at": "2026-10-05T16:25:57Z"
+      "status": "merged",
+      "updated_at": "2026-10-06T03:10:51Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
@@ -251,6 +251,38 @@
   ],
   "selected_external": [
     {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 120,
+      "title": "fix(slots): keep a known exit when the geo lookup fails, and keep the auto label out of the name",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/120",
+      "status": "merged",
+      "updated_at": "2026-10-06T03:13:15Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 119,
+      "title": "feat(usage): record the reasoning effort each request ran at",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/119",
+      "status": "merged",
+      "updated_at": "2026-10-06T03:13:03Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 118,
+      "title": "fix(dashboard): the multiplier badge follows the fetched value",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/118",
+      "status": "merged",
+      "updated_at": "2026-10-06T03:11:07Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 117,
+      "title": "fix(models): let the live catalogue own the reasoning efforts",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/117",
+      "status": "merged",
+      "updated_at": "2026-10-06T03:10:51Z"
+    },
+    {
       "repo": "omdsh-dev/DSH-better-sidebar",
       "number": 301,
       "title": "fix(git): hide spawned git windows on Windows",
@@ -331,5 +363,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-06T11:07:17.761018+08:00"
+  "updated_at": "2026-10-06T18:11:23.173129+08:00"
 }
