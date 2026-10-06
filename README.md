@@ -43,7 +43,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 6 Oct 2026 · 18:11 SGT</sub>
+<sub>↻ refreshed 7 Oct 2026 · 00:49 SGT</sub>
 <!-- profile-live:end -->
 
 ---
@@ -101,6 +101,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“What I cannot create, I do not understand.”</em> — Richard Feynman</sub>
+<sub><em>“Simplicity is prerequisite for reliability.”</em> — Edsger W. Dijkstra</sub>
 <!-- profile-footer:end -->
 </div>
