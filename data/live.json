@@ -142,7 +142,7 @@
       "title": "test(gateway): disable bundled plugins in kernel fixture",
       "url": "https://github.com/openclaw/openclaw/pull/128524",
       "status": "open",
-      "updated_at": "2026-09-22T10:56:12Z"
+      "updated_at": "2026-10-07T05:24:54Z"
     },
     {
       "repo": "openclaw/openclaw",
@@ -363,5 +363,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-07T08:48:58.455449+08:00"
+  "updated_at": "2026-10-07T14:36:08.142301+08:00"
 }
