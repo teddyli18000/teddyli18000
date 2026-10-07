@@ -43,7 +43,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 7 Oct 2026 · 21:54 SGT</sub>
+<sub>↻ refreshed 8 Oct 2026 · 03:47 SGT</sub>
 <!-- profile-live:end -->
 
 ---
@@ -101,6 +101,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“Simplicity is prerequisite for reliability.”</em> — Edsger W. Dijkstra</sub>
+<sub><em>“Any sufficiently advanced technology is indistinguishable from magic.”</em> — Arthur C. Clarke</sub>
 <!-- profile-footer:end -->
 </div>
