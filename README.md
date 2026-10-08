@@ -26,24 +26,16 @@
   <img width="41%" src="./assets/commit-languages-card.svg" alt="Most used languages across GitHub commits.">
 </p>
 
-**Outside my repos**
+**Outside my repos · selected**
 
-- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #120](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/120) · fix(slots): keep a known exit when the geo lookup fails, and keep the auto label out of the name
-- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #119](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/119) · feat(usage): record the reasoning effort each request ran at
-- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #118](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/118) · fix(dashboard): the multiplier badge follows the fetched value
-- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #117](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/117) · fix(models): let the live catalogue own the reasoning efforts
+- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #181](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/181) · test(ci): add per-suite timeouts, process cleanup, and diagnostics
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
-- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #65](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/65) · chore(tests): collect the suites under tests/ and run them in CI
-- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #64](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/64) · fix(docker): start the image in LAN mode so it is not an open proxy
-- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #63](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/63) · fix(dashboard): keep the realm view when an account action finishes
-- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #50](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/50) · fix(dashboard): 显示单模型限流及恢复时间
-- ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #52](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/52) · fix(health): 报告实际生效的 API Key 鉴权状态
 - ✓ merged → [alibaba/open-code-review #1122](https://github.com/alibaba/open-code-review/pull/1122) · fix(rules): route JavaScript module files to JS rules
 - ✓ merged → [farion1231/cc-switch #6851](https://github.com/farion1231/cc-switch/pull/6851) · fix(codex): mark glm-5.3 as text-only
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 8 Oct 2026 · 19:56 SGT</sub>
+<sub>↻ refreshed 8 Oct 2026 · 23:30 SGT · via GitHub Actions</sub>
 <!-- profile-live:end -->
 
 ---

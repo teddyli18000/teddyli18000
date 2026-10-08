@@ -5,32 +5,32 @@
       "number": 184,
       "title": "test(dashboard): share one strict fake DOM across dashboard suites",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/184",
-      "status": "open",
-      "updated_at": "2026-10-08T07:19:04Z"
+      "status": "merged",
+      "updated_at": "2026-10-08T12:35:35Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 183,
       "title": "test(ci): run independent suites in parallel",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/183",
-      "status": "open",
-      "updated_at": "2026-10-08T07:19:00Z"
+      "status": "merged",
+      "updated_at": "2026-10-08T12:35:35Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 182,
       "title": "test(infra): isolate suite data directories before parallel execution",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/182",
-      "status": "open",
-      "updated_at": "2026-10-08T07:18:55Z"
+      "status": "merged",
+      "updated_at": "2026-10-08T12:35:35Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 181,
       "title": "test(ci): add per-suite timeouts, process cleanup, and diagnostics",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/181",
-      "status": "open",
-      "updated_at": "2026-10-08T07:18:46Z"
+      "status": "merged",
+      "updated_at": "2026-10-08T12:35:35Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
@@ -284,35 +284,11 @@
   "selected_external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
-      "number": 120,
-      "title": "fix(slots): keep a known exit when the geo lookup fails, and keep the auto label out of the name",
-      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/120",
+      "number": 181,
+      "title": "test(ci): add per-suite timeouts, process cleanup, and diagnostics",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/181",
       "status": "merged",
-      "updated_at": "2026-10-06T03:13:15Z"
-    },
-    {
-      "repo": "ardeyouxipianyi/workbuddy2api-hub",
-      "number": 119,
-      "title": "feat(usage): record the reasoning effort each request ran at",
-      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/119",
-      "status": "merged",
-      "updated_at": "2026-10-06T03:13:03Z"
-    },
-    {
-      "repo": "ardeyouxipianyi/workbuddy2api-hub",
-      "number": 118,
-      "title": "fix(dashboard): the multiplier badge follows the fetched value",
-      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/118",
-      "status": "merged",
-      "updated_at": "2026-10-06T03:11:07Z"
-    },
-    {
-      "repo": "ardeyouxipianyi/workbuddy2api-hub",
-      "number": 117,
-      "title": "fix(models): let the live catalogue own the reasoning efforts",
-      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/117",
-      "status": "merged",
-      "updated_at": "2026-10-06T03:10:51Z"
+      "updated_at": "2026-10-08T12:35:35Z"
     },
     {
       "repo": "omdsh-dev/DSH-better-sidebar",
@@ -321,46 +297,6 @@
       "url": "https://github.com/omdsh-dev/DSH-better-sidebar/pull/301",
       "status": "merged",
       "updated_at": "2026-10-01T06:29:46Z"
-    },
-    {
-      "repo": "ardeyouxipianyi/workbuddy2api-hub",
-      "number": 65,
-      "title": "chore(tests): collect the suites under tests/ and run them in CI",
-      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/65",
-      "status": "merged",
-      "updated_at": "2026-09-26T12:33:07Z"
-    },
-    {
-      "repo": "ardeyouxipianyi/workbuddy2api-hub",
-      "number": 64,
-      "title": "fix(docker): start the image in LAN mode so it is not an open proxy",
-      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/64",
-      "status": "merged",
-      "updated_at": "2026-09-26T10:11:18Z"
-    },
-    {
-      "repo": "ardeyouxipianyi/workbuddy2api-hub",
-      "number": 63,
-      "title": "fix(dashboard): keep the realm view when an account action finishes",
-      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/63",
-      "status": "merged",
-      "updated_at": "2026-09-26T10:11:17Z"
-    },
-    {
-      "repo": "ardeyouxipianyi/workbuddy2api-hub",
-      "number": 50,
-      "title": "fix(dashboard): 显示单模型限流及恢复时间",
-      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/50",
-      "status": "merged",
-      "updated_at": "2026-09-24T14:45:02Z"
-    },
-    {
-      "repo": "ardeyouxipianyi/workbuddy2api-hub",
-      "number": 52,
-      "title": "fix(health): 报告实际生效的 API Key 鉴权状态",
-      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/52",
-      "status": "merged",
-      "updated_at": "2026-09-24T14:44:58Z"
     },
     {
       "repo": "alibaba/open-code-review",
@@ -395,5 +331,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-08T19:56:50.911137+08:00"
+  "updated_at": "2026-10-08T23:30:51.138742+08:00"
 }
