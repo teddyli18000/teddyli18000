@@ -2,6 +2,78 @@
   "external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 203,
+      "title": "chore(comments): normalize developer comments to Simplified Chinese",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/203",
+      "status": "open",
+      "updated_at": "2026-10-08T17:31:46Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 202,
+      "title": "test(infra): cover the runner's timeout, logging and argument contracts",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/202",
+      "status": "open",
+      "updated_at": "2026-10-08T17:31:40Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 201,
+      "title": "feat(settings): persist the account-section collapse state",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/201",
+      "status": "open",
+      "updated_at": "2026-10-08T17:20:36Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 200,
+      "title": "test(infra): read the response instead of sleeping in the keep-alive regression",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/200",
+      "status": "open",
+      "updated_at": "2026-10-08T17:20:31Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 198,
+      "title": "test(dashboard): assert the reasoning-effort contract, not the column count",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/198",
+      "status": "open",
+      "updated_at": "2026-10-08T17:03:02Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 197,
+      "title": "test(dashboard): load the page source through one helper",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/197",
+      "status": "merged",
+      "updated_at": "2026-10-08T16:42:12Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 196,
+      "title": "test(infra): share the isolated data root the suites were each building",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/196",
+      "status": "merged",
+      "updated_at": "2026-10-08T16:42:18Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 195,
+      "title": "ci: fail the test job when a suite dirties the checkout",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/195",
+      "status": "merged",
+      "updated_at": "2026-10-08T16:42:23Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 192,
+      "title": "test(infra): share the process lifecycle the suites were each copying",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/192",
+      "status": "merged",
+      "updated_at": "2026-10-08T16:38:50Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 184,
       "title": "test(dashboard): share one strict fake DOM across dashboard suites",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/184",
@@ -284,11 +356,11 @@
   "selected_external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
-      "number": 181,
-      "title": "test(ci): add per-suite timeouts, process cleanup, and diagnostics",
-      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/181",
+      "number": 195,
+      "title": "ci: fail the test job when a suite dirties the checkout",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/195",
       "status": "merged",
-      "updated_at": "2026-10-08T12:35:35Z"
+      "updated_at": "2026-10-08T16:42:23Z"
     },
     {
       "repo": "omdsh-dev/DSH-better-sidebar",
@@ -331,5 +403,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-08T23:30:51.138742+08:00"
+  "updated_at": "2026-10-09T02:35:10.905854+08:00"
 }
