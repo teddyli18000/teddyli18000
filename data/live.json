@@ -2,6 +2,38 @@
   "external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 184,
+      "title": "test(dashboard): share one strict fake DOM across dashboard suites",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/184",
+      "status": "open",
+      "updated_at": "2026-10-08T07:19:04Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 183,
+      "title": "test(ci): run independent suites in parallel",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/183",
+      "status": "open",
+      "updated_at": "2026-10-08T07:19:00Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 182,
+      "title": "test(infra): isolate suite data directories before parallel execution",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/182",
+      "status": "open",
+      "updated_at": "2026-10-08T07:18:55Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 181,
+      "title": "test(ci): add per-suite timeouts, process cleanup, and diagnostics",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/181",
+      "status": "open",
+      "updated_at": "2026-10-08T07:18:46Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 120,
       "title": "fix(slots): keep a known exit when the geo lookup fails, and keep the auto label out of the name",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/120",
@@ -363,5 +395,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-08T13:02:08.498132+08:00"
+  "updated_at": "2026-10-08T19:56:50.911137+08:00"
 }
