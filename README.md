@@ -44,9 +44,9 @@
 <tr>
 <td width="42%" valign="top">
 <h3>✦ Selected work</h3>
+🦊 <a href="https://github.com/teddyli18000/vitrual_browser"><strong>VFox</strong></a> — telemetry-free multi-profile browser.<br>
+🔀 <a href="https://github.com/ardeyouxipianyi/workbuddy2api-hub"><strong>WorkBuddy2API Hub</strong></a> — multi-account AI gateway.<br>
 🔬 <a href="https://github.com/teddyli18000/AiForMillikan"><strong>Millikan AI</strong></a> — oil-drop desktop tool.<br>
-🖥️ <a href="https://github.com/teddyli18000/screen-clone-manager"><strong>Screen Clone Manager</strong></a> — Windows display cloning.<br>
-☁️ <a href="https://github.com/teddyli18000/baidu-drive-mover"><strong>Baidu Drive Mover</strong></a> — resumable cloud transfers.<br>
 🛠️ <a href="https://github.com/teddyli18000/XCAD"><strong>XCAD</strong></a> — C/C++ course final project.
 </td>
 <td width="27%" valign="top">
@@ -58,8 +58,8 @@
 <td width="31%" valign="top">
 <h3>🛸 Side quests</h3>
 📬 <a href="https://github.com/teddyli18000/outlook-mail-helper"><strong>Outlook Mail Helper</strong></a> — inbox utility.<br>
-🩻 <a href="https://github.com/teddyli18000/medical-img-preparer"><strong>Medical image preparer</strong></a> — preprocessing checks.<br>
-🧪 <a href="https://github.com/teddyli18000/millikan-drop-processor"><strong>Millikan drop processor</strong></a> — oil-drop processing.
+☁️ <a href="https://github.com/teddyli18000/baidu-drive-mover"><strong>Baidu Drive Mover</strong></a> — resumable cloud transfers.<br>
+🖥️ <a href="https://github.com/teddyli18000/screen-clone-manager"><strong>Screen Clone Manager</strong></a> — Windows display cloning.
 </td>
 </tr>
 </table>
