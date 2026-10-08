@@ -2,8 +2,8 @@
 """Refresh the profile's upstream activity list, refresh stamp, and footer.
 
 Generic GitHub statistics come from mature profile-card actions. This script owns
-the profile-specific upstream PR list (every merged PR authored outside the owner's
-repos), visible refresh timestamp, and footer rotation.
+the profile-specific upstream PR list (one latest merged PR per external repo),
+visible refresh timestamp, and footer rotation.
 """
 from __future__ import annotations
 
@@ -94,13 +94,18 @@ def fetch_external() -> list[dict]:
 
 
 def published_external(items: list[dict]) -> list[dict]:
-    """The merged PRs only, newest activity first; the profile shows shipped work.
+    """One merged PR per external repo, newest activity first.
+
+    All merged PRs are ordered by activity first. The first PR seen for a repo is
+    published and older PRs from that same repo are omitted. When a newer merged
+    PR appears, it naturally takes the repo's slot and the previous entry drops
+    out without disturbing the ordering of other repositories.
 
     `repo`/`number` break ties so the order is total: two PRs can share an
     `updated_at`, and an order that depended on the API's result ordering would
     make `signature()` see phantom changes and commit a new stamp every run.
     """
-    return sorted(
+    ordered = sorted(
         (item for item in items if item["status"] == "merged"),
         key=lambda item: (
             -dt.datetime.fromisoformat(item["updated_at"].replace("Z", "+00:00")).timestamp(),
@@ -108,6 +113,14 @@ def published_external(items: list[dict]) -> list[dict]:
             item["number"],
         ),
     )
+    selected: list[dict] = []
+    seen_repos: set[str] = set()
+    for item in ordered:
+        if item["repo"] in seen_repos:
+            continue
+        seen_repos.add(item["repo"])
+        selected.append(item)
+    return selected
 
 
 def signature(items: list[dict]) -> list[dict]:
@@ -125,7 +138,8 @@ def hour_bucket(value: dt.datetime) -> tuple[int, int, int, int]:
 def last_good() -> tuple[list[dict], list[dict], dt.datetime]:
     snapshot = json.loads(LIVE.read_text(encoding="utf-8"))
     external = snapshot.get("external") or []
-    selected = snapshot.get("selected_external") or published_external(external)
+    stored_selected = snapshot.get("selected_external") or external
+    selected = published_external(stored_selected)
     if not selected:
         raise ValueError("live.json does not contain a last-good merged upstream PR list")
     stamp_raw = snapshot.get("updated_at")
@@ -179,7 +193,7 @@ def live_markdown(selected: list[dict], updated: dt.datetime) -> str:
         '  <img width="41%" src="./assets/commit-languages-card.svg" alt="Most used languages across GitHub commits.">',
         '</p>',
         '',
-        '**Outside my repos**',
+        '**Outside my repos · selected**',
         '',
     ]
     for item in selected:
@@ -190,7 +204,7 @@ def live_markdown(selected: list[dict], updated: dt.datetime) -> str:
         marker = "✓ merged" if item["status"] == "merged" else f"↗ {item['status']}"
         lines.append(f"- {marker} → [{item['repo']} #{item['number']}]({item['url']}) · {note}")
     stamp = updated.strftime("%d %b %Y · %H:%M SGT").lstrip("0")
-    lines.extend(["", f"<sub>↻ refreshed {stamp}</sub>"])
+    lines.extend(["", f"<sub>↻ refreshed {stamp} · via GitHub Actions</sub>"])
     return "\n".join(lines)
 
 

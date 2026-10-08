@@ -6,7 +6,8 @@
 - `scripts/polish_cards.py` may adapt mature generated SVGs to the shared profile palette and truthful labels, but must not replace their data collection logic.
 - Shields.io owns the focused tech-stack badges; `Platane/snk@v3` owns the contribution snake.
 - `scripts/generate_profile.py` owns only the profile-specific upstream PR list, visible refresh timestamp, date-seeded footer rotation, and `data/live.json` last-good state.
-- The upstream list is merged-only, never a top-N sample: every merged PR authored outside these repos appears, newest-activity-first, and nothing else is published. The search is paginated, and a failed per-PR detail call still resolves merge state from the search hit's `pull_request.merged_at`, so a merged PR can never drop off the list on a flaky request.
+- The upstream list is merged-only and filtered to one entry per external repository. For each repo, publish the newest-activity merged PR; when a newer merged PR appears, it takes that repo's slot and the older entry disappears. Repositories remain ordered newest-activity-first. Keep the full paginated external PR snapshot in `data/live.json` so this selection can be recomputed truthfully, and retain the last-good snapshot on API failure.
+- A failed per-PR detail call must still resolve merge state from the search hit's `pull_request.merged_at`, so a merged PR can never drop off the list on a flaky request.
 - Do not add AI-generated art, ambient banners, decorative background strips, typing SVGs, trophies, visitor counters, or ad-hoc generic stats implementations.
 - The work/current/side-quest area is intentionally one compact three-column HTML table.
 - Keep the hero free of throwaway microcopy. The only rotating prose belongs in the footer and should be a sourced quote or a considered original line.

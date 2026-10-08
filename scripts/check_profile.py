@@ -106,12 +106,18 @@ def main() -> None:
         fail("live block lost its upstream PR list")
     if len(linked_pulls) != len(set(linked_pulls)):
         fail("live block lists the same upstream PR more than once")
+    linked_repos = [url.split("github.com/", 1)[1].split("/pull/", 1)[0] for url in linked_pulls]
+    if len(linked_repos) != len(set(linked_repos)):
+        fail("live block must show at most one merged PR per external repo")
     if re.search(r"^- ↗ ", live, flags=re.M):
         fail("live block must only list merged upstream PRs")
-    if "Outside my repos" not in live:
-        fail("live block lost Outside my repos")
-    if not re.search(r"<sub>↻ refreshed \d{1,2} [A-Z][a-z]{2} \d{4} · \d{2}:\d{2} SGT</sub>", live):
-        fail("live block must show its last successful refresh time")
+    if "Outside my repos · selected" not in live:
+        fail("live block lost its selected external-work label")
+    if not re.search(
+        r"<sub>↻ refreshed \d{1,2} [A-Z][a-z]{2} \d{4} · \d{2}:\d{2} SGT · via GitHub Actions</sub>",
+        live,
+    ):
+        fail("live block must show its last successful refresh time and GitHub Actions source")
 
     if readme.count("Xinchen Lee") != 1:
         fail("full name should appear exactly once")
@@ -172,22 +178,39 @@ def main() -> None:
             fail(f"snake workflow missing {token}")
 
     data = json.loads(LIVE.read_text(encoding="utf-8"))
-    selected = data.get("selected_external") or []
-    if not selected or not data.get("updated_at"):
+    stored_selected = data.get("selected_external") or []
+    if not stored_selected or not data.get("updated_at"):
         fail("live.json must retain the published upstream PRs and updated_at")
-    if any(item.get("status") != "merged" for item in selected):
+    if any(item.get("status") != "merged" for item in stored_selected):
         fail("live.json must only retain merged upstream PRs")
+    selected = []
+    seen_repos: set[str] = set()
+    for item in stored_selected:
+        if item["repo"] in seen_repos:
+            continue
+        seen_repos.add(item["repo"])
+        selected.append(item)
     if set(linked_pulls) != {item["url"] for item in selected}:
         fail(
-            f"live block lists {len(linked_pulls)} upstream PRs but live.json retains {len(selected)}"
+            f"live block lists {len(linked_pulls)} upstream repos but live.json resolves to {len(selected)}"
         )
 
     generator = GENERATOR.read_text(encoding="utf-8")
-    for token in ("fetch_external", "published_external", "footer_markdown", "assets/profile-details.svg", "assets/stats-card.svg", "assets/commit-languages-card.svg", "↻ refreshed"):
+    for token in (
+        "fetch_external",
+        "published_external",
+        "seen_repos",
+        "footer_markdown",
+        "assets/profile-details.svg",
+        "assets/stats-card.svg",
+        "assets/commit-languages-card.svg",
+        "Outside my repos · selected",
+        "via GitHub Actions",
+    ):
         if token not in generator:
             fail(f"generator missing {token}")
 
-    print("PASS: v9 profile with animated summary details, activity stats, commit-language card, snake, and hardened refresh")
+    print("PASS: v9 profile with animated summary details, activity stats, selected upstream work, commit-language card, snake, and hardened refresh")
 
 
 if __name__ == "__main__":
