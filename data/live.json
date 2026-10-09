@@ -2,6 +2,46 @@
   "external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 210,
+      "title": "fix(panel): require a panel session for GET /pricing",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/210",
+      "status": "open",
+      "updated_at": "2026-10-09T02:30:56Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 209,
+      "title": "test(dashboard): assert the credit-history account cell per row, not by markup",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/209",
+      "status": "open",
+      "updated_at": "2026-10-09T00:33:31Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 208,
+      "title": "test(infra): prove tasks-cache invalidation by behavior, not by source text",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/208",
+      "status": "open",
+      "updated_at": "2026-10-09T00:33:26Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 207,
+      "title": "feat(updates): discover newer releases, with an opt-in daily check",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/207",
+      "status": "open",
+      "updated_at": "2026-10-09T00:06:30Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 206,
+      "title": "feat(activity): persist account check-in/daily-activity history and expose a read API",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/206",
+      "status": "open",
+      "updated_at": "2026-10-09T00:06:26Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 203,
       "title": "chore(comments): normalize developer comments to Simplified Chinese",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/203",
@@ -403,5 +443,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-09T07:33:45.223673+08:00"
+  "updated_at": "2026-10-09T11:04:42.899082+08:00"
 }
