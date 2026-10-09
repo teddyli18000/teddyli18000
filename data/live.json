@@ -2,6 +2,54 @@
   "external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 220,
+      "title": "test(limits): bind the mobile-card contract to the guard rows",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/220",
+      "status": "open",
+      "updated_at": "2026-10-09T05:04:42Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 218,
+      "title": "test(usage-share): bind each share to the model row it belongs to",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/218",
+      "status": "open",
+      "updated_at": "2026-10-09T04:57:59Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 216,
+      "title": "test(infra): bind the per-key analytics labels to the row they describe",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/216",
+      "status": "open",
+      "updated_at": "2026-10-09T04:38:15Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 215,
+      "title": "fix(dashboard): scope the disabled summary to the active realm",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/215",
+      "status": "open",
+      "updated_at": "2026-10-09T04:41:47Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 214,
+      "title": "test(dashboard): bind each output-probe indicator to its model row",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/214",
+      "status": "open",
+      "updated_at": "2026-10-09T04:38:09Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 213,
+      "title": "test(matrix): read the summary token total from the summary row",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/213",
+      "status": "open",
+      "updated_at": "2026-10-09T04:38:06Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 210,
       "title": "fix(panel): require a panel session for GET /pricing",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/210",
@@ -443,5 +491,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-09T11:04:42.899082+08:00"
+  "updated_at": "2026-10-09T18:27:38.530608+08:00"
 }
