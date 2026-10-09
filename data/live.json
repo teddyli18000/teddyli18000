@@ -2,131 +2,171 @@
   "external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 234,
+      "title": "feat(release): a v* tag builds the assets and opens a draft release",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/234",
+      "status": "merged",
+      "updated_at": "2026-10-09T16:35:06Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 233,
+      "title": "[URGENT] fix(proxy): a 429 with no reset clock must not park the whole credential",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/233",
+      "status": "merged",
+      "updated_at": "2026-10-09T16:04:41Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 227,
+      "title": "test(panel): pin the management boundary as behaviour, not a per-route fix",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/227",
+      "status": "merged",
+      "updated_at": "2026-10-09T12:32:54Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 226,
+      "title": "feat(dashboard): collapse the account section, remembered server-side",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/226",
+      "status": "merged",
+      "updated_at": "2026-10-09T12:32:54Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 225,
+      "title": "test(dashboard): assert the credit-history sticky header by declaration, not by text",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/225",
+      "status": "merged",
+      "updated_at": "2026-10-09T12:32:54Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 220,
       "title": "test(limits): bind the mobile-card contract to the guard rows",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/220",
-      "status": "open",
-      "updated_at": "2026-10-09T05:04:42Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:18:06Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 218,
       "title": "test(usage-share): bind each share to the model row it belongs to",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/218",
-      "status": "open",
-      "updated_at": "2026-10-09T04:57:59Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:18:01Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 216,
       "title": "test(infra): bind the per-key analytics labels to the row they describe",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/216",
-      "status": "open",
-      "updated_at": "2026-10-09T04:38:15Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:17:57Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 215,
       "title": "fix(dashboard): scope the disabled summary to the active realm",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/215",
-      "status": "open",
-      "updated_at": "2026-10-09T04:41:47Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:19:32Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 214,
       "title": "test(dashboard): bind each output-probe indicator to its model row",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/214",
-      "status": "open",
-      "updated_at": "2026-10-09T04:38:09Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:17:52Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 213,
       "title": "test(matrix): read the summary token total from the summary row",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/213",
-      "status": "open",
-      "updated_at": "2026-10-09T04:38:06Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:17:48Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 210,
       "title": "fix(panel): require a panel session for GET /pricing",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/210",
-      "status": "open",
-      "updated_at": "2026-10-09T02:30:56Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:24:12Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 209,
       "title": "test(dashboard): assert the credit-history account cell per row, not by markup",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/209",
-      "status": "open",
-      "updated_at": "2026-10-09T00:33:31Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:17:43Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 208,
       "title": "test(infra): prove tasks-cache invalidation by behavior, not by source text",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/208",
-      "status": "open",
-      "updated_at": "2026-10-09T00:33:26Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:17:38Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 207,
       "title": "feat(updates): discover newer releases, with an opt-in daily check",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/207",
-      "status": "open",
-      "updated_at": "2026-10-09T00:06:30Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:33:02Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 206,
       "title": "feat(activity): persist account check-in/daily-activity history and expose a read API",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/206",
-      "status": "open",
-      "updated_at": "2026-10-09T00:06:26Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:33:02Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 203,
       "title": "chore(comments): normalize developer comments to Simplified Chinese",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/203",
-      "status": "open",
-      "updated_at": "2026-10-08T17:31:46Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:18:10Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 202,
       "title": "test(infra): cover the runner's timeout, logging and argument contracts",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/202",
-      "status": "open",
-      "updated_at": "2026-10-08T17:31:40Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:22:35Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 201,
       "title": "feat(settings): persist the account-section collapse state",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/201",
-      "status": "open",
-      "updated_at": "2026-10-08T17:20:36Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:33:02Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 200,
       "title": "test(infra): read the response instead of sleeping in the keep-alive regression",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/200",
-      "status": "open",
-      "updated_at": "2026-10-08T17:20:31Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:17:31Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 198,
       "title": "test(dashboard): assert the reasoning-effort contract, not the column count",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/198",
-      "status": "open",
-      "updated_at": "2026-10-08T17:03:02Z"
+      "status": "merged",
+      "updated_at": "2026-10-09T11:16:58Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
@@ -444,11 +484,11 @@
   "selected_external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
-      "number": 195,
-      "title": "ci: fail the test job when a suite dirties the checkout",
-      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/195",
+      "number": 234,
+      "title": "feat(release): a v* tag builds the assets and opens a draft release",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/234",
       "status": "merged",
-      "updated_at": "2026-10-08T16:42:23Z"
+      "updated_at": "2026-10-09T16:35:06Z"
     },
     {
       "repo": "omdsh-dev/DSH-better-sidebar",
@@ -491,5 +531,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-09T18:27:38.530608+08:00"
+  "updated_at": "2026-10-10T01:09:03.135232+08:00"
 }
