@@ -2,6 +2,70 @@
   "external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 262,
+      "title": "feat(dashboard): Settings card for the update check",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/262",
+      "status": "open",
+      "updated_at": "2026-10-10T12:27:47Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 261,
+      "title": "feat(dashboard): show each account's daily activity and its history",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/261",
+      "status": "open",
+      "updated_at": "2026-10-10T12:20:13Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 260,
+      "title": "test(credit-history): bind credit/token values to their record row",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/260",
+      "status": "open",
+      "updated_at": "2026-10-10T12:18:31Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 259,
+      "title": "test(dashboard): bind the Settings API-key badges to the card they describe",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/259",
+      "status": "open",
+      "updated_at": "2026-10-10T12:18:23Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 258,
+      "title": "test(page-nav): pin the nav children, not just the sidebar container",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/258",
+      "status": "open",
+      "updated_at": "2026-10-10T12:18:09Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 257,
+      "title": "test(login): prove the copy control's wiring and English label by behaviour",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/257",
+      "status": "open",
+      "updated_at": "2026-10-10T12:17:42Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 256,
+      "title": "test(infra): ask a real interpreter about the wb_proxy twin, not the source",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/256",
+      "status": "open",
+      "updated_at": "2026-10-10T12:15:47Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 255,
+      "title": "test(analytics): bind the remaining per-key values to their own row",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/255",
+      "status": "open",
+      "updated_at": "2026-10-10T12:15:44Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 234,
       "title": "feat(release): a v* tag builds the assets and opens a draft release",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/234",
@@ -531,5 +595,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-10T15:16:25.272761+08:00"
+  "updated_at": "2026-10-10T21:50:37.959220+08:00"
 }
