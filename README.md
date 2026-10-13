@@ -28,6 +28,7 @@
 
 **Outside my repos · selected**
 
+- ✓ merged → [vn7n24fzkq/github-profile-summary-cards #330](https://github.com/vn7n24fzkq/github-profile-summary-cards/pull/330) · fix: make language aliases case-insensitive
 - ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #262](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/262) · feat(dashboard): Settings card for the update check
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 - ✓ merged → [alibaba/open-code-review #1122](https://github.com/alibaba/open-code-review/pull/1122) · fix(rules): route JavaScript module files to JS rules
@@ -35,7 +36,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 13 Oct 2026 · 11:40 SGT · via GitHub Actions</sub>
+<sub>↻ refreshed 13 Oct 2026 · 19:05 SGT · via GitHub Actions</sub>
 <!-- profile-live:end -->
 
 ---

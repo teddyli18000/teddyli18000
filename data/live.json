@@ -389,8 +389,8 @@
       "number": 330,
       "title": "fix: make language aliases case-insensitive",
       "url": "https://github.com/vn7n24fzkq/github-profile-summary-cards/pull/330",
-      "status": "open",
-      "updated_at": "2026-09-01T11:15:58Z"
+      "status": "merged",
+      "updated_at": "2026-10-13T07:32:59Z"
     },
     {
       "repo": "alibaba/open-code-review",
@@ -547,6 +547,14 @@
   ],
   "selected_external": [
     {
+      "repo": "vn7n24fzkq/github-profile-summary-cards",
+      "number": 330,
+      "title": "fix: make language aliases case-insensitive",
+      "url": "https://github.com/vn7n24fzkq/github-profile-summary-cards/pull/330",
+      "status": "merged",
+      "updated_at": "2026-10-13T07:32:59Z"
+    },
+    {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 262,
       "title": "feat(dashboard): Settings card for the update check",
@@ -595,5 +603,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-13T11:40:21.101344+08:00"
+  "updated_at": "2026-10-13T19:05:48.482665+08:00"
 }
