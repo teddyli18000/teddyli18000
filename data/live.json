@@ -409,10 +409,10 @@
       "updated_at": "2026-09-01T07:39:19Z"
     },
     {
-      "repo": "nelvko/clash-for-linux-install",
+      "repo": "nelvko/clashctl",
       "number": 620,
       "title": "fix(install): avoid keeping partial downloads",
-      "url": "https://github.com/nelvko/clash-for-linux-install/pull/620",
+      "url": "https://github.com/nelvko/clashctl/pull/620",
       "status": "open",
       "updated_at": "2026-08-26T14:40:49Z"
     },
@@ -437,8 +437,8 @@
       "number": 128524,
       "title": "test(gateway): disable bundled plugins in kernel fixture",
       "url": "https://github.com/openclaw/openclaw/pull/128524",
-      "status": "open",
-      "updated_at": "2026-10-08T03:43:47Z"
+      "status": "closed",
+      "updated_at": "2026-10-14T07:53:26Z"
     },
     {
       "repo": "openclaw/openclaw",
@@ -603,5 +603,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-14T14:43:21.261840+08:00"
+  "updated_at": "2026-10-14T20:29:55.309928+08:00"
 }
