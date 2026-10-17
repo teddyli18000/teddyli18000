@@ -6,7 +6,7 @@
       "title": "fix(identity): 桌面端身份对齐官方客户端（intl 5.8.4 / cn 5.6.2）",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/433",
       "status": "open",
-      "updated_at": "2026-10-17T17:18:48Z"
+      "updated_at": "2026-10-17T18:28:45Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
@@ -14,7 +14,7 @@
       "title": "fix(identity): CLI / VSCode 身份完全对齐官方（2.168.2 / 4.12.39997873）",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/431",
       "status": "open",
-      "updated_at": "2026-10-17T17:11:56Z"
+      "updated_at": "2026-10-17T18:28:52Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
@@ -627,5 +627,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-18T01:55:09.198215+08:00"
+  "updated_at": "2026-10-18T04:17:03.170301+08:00"
 }
