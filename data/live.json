@@ -413,8 +413,8 @@
       "number": 620,
       "title": "fix(install): avoid keeping partial downloads",
       "url": "https://github.com/nelvko/clashctl/pull/620",
-      "status": "open",
-      "updated_at": "2026-08-26T14:40:49Z"
+      "status": "closed",
+      "updated_at": "2026-10-17T10:38:49Z"
     },
     {
       "repo": "farion1231/cc-switch",
@@ -603,5 +603,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-17T15:59:45.001188+08:00"
+  "updated_at": "2026-10-17T20:05:23.137373+08:00"
 }
