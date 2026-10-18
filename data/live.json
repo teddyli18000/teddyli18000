@@ -2,27 +2,51 @@
   "external": [
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 450,
+      "title": "feat(settings): 自动切换出站身份支持配置允许的身份",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/450",
+      "status": "merged",
+      "updated_at": "2026-10-18T06:46:40Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 449,
+      "title": "fix(accounts): 设备 token 改为账号级，弃用全局单值",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/449",
+      "status": "closed",
+      "updated_at": "2026-10-18T06:01:48Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 448,
+      "title": "fix(proxy): 403/11140 后默认停手，限制持久化 + 整池波次暂停",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/448",
+      "status": "merged",
+      "updated_at": "2026-10-18T06:45:25Z"
+    },
+    {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 433,
       "title": "fix(identity): 桌面端身份对齐官方客户端（intl 5.8.4 / cn 5.6.2）",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/433",
-      "status": "open",
-      "updated_at": "2026-10-17T18:28:45Z"
+      "status": "closed",
+      "updated_at": "2026-10-18T05:41:50Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 431,
       "title": "fix(identity): CLI / VSCode 身份完全对齐官方（2.168.2 / 4.12.39997873）",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/431",
-      "status": "open",
-      "updated_at": "2026-10-17T18:28:52Z"
+      "status": "merged",
+      "updated_at": "2026-10-18T06:39:58Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 429,
       "title": "fix(transport): chat 头名保真 + 按账号隔离连接 + 紧凑 JSON",
       "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/429",
-      "status": "open",
-      "updated_at": "2026-10-17T17:10:26Z"
+      "status": "merged",
+      "updated_at": "2026-10-18T06:27:38Z"
     },
     {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
@@ -571,20 +595,20 @@
   ],
   "selected_external": [
     {
+      "repo": "ardeyouxipianyi/workbuddy2api-hub",
+      "number": 450,
+      "title": "feat(settings): 自动切换出站身份支持配置允许的身份",
+      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/450",
+      "status": "merged",
+      "updated_at": "2026-10-18T06:46:40Z"
+    },
+    {
       "repo": "vn7n24fzkq/github-profile-summary-cards",
       "number": 330,
       "title": "fix: make language aliases case-insensitive",
       "url": "https://github.com/vn7n24fzkq/github-profile-summary-cards/pull/330",
       "status": "merged",
       "updated_at": "2026-10-13T07:32:59Z"
-    },
-    {
-      "repo": "ardeyouxipianyi/workbuddy2api-hub",
-      "number": 262,
-      "title": "feat(dashboard): Settings card for the update check",
-      "url": "https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/262",
-      "status": "merged",
-      "updated_at": "2026-10-10T15:03:56Z"
     },
     {
       "repo": "omdsh-dev/DSH-better-sidebar",
@@ -627,5 +651,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-18T12:32:04.461684+08:00"
+  "updated_at": "2026-10-18T17:01:50.826316+08:00"
 }
