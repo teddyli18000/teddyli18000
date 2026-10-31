@@ -28,15 +28,15 @@
 
 **Outside my repos · selected**
 
+- ✓ merged → [farion1231/cc-switch #7027](https://github.com/farion1231/cc-switch/pull/7027) · fix(settings): avoid launching OpenCode Desktop during env check
 - ✓ merged → [ardeyouxipianyi/workbuddy2api-hub #450](https://github.com/ardeyouxipianyi/workbuddy2api-hub/pull/450) · feat(settings): 自动切换出站身份支持配置允许的身份
 - ✓ merged → [vn7n24fzkq/github-profile-summary-cards #330](https://github.com/vn7n24fzkq/github-profile-summary-cards/pull/330) · fix: make language aliases case-insensitive
 - ✓ merged → [omdsh-dev/DSH-better-sidebar #301](https://github.com/omdsh-dev/DSH-better-sidebar/pull/301) · hide spawned git windows on Windows
 - ✓ merged → [alibaba/open-code-review #1122](https://github.com/alibaba/open-code-review/pull/1122) · fix(rules): route JavaScript module files to JS rules
-- ✓ merged → [farion1231/cc-switch #6851](https://github.com/farion1231/cc-switch/pull/6851) · fix(codex): mark glm-5.3 as text-only
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 31 Oct 2026 · 14:12 SGT · via GitHub Actions</sub>
+<sub>↻ refreshed 31 Oct 2026 · 20:30 SGT · via GitHub Actions</sub>
 <!-- profile-live:end -->
 
 ---

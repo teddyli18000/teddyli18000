@@ -1,6 +1,22 @@
 {
   "external": [
     {
+      "repo": "farion1231/cc-switch",
+      "number": 9099,
+      "title": "fix(apps): don't offer npm upgrade for OpenCode Desktop CLI",
+      "url": "https://github.com/farion1231/cc-switch/pull/9099",
+      "status": "open",
+      "updated_at": "2026-10-31T11:53:53Z"
+    },
+    {
+      "repo": "farion1231/cc-switch",
+      "number": 9092,
+      "title": "fix(apps): don't offer npm upgrade for OpenCode Desktop CLI",
+      "url": "https://github.com/farion1231/cc-switch/pull/9092",
+      "status": "closed",
+      "updated_at": "2026-10-31T11:07:59Z"
+    },
+    {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 450,
       "title": "feat(settings): 自动切换出站身份支持配置允许的身份",
@@ -453,8 +469,8 @@
       "number": 7027,
       "title": "fix(settings): avoid launching OpenCode Desktop during env check",
       "url": "https://github.com/farion1231/cc-switch/pull/7027",
-      "status": "open",
-      "updated_at": "2026-10-22T07:55:07Z"
+      "status": "merged",
+      "updated_at": "2026-10-31T08:09:36Z"
     },
     {
       "repo": "nelvko/clashctl",
@@ -595,6 +611,14 @@
   ],
   "selected_external": [
     {
+      "repo": "farion1231/cc-switch",
+      "number": 7027,
+      "title": "fix(settings): avoid launching OpenCode Desktop during env check",
+      "url": "https://github.com/farion1231/cc-switch/pull/7027",
+      "status": "merged",
+      "updated_at": "2026-10-31T08:09:36Z"
+    },
+    {
       "repo": "ardeyouxipianyi/workbuddy2api-hub",
       "number": 450,
       "title": "feat(settings): 自动切换出站身份支持配置允许的身份",
@@ -627,14 +651,6 @@
       "updated_at": "2026-09-01T11:47:22Z"
     },
     {
-      "repo": "farion1231/cc-switch",
-      "number": 6851,
-      "title": "fix(codex): mark glm-5.3 as text-only",
-      "url": "https://github.com/farion1231/cc-switch/pull/6851",
-      "status": "merged",
-      "updated_at": "2026-08-31T15:00:39Z"
-    },
-    {
       "repo": "pandas-dev/pandas",
       "number": 66739,
       "title": "CLN: share checked integer extern declarations",
@@ -651,5 +667,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-10-31T14:12:23.788754+08:00"
+  "updated_at": "2026-10-31T20:30:24.347640+08:00"
 }
