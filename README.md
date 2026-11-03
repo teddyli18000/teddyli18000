@@ -36,7 +36,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 3 Nov 2026 · 19:16 SGT · via GitHub Actions</sub>
+<sub>↻ refreshed 4 Nov 2026 · 02:29 SGT · via GitHub Actions</sub>
 <!-- profile-live:end -->
 
 ---
@@ -94,6 +94,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“A good abstraction does not erase difficulty; it gives difficulty a boundary.”</em></sub>
+<sub><em>“The purpose of computing is insight, not numbers.”</em> — Richard W. Hamming</sub>
 <!-- profile-footer:end -->
 </div>
