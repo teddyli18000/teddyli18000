@@ -1,0 +1,36 @@
+name: Isometric contribution calendar
+
+on:
+  schedule:
+    - cron: "18 1 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/metrics.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-isocalendar
+  cancel-in-progress: true
+
+jobs:
+  calendar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN || github.token }}
+          user: teddyli18000
+          filename: assets/metrics.svg
+          template: classic
+          base: ""
+          config_timezone: Asia/Shanghai
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          output_action: commit
+          committer_branch: main
