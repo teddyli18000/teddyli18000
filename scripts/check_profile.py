@@ -80,6 +80,8 @@ def main() -> None:
     ]
     if local_images != expected_images:
         fail("Open source block must use profile-details + activity + commit-language cards")
+    if not re.search(r'<img width="65%" src="\\./assets/metrics\\.svg"', readme):
+        fail("Contribution calendar should stay compact at 65% width")
 
     profile = check_svg(PROFILE_DETAILS, "700", "200")
     stats = check_svg(STATS_CARD, "470", "190")
