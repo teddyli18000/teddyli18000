@@ -17,12 +17,14 @@ PROFILE_DETAILS = ROOT / "assets" / "profile-details.svg"
 COMMIT_LANGS = ROOT / "assets" / "commit-languages-card.svg"
 REFRESH_WORKFLOW = ROOT / ".github" / "workflows" / "profile-refresh.yml"
 SNAKE_WORKFLOW = ROOT / ".github" / "workflows" / "snake.yml"
+METRICS_WORKFLOW = ROOT / ".github" / "workflows" / "metrics.yml"
 
 APPROVED_IMAGE_PREFIXES = (
     "https://user-images.githubusercontent.com/",
     "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/",
     "https://img.shields.io/badge/",
     "https://raw.githubusercontent.com/teddyli18000/teddyli18000/output/",
+    "https://count.himiku.com/@teddyli18000?",
 )
 
 
@@ -58,8 +60,9 @@ def main() -> None:
 
     open_source = readme.find("## ↗ Open source / live")
     stack = readme.find("## 🛠 Tech stack")
+    calendar = readme.find("## 📅 Contribution calendar")
     snake = readme.find("## 🐍 Contribution trail")
-    if min(open_source, stack, snake) < 0 or not (open_source < stack < snake):
+    if min(open_source, stack, calendar, snake) < 0 or not (open_source < stack < calendar < snake):
         fail("major README section order changed")
 
     for heading in ("<h3>✦ Selected work</h3>", "<h3>🧭 Current</h3>", "<h3>🛸 Side quests</h3>"):
@@ -73,6 +76,7 @@ def main() -> None:
         "./assets/profile-details.svg",
         "./assets/stats-card.svg",
         "./assets/commit-languages-card.svg",
+        "./assets/metrics.svg",
     ]
     if local_images != expected_images:
         fail("Open source block must use profile-details + activity + commit-language cards")
@@ -133,6 +137,8 @@ def main() -> None:
     snake_urls = re.findall(r'https://raw\.githubusercontent\.com/teddyli18000/teddyli18000/output/github-snake(?:-dark)?\.svg', readme)
     if len(snake_urls) < 2:
         fail("Contribution trail must include light/dark snake assets")
+    if readme.count("https://count.himiku.com/@teddyli18000?theme=miku") != 1:
+        fail("Miku visitor counter is missing or duplicated")
 
     footer = readme.split("<!-- profile-footer:start -->", 1)[1].split("<!-- profile-footer:end -->", 1)[0]
     if "<em>“" not in footer or "”</em>" not in footer:
@@ -176,6 +182,13 @@ def main() -> None:
     for token in ("Platane/snk@v3", "target_branch: output", "github-snake-dark.svg"):
         if token not in snake_workflow:
             fail(f"snake workflow missing {token}")
+
+    if not METRICS_WORKFLOW.is_file():
+        fail("isometric calendar workflow is missing")
+    metrics_workflow = METRICS_WORKFLOW.read_text(encoding="utf-8")
+    for token in ("lowlighter/metrics@v3.34", "plugin_isocalendar: yes", "plugin_isocalendar_duration: full-year", "assets/metrics.svg"):
+        if token not in metrics_workflow:
+            fail(f"isometric calendar workflow missing {token}")
 
     data = json.loads(LIVE.read_text(encoding="utf-8"))
     stored_selected = data.get("selected_external") or []
