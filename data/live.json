@@ -445,8 +445,8 @@
       "number": 2,
       "title": "fix: load all memo issue comments",
       "url": "https://github.com/CreoEnMi-p/CreoEnMi-p.github.io/pull/2",
-      "status": "open",
-      "updated_at": "2026-09-01T12:29:29Z"
+      "status": "merged",
+      "updated_at": "2026-11-09T01:57:16Z"
     },
     {
       "repo": "vn7n24fzkq/github-profile-summary-cards",
@@ -611,6 +611,14 @@
   ],
   "selected_external": [
     {
+      "repo": "CreoEnMi-p/CreoEnMi-p.github.io",
+      "number": 2,
+      "title": "fix: load all memo issue comments",
+      "url": "https://github.com/CreoEnMi-p/CreoEnMi-p.github.io/pull/2",
+      "status": "merged",
+      "updated_at": "2026-11-09T01:57:16Z"
+    },
+    {
       "repo": "farion1231/cc-switch",
       "number": 7027,
       "title": "fix(settings): avoid launching OpenCode Desktop during env check",
@@ -667,5 +675,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-11-09T06:51:19.811389+08:00"
+  "updated_at": "2026-11-09T10:07:20.827824+08:00"
 }
