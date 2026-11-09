@@ -88,7 +88,7 @@
 ## 📅 Contribution calendar
 
 <p align="center">
-  <img width="100%" src="./assets/metrics.svg" alt="Isometric contribution calendar with streak statistics.">
+  <img width="65%" src="./assets/metrics.svg" alt="Isometric contribution calendar with streak statistics.">
 </p>
 
 ---
