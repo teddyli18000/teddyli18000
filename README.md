@@ -85,6 +85,14 @@
 
 ---
 
+## 📅 Contribution calendar
+
+<p align="center">
+  <img width="100%" src="./assets/metrics.svg" alt="Isometric contribution calendar with streak statistics.">
+</p>
+
+---
+
 ## 🐍 Contribution trail
 
 <picture>
@@ -92,6 +100,11 @@
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/teddyli18000/teddyli18000/output/github-snake.svg">
   <img width="100%" alt="GitHub contribution snake animation." src="https://raw.githubusercontent.com/teddyli18000/teddyli18000/output/github-snake.svg">
 </picture>
+
+<div align="center">
+  <p><strong>Thanks for visiting!</strong></p>
+  <img src="https://count.himiku.com/@teddyli18000?theme=miku&amp;padding=7&amp;offset=0&amp;align=top&amp;scale=1&amp;pixelated=1&amp;darkmode=auto" alt="Profile visits">
+</div>
 
 <div align="center">
 <!-- profile-footer:start -->
