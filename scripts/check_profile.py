@@ -139,7 +139,7 @@ def main() -> None:
     snake_urls = re.findall(r'https://raw\.githubusercontent\.com/teddyli18000/teddyli18000/output/github-snake(?:-dark)?\.svg', readme)
     if len(snake_urls) < 2:
         fail("Contribution trail must include light/dark snake assets")
-    if readme.count("https://count.himiku.com/@teddyli18000?theme=miku&amp;padding=3&amp;prefix=2") != 1:
+    if readme.count("https://count.himiku.com/@teddyli18000?theme=miku&amp;padding=3&amp;prefix=3") != 1:
         fail("Miku visitor counter historical display baseline is missing or duplicated")
 
     footer = readme.split("<!-- profile-footer:start -->", 1)[1].split("<!-- profile-footer:end -->", 1)[0]
