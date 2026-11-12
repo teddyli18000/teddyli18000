@@ -103,7 +103,7 @@
 
 <div align="center">
   <p><strong>Thanks for visiting!</strong></p>
-  <img src="https://count.himiku.com/@teddyli18000?theme=miku&amp;padding=3&amp;prefix=2&amp;offset=0&amp;align=top&amp;scale=1&amp;pixelated=1&amp;darkmode=auto" alt="Profile visits">
+  <img src="https://count.himiku.com/@teddyli18000?theme=miku&amp;padding=3&amp;prefix=3&amp;offset=0&amp;align=top&amp;scale=1&amp;pixelated=1&amp;darkmode=auto" alt="Profile visits">
 </div>
 
 <div align="center">
