@@ -36,7 +36,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 19 Nov 2026 · 16:55 SGT · via GitHub Actions</sub>
+<sub>↻ refreshed 20 Nov 2026 · 02:01 SGT · via GitHub Actions</sub>
 <!-- profile-live:end -->
 
 ---
@@ -107,6 +107,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“Any sufficiently advanced technology is indistinguishable from magic.”</em> — Arthur C. Clarke</sub>
+<sub><em>“Clarity is not the absence of complexity; it is complexity put in its place.”</em></sub>
 <!-- profile-footer:end -->
 </div>

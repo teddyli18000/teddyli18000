@@ -1,6 +1,14 @@
 {
   "external": [
     {
+      "repo": "RyanZhangNTU/codex-pacer",
+      "number": 264,
+      "title": "Allow selecting a display time zone for quota reset times",
+      "url": "https://github.com/RyanZhangNTU/codex-pacer/pull/264",
+      "status": "draft",
+      "updated_at": "2026-11-19T14:46:04Z"
+    },
+    {
       "repo": "farion1231/cc-switch",
       "number": 9099,
       "title": "fix(apps): don't offer npm upgrade for OpenCode Desktop CLI",
@@ -251,5 +259,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-11-19T16:55:22.032831+08:00"
+  "updated_at": "2026-11-20T02:01:01.076579+08:00"
 }
