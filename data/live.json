@@ -5,8 +5,8 @@
       "number": 264,
       "title": "Allow selecting a display time zone for quota reset times",
       "url": "https://github.com/RyanZhangNTU/codex-pacer/pull/264",
-      "status": "draft",
-      "updated_at": "2026-11-19T14:46:04Z"
+      "status": "merged",
+      "updated_at": "2026-11-20T04:06:53Z"
     },
     {
       "repo": "farion1231/cc-switch",
@@ -203,6 +203,14 @@
   ],
   "selected_external": [
     {
+      "repo": "RyanZhangNTU/codex-pacer",
+      "number": 264,
+      "title": "Allow selecting a display time zone for quota reset times",
+      "url": "https://github.com/RyanZhangNTU/codex-pacer/pull/264",
+      "status": "merged",
+      "updated_at": "2026-11-20T04:06:53Z"
+    },
+    {
       "repo": "CreoEnMi-p/CreoEnMi-p.github.io",
       "number": 2,
       "title": "fix: load all memo issue comments",
@@ -259,5 +267,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-11-20T08:33:18.372321+08:00"
+  "updated_at": "2026-11-20T15:44:19.581263+08:00"
 }

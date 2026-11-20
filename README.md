@@ -28,6 +28,7 @@
 
 **Outside my repos · selected**
 
+- ✓ merged → [RyanZhangNTU/codex-pacer #264](https://github.com/RyanZhangNTU/codex-pacer/pull/264) · Allow selecting a display time zone for quota reset times
 - ✓ merged → [CreoEnMi-p/CreoEnMi-p.github.io #2](https://github.com/CreoEnMi-p/CreoEnMi-p.github.io/pull/2) · fix: load all memo issue comments
 - ✓ merged → [farion1231/cc-switch #7027](https://github.com/farion1231/cc-switch/pull/7027) · fix(settings): avoid launching OpenCode Desktop during env check
 - ✓ merged → [vn7n24fzkq/github-profile-summary-cards #330](https://github.com/vn7n24fzkq/github-profile-summary-cards/pull/330) · fix: make language aliases case-insensitive
@@ -36,7 +37,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 20 Nov 2026 · 08:33 SGT · via GitHub Actions</sub>
+<sub>↻ refreshed 20 Nov 2026 · 15:44 SGT · via GitHub Actions</sub>
 <!-- profile-live:end -->
 
 ---
