@@ -13,8 +13,8 @@
       "number": 9099,
       "title": "fix(apps): don't offer npm upgrade for OpenCode Desktop CLI",
       "url": "https://github.com/farion1231/cc-switch/pull/9099",
-      "status": "open",
-      "updated_at": "2026-11-21T11:20:16Z"
+      "status": "merged",
+      "updated_at": "2026-11-23T04:55:40Z"
     },
     {
       "repo": "farion1231/cc-switch",
@@ -203,6 +203,14 @@
   ],
   "selected_external": [
     {
+      "repo": "farion1231/cc-switch",
+      "number": 9099,
+      "title": "fix(apps): don't offer npm upgrade for OpenCode Desktop CLI",
+      "url": "https://github.com/farion1231/cc-switch/pull/9099",
+      "status": "merged",
+      "updated_at": "2026-11-23T04:55:40Z"
+    },
+    {
       "repo": "RyanZhangNTU/codex-pacer",
       "number": 264,
       "title": "Allow selecting a display time zone for quota reset times",
@@ -217,14 +225,6 @@
       "url": "https://github.com/CreoEnMi-p/CreoEnMi-p.github.io/pull/2",
       "status": "merged",
       "updated_at": "2026-11-09T01:57:16Z"
-    },
-    {
-      "repo": "farion1231/cc-switch",
-      "number": 7027,
-      "title": "fix(settings): avoid launching OpenCode Desktop during env check",
-      "url": "https://github.com/farion1231/cc-switch/pull/7027",
-      "status": "merged",
-      "updated_at": "2026-10-31T08:09:36Z"
     },
     {
       "repo": "vn7n24fzkq/github-profile-summary-cards",
@@ -267,5 +267,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-11-23T12:08:34.901090+08:00"
+  "updated_at": "2026-11-23T22:30:46.264147+08:00"
 }
