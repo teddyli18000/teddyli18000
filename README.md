@@ -28,6 +28,7 @@
 
 **Outside my repos · selected**
 
+- ✓ merged → [cslib-community/cslib-frontier #8326](https://github.com/cslib-community/cslib-frontier/pull/8326) · feat(matrix): residual-corrected weak duality for bounded LPs
 - ✓ merged → [farion1231/cc-switch #9099](https://github.com/farion1231/cc-switch/pull/9099) · fix(apps): don't offer npm upgrade for OpenCode Desktop CLI
 - ✓ merged → [RyanZhangNTU/codex-pacer #264](https://github.com/RyanZhangNTU/codex-pacer/pull/264) · Allow selecting a display time zone for quota reset times
 - ✓ merged → [CreoEnMi-p/CreoEnMi-p.github.io #2](https://github.com/CreoEnMi-p/CreoEnMi-p.github.io/pull/2) · fix: load all memo issue comments
@@ -37,7 +38,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 24 Nov 2026 · 19:41 SGT · via GitHub Actions</sub>
+<sub>↻ refreshed 25 Nov 2026 · 05:31 SGT · via GitHub Actions</sub>
 <!-- profile-live:end -->
 
 ---
@@ -108,6 +109,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“Simplicity is prerequisite for reliability.”</em> — Edsger W. Dijkstra</sub>
+<sub><em>“Any sufficiently advanced technology is indistinguishable from magic.”</em> — Arthur C. Clarke</sub>
 <!-- profile-footer:end -->
 </div>

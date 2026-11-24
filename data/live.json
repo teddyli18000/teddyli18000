@@ -1,6 +1,54 @@
 {
   "external": [
     {
+      "repo": "cslib-community/cslib-frontier",
+      "number": 8326,
+      "title": "feat(matrix): residual-corrected weak duality for bounded LPs",
+      "url": "https://github.com/cslib-community/cslib-frontier/pull/8326",
+      "status": "merged",
+      "updated_at": "2026-11-24T17:52:37Z"
+    },
+    {
+      "repo": "CGandGameEngineLearner/goldbach-proofs",
+      "number": 142,
+      "title": "Prove L-goldbach-ap-nonunit-power",
+      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/142",
+      "status": "open",
+      "updated_at": "2026-11-24T13:41:18Z"
+    },
+    {
+      "repo": "CGandGameEngineLearner/goldbach-proofs",
+      "number": 135,
+      "title": "Prove L-goldbach-exception-shift-union",
+      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/135",
+      "status": "open",
+      "updated_at": "2026-11-24T13:00:27Z"
+    },
+    {
+      "repo": "CGandGameEngineLearner/goldbach-proofs",
+      "number": 130,
+      "title": "Prove L-goldbach-exception-fourth-moment",
+      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/130",
+      "status": "open",
+      "updated_at": "2026-11-24T12:55:07Z"
+    },
+    {
+      "repo": "CGandGameEngineLearner/goldbach-proofs",
+      "number": 115,
+      "title": "Prove L-goldbach-conv-mass-prefix",
+      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/115",
+      "status": "open",
+      "updated_at": "2026-11-24T12:42:32Z"
+    },
+    {
+      "repo": "CGandGameEngineLearner/goldbach-proofs",
+      "number": 111,
+      "title": "Prove L-goldbach-ap-nonunit-prime",
+      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/111",
+      "status": "open",
+      "updated_at": "2026-11-24T12:46:27Z"
+    },
+    {
       "repo": "RyanZhangNTU/codex-pacer",
       "number": 264,
       "title": "Allow selecting a display time zone for quota reset times",
@@ -203,6 +251,14 @@
   ],
   "selected_external": [
     {
+      "repo": "cslib-community/cslib-frontier",
+      "number": 8326,
+      "title": "feat(matrix): residual-corrected weak duality for bounded LPs",
+      "url": "https://github.com/cslib-community/cslib-frontier/pull/8326",
+      "status": "merged",
+      "updated_at": "2026-11-24T17:52:37Z"
+    },
+    {
       "repo": "farion1231/cc-switch",
       "number": 9099,
       "title": "fix(apps): don't offer npm upgrade for OpenCode Desktop CLI",
@@ -267,5 +323,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-11-24T19:41:32.114547+08:00"
+  "updated_at": "2026-11-25T05:31:51.027109+08:00"
 }
