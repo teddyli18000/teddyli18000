@@ -21,32 +21,32 @@
       "number": 135,
       "title": "Prove L-goldbach-exception-shift-union",
       "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/135",
-      "status": "open",
-      "updated_at": "2026-11-24T13:00:27Z"
+      "status": "merged",
+      "updated_at": "2026-11-26T17:11:21Z"
     },
     {
       "repo": "CGandGameEngineLearner/goldbach-proofs",
       "number": 130,
       "title": "Prove L-goldbach-exception-fourth-moment",
       "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/130",
-      "status": "open",
-      "updated_at": "2026-11-24T12:55:07Z"
+      "status": "merged",
+      "updated_at": "2026-11-26T17:09:24Z"
     },
     {
       "repo": "CGandGameEngineLearner/goldbach-proofs",
       "number": 115,
       "title": "Prove L-goldbach-conv-mass-prefix",
       "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/115",
-      "status": "open",
-      "updated_at": "2026-11-24T12:42:32Z"
+      "status": "merged",
+      "updated_at": "2026-11-26T17:06:22Z"
     },
     {
       "repo": "CGandGameEngineLearner/goldbach-proofs",
       "number": 111,
       "title": "Prove L-goldbach-ap-nonunit-prime",
       "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/111",
-      "status": "open",
-      "updated_at": "2026-11-24T12:46:27Z"
+      "status": "merged",
+      "updated_at": "2026-11-26T17:07:19Z"
     },
     {
       "repo": "RyanZhangNTU/codex-pacer",
@@ -251,6 +251,14 @@
   ],
   "selected_external": [
     {
+      "repo": "CGandGameEngineLearner/goldbach-proofs",
+      "number": 135,
+      "title": "Prove L-goldbach-exception-shift-union",
+      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/135",
+      "status": "merged",
+      "updated_at": "2026-11-26T17:11:21Z"
+    },
+    {
       "repo": "cslib-community/cslib-frontier",
       "number": 8326,
       "title": "feat(matrix): residual-corrected weak duality for bounded LPs",
@@ -323,5 +331,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-11-26T23:28:49.055709+08:00"
+  "updated_at": "2026-11-27T07:58:04.630379+08:00"
 }

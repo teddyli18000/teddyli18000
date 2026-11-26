@@ -28,6 +28,7 @@
 
 **Outside my repos · selected**
 
+- ✓ merged → [CGandGameEngineLearner/goldbach-proofs #135](https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/135) · Prove L-goldbach-exception-shift-union
 - ✓ merged → [cslib-community/cslib-frontier #8326](https://github.com/cslib-community/cslib-frontier/pull/8326) · feat(matrix): residual-corrected weak duality for bounded LPs
 - ✓ merged → [farion1231/cc-switch #9099](https://github.com/farion1231/cc-switch/pull/9099) · fix(apps): don't offer npm upgrade for OpenCode Desktop CLI
 - ✓ merged → [RyanZhangNTU/codex-pacer #264](https://github.com/RyanZhangNTU/codex-pacer/pull/264) · Allow selecting a display time zone for quota reset times
@@ -38,7 +39,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 26 Nov 2026 · 23:28 SGT · via GitHub Actions</sub>
+<sub>↻ refreshed 27 Nov 2026 · 07:58 SGT · via GitHub Actions</sub>
 <!-- profile-live:end -->
 
 ---
@@ -109,6 +110,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“Clarity is not the absence of complexity; it is complexity put in its place.”</em></sub>
+<sub><em>“A good abstraction does not erase difficulty; it gives difficulty a boundary.”</em></sub>
 <!-- profile-footer:end -->
 </div>
