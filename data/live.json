@@ -1,6 +1,46 @@
 {
   "external": [
     {
+      "repo": "CGandGameEngineLearner/goldbach-proofs",
+      "number": 2965,
+      "title": "[goldbach/finite-rfc-third] Prove L-goldbach-finite-major-bmor-conditional-energy",
+      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/2965",
+      "status": "merged",
+      "updated_at": "2026-11-27T01:34:32Z"
+    },
+    {
+      "repo": "CGandGameEngineLearner/goldbach-proofs",
+      "number": 2946,
+      "title": "[goldbach/dyadic-reflection] Prove L-goldbach-dyadic-primitive-reflected-form",
+      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/2946",
+      "status": "merged",
+      "updated_at": "2026-11-27T01:07:58Z"
+    },
+    {
+      "repo": "CGandGameEngineLearner/goldbach-proofs",
+      "number": 2937,
+      "title": "[goldbach/dyadic-reflection] Prove L-goldbach-dyadic-coarse-reflection-budget",
+      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/2937",
+      "status": "merged",
+      "updated_at": "2026-11-27T00:57:52Z"
+    },
+    {
+      "repo": "CGandGameEngineLearner/goldbach-proofs",
+      "number": 2920,
+      "title": "[goldbach/farey-inverse-sieve] Prove L-goldbach-farey-full-sieve-remainder",
+      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/2920",
+      "status": "open",
+      "updated_at": "2026-11-27T00:38:22Z"
+    },
+    {
+      "repo": "CGandGameEngineLearner/goldbach-proofs",
+      "number": 2904,
+      "title": "[goldbach/farey-inverse-sieve] Prove L-goldbach-farey-coprime-progression-count",
+      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/2904",
+      "status": "merged",
+      "updated_at": "2026-11-27T00:35:09Z"
+    },
+    {
       "repo": "cslib-community/cslib-frontier",
       "number": 8326,
       "title": "feat(matrix): residual-corrected weak duality for bounded LPs",
@@ -252,11 +292,11 @@
   "selected_external": [
     {
       "repo": "CGandGameEngineLearner/goldbach-proofs",
-      "number": 135,
-      "title": "Prove L-goldbach-exception-shift-union",
-      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/135",
+      "number": 2965,
+      "title": "[goldbach/finite-rfc-third] Prove L-goldbach-finite-major-bmor-conditional-energy",
+      "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/2965",
       "status": "merged",
-      "updated_at": "2026-11-26T17:11:21Z"
+      "updated_at": "2026-11-27T01:34:32Z"
     },
     {
       "repo": "cslib-community/cslib-frontier",
@@ -331,5 +371,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-11-27T07:58:04.630379+08:00"
+  "updated_at": "2026-11-27T15:22:25.217689+08:00"
 }
