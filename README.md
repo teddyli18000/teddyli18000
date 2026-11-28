@@ -28,6 +28,7 @@
 
 **Outside my repos · selected**
 
+- ✓ merged → [wynter-yaxley/atrium-desktop #236](https://github.com/wynter-yaxley/atrium-desktop/pull/236) · fix(weather): classify sunrise events correctly
 - ✓ merged → [CGandGameEngineLearner/goldbach-proofs #2965](https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/2965) · [goldbach/finite-rfc-third] Prove L-goldbach-finite-major-bmor-conditional-energy
 - ✓ merged → [cslib-community/cslib-frontier #8326](https://github.com/cslib-community/cslib-frontier/pull/8326) · feat(matrix): residual-corrected weak duality for bounded LPs
 - ✓ merged → [farion1231/cc-switch #9099](https://github.com/farion1231/cc-switch/pull/9099) · fix(apps): don't offer npm upgrade for OpenCode Desktop CLI
@@ -39,7 +40,7 @@
 - ✓ merged → [pandas-dev/pandas #66739](https://github.com/pandas-dev/pandas/pull/66739) · shared low-level Cython declarations
 - ✓ merged → [open-city-ai/haidian #61](https://github.com/open-city-ai/haidian/pull/61) · public AI infrastructure proposal
 
-<sub>↻ refreshed 28 Nov 2026 · 16:27 SGT · via GitHub Actions</sub>
+<sub>↻ refreshed 29 Nov 2026 · 01:06 SGT · via GitHub Actions</sub>
 <!-- profile-live:end -->
 
 ---
@@ -110,6 +111,6 @@
 
 <div align="center">
 <!-- profile-footer:start -->
-<sub><em>“The purpose of computing is insight, not numbers.”</em> — Richard W. Hamming</sub>
+<sub><em>“What I cannot create, I do not understand.”</em> — Richard Feynman</sub>
 <!-- profile-footer:end -->
 </div>

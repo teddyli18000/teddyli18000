@@ -1,6 +1,30 @@
 {
   "external": [
     {
+      "repo": "wynter-yaxley/atrium-desktop",
+      "number": 240,
+      "title": "fix(stacks): account for tilted labels when fitting fan height",
+      "url": "https://github.com/wynter-yaxley/atrium-desktop/pull/240",
+      "status": "open",
+      "updated_at": "2026-11-28T17:01:24Z"
+    },
+    {
+      "repo": "wynter-yaxley/atrium-desktop",
+      "number": 236,
+      "title": "fix(weather): classify sunrise events correctly",
+      "url": "https://github.com/wynter-yaxley/atrium-desktop/pull/236",
+      "status": "merged",
+      "updated_at": "2026-11-28T16:44:45Z"
+    },
+    {
+      "repo": "wynter-yaxley/atrium-desktop",
+      "number": 234,
+      "title": "fix(launchpad): clear stale keyboard selection after paging",
+      "url": "https://github.com/wynter-yaxley/atrium-desktop/pull/234",
+      "status": "merged",
+      "updated_at": "2026-11-28T15:35:45Z"
+    },
+    {
       "repo": "CGandGameEngineLearner/goldbach-proofs",
       "number": 2965,
       "title": "[goldbach/finite-rfc-third] Prove L-goldbach-finite-major-bmor-conditional-energy",
@@ -54,7 +78,7 @@
       "title": "Prove L-goldbach-ap-nonunit-power",
       "url": "https://github.com/CGandGameEngineLearner/goldbach-proofs/pull/142",
       "status": "open",
-      "updated_at": "2026-11-24T13:41:18Z"
+      "updated_at": "2026-11-28T17:04:40Z"
     },
     {
       "repo": "CGandGameEngineLearner/goldbach-proofs",
@@ -291,6 +315,14 @@
   ],
   "selected_external": [
     {
+      "repo": "wynter-yaxley/atrium-desktop",
+      "number": 236,
+      "title": "fix(weather): classify sunrise events correctly",
+      "url": "https://github.com/wynter-yaxley/atrium-desktop/pull/236",
+      "status": "merged",
+      "updated_at": "2026-11-28T16:44:45Z"
+    },
+    {
       "repo": "CGandGameEngineLearner/goldbach-proofs",
       "number": 2965,
       "title": "[goldbach/finite-rfc-third] Prove L-goldbach-finite-major-bmor-conditional-energy",
@@ -371,5 +403,5 @@
       "updated_at": "2026-08-07T16:24:08Z"
     }
   ],
-  "updated_at": "2026-11-28T16:27:50.403841+08:00"
+  "updated_at": "2026-11-29T01:06:38.233659+08:00"
 }
